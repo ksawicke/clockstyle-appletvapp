@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="13122.16" systemVersion="17A278a" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="14113" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="dark"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="tvOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Orbitron-Bold.ttf">
+            <string>Orbitron-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Clock Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ClockController" customModule="Clock_Test" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,9 +26,118 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="04j-Og-yUw" userLabel="Time Stack">
+                                <rect key="frame" x="430" y="160" width="1060" height="135"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRr-h4-ee0">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="135"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="135"/>
+                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nig-er-eLx">
+                                        <rect key="frame" x="50" y="0.0" width="226" height="135"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="135"/>
+                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TH6-oY-i9H">
+                                        <rect key="frame" x="276" y="0.0" width="29" height="135"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="135"/>
+                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5s-of-F81">
+                                        <rect key="frame" x="305" y="0.0" width="226" height="135"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="135"/>
+                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VlF-JC-IyU">
+                                        <rect key="frame" x="531" y="0.0" width="29" height="135"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="135"/>
+                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7g-Xq-mcL">
+                                        <rect key="frame" x="560" y="0.0" width="226" height="135"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="135"/>
+                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWc-fz-2xI">
+                                        <rect key="frame" x="786" y="0.0" width="274" height="135"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="135"/>
+                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="O5s-of-F81" firstAttribute="width" secondItem="Nig-er-eLx" secondAttribute="width" id="WHt-fA-4xW"/>
+                                    <constraint firstItem="k7g-Xq-mcL" firstAttribute="width" secondItem="Nig-er-eLx" secondAttribute="width" id="c7y-Ft-Gub"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7my-Sb-GZW" userLabel="Date Stack">
+                                <rect key="frame" x="523" y="345" width="875" height="85"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MON" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hpd-7K-Tbu">
+                                        <rect key="frame" x="0.0" y="0.0" width="220" height="85"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="85"/>
+                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" JUN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0qS-1E-jRm">
+                                        <rect key="frame" x="220" y="0.0" width="234" height="85"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="85"/>
+                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 12, " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Am-Mb-sgJ">
+                                        <rect key="frame" x="454" y="0.0" width="175" height="85"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="85"/>
+                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDD-9m-pzn">
+                                        <rect key="frame" x="629" y="0.0" width="246" height="85"/>
+                                        <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="85"/>
+                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rincon Mountain Tech" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPZ-fq-UCb">
+                                <rect key="frame" x="1356" y="992" width="464" height="38"/>
+                                <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="38"/>
+                                <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="LPZ-fq-UCb" secondAttribute="trailing" constant="100" id="04t-Kv-WTS"/>
+                            <constraint firstItem="04j-Og-yUw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="HzW-Br-dmp"/>
+                            <constraint firstItem="04j-Og-yUw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QkC-9b-a5S"/>
+                            <constraint firstItem="7my-Sb-GZW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="US9-98-XdW"/>
+                            <constraint firstAttribute="bottom" secondItem="LPZ-fq-UCb" secondAttribute="bottom" constant="50" id="cEd-a6-sCo"/>
+                            <constraint firstItem="7my-Sb-GZW" firstAttribute="top" secondItem="04j-Og-yUw" secondAttribute="bottom" constant="50" id="w33-5t-sOQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wu6-TO-1qx"/>
                     </view>
+                    <connections>
+                        <outlet property="dateSlot1" destination="Hpd-7K-Tbu" id="0CW-YJ-Cmn"/>
+                        <outlet property="dateSlot2" destination="0qS-1E-jRm" id="XtX-kc-tCi"/>
+                        <outlet property="dateSlot3" destination="3Am-Mb-sgJ" id="QM0-ga-4M6"/>
+                        <outlet property="dateSlot4" destination="mDD-9m-pzn" id="SBl-6Q-TI3"/>
+                        <outlet property="timeSlotBeg" destination="cRr-h4-ee0" id="ONU-x0-a7s"/>
+                        <outlet property="timeSlotEnd" destination="aWc-fz-2xI" id="cSZ-WR-50L"/>
+                        <outlet property="timeSlotH1" destination="Nig-er-eLx" id="za5-Re-ZEU"/>
+                        <outlet property="timeSlotM1" destination="O5s-of-F81" id="big-AV-18y"/>
+                        <outlet property="timeSlotS1" destination="k7g-Xq-mcL" id="drG-1J-cLx"/>
+                        <outlet property="timeSlotSep1" destination="TH6-oY-i9H" id="tZc-1X-0o1"/>
+                        <outlet property="timeSlotSep2" destination="VlF-JC-IyU" id="oKu-aP-Doj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -11,6 +11,7 @@
 		6540146C20A6119A00224714 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6540146B20A6119A00224714 /* ViewController.swift */; };
 		6540146F20A6119A00224714 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6540146D20A6119A00224714 /* Main.storyboard */; };
 		6540147120A6119B00224714 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6540147020A6119B00224714 /* Assets.xcassets */; };
+		65535DBB20C8FE4700E2D6D1 /* Orbitron-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65535DBA20C8FCB600E2D6D1 /* Orbitron-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		6540146E20A6119A00224714 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6540147020A6119B00224714 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6540147220A6119B00224714 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65535DBA20C8FCB600E2D6D1 /* Orbitron-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Orbitron-Bold.ttf"; path = "../../../../../Downloads/Orbitron/Orbitron-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +39,7 @@
 			isa = PBXGroup;
 			children = (
 				6540146820A6119A00224714 /* Clock Test */,
+				65535DB820C8FC4000E2D6D1 /* Supporting Files */,
 				6540146720A6119A00224714 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,6 +62,22 @@
 				6540147220A6119B00224714 /* Info.plist */,
 			);
 			path = "Clock Test";
+			sourceTree = "<group>";
+		};
+		65535DB820C8FC4000E2D6D1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				65535DB920C8FC5100E2D6D1 /* Fonts */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		65535DB920C8FC5100E2D6D1 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				65535DBA20C8FCB600E2D6D1 /* Orbitron-Bold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,6 +140,7 @@
 			files = (
 				6540147120A6119B00224714 /* Assets.xcassets in Resources */,
 				6540146F20A6119A00224714 /* Main.storyboard in Resources */,
+				65535DBB20C8FE4700E2D6D1 /* Orbitron-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,16 +286,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2HXVRM98MN;
+				DEVELOPMENT_TEAM = MPL4JS8WQN;
 				INFOPLIST_FILE = "Clock Test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rinconmountaintech.Clock-Test";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rinconmountaintech.clocktest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
 			};
@@ -285,16 +306,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2HXVRM98MN;
+				DEVELOPMENT_TEAM = MPL4JS8WQN;
 				INFOPLIST_FILE = "Clock Test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rinconmountaintech.Clock-Test";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rinconmountaintech.clocktest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
 			};
