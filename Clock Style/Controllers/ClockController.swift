@@ -9,6 +9,15 @@ import UIKit
 
 class ClockController: UIViewController {
 
+    var themes: Array = [0, 1, 2, 3]
+    var themeData: [[String: String]] = [
+        ["background": "color", "bgcolor": "black"],
+        ["background": "color", "bgcolor": "green"],
+        ["background": "color", "bgcolor": "red"],
+        ["background": "color", "bgcolor": "orange"]
+    ]
+    var currentTheme : Int = 0
+    
     var timeFormat: String = "America" // America, France, Burundi, Congo
     
     @IBOutlet weak var timeSlotBeg: UILabel!
@@ -23,16 +32,15 @@ class ClockController: UIViewController {
     @IBOutlet weak var dateSlot3: UILabel!
     @IBOutlet weak var dateSlot4: UILabel!
     
+    @IBAction func onClickToggleTheme(_ sender: Any) {
+        print("click")
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Timer.scheduledTimer(timeInterval: 1, target: self, selector: "updateClock", userInfo: nil, repeats: true)
-        
-        for family in UIFont.familyNames.sorted() {
-            let names = UIFont.fontNames(forFamilyName: family)
-            print("Family: \(family) Font names: \(names)")
-        }
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ClockController.updateClock), userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {

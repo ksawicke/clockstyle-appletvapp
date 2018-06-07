@@ -8,20 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		6540146A20A6119A00224714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6540146920A6119A00224714 /* AppDelegate.swift */; };
-		6540146C20A6119A00224714 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6540146B20A6119A00224714 /* ViewController.swift */; };
+		6540146C20A6119A00224714 /* ClockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6540146B20A6119A00224714 /* ClockController.swift */; };
 		6540146F20A6119A00224714 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6540146D20A6119A00224714 /* Main.storyboard */; };
 		6540147120A6119B00224714 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6540147020A6119B00224714 /* Assets.xcassets */; };
-		65535DBB20C8FE4700E2D6D1 /* Orbitron-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65535DBA20C8FCB600E2D6D1 /* Orbitron-Bold.ttf */; };
+		65EC802120C9FA320095B91F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6540147220A6119B00224714 /* Info.plist */; };
+		65EC802320C9FAF30095B91F /* Orbitron-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65EC802220C9FAF30095B91F /* Orbitron-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6540146620A6119A00224714 /* Clock Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clock Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6540146620A6119A00224714 /* Clock Style.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clock Style.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6540146920A6119A00224714 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6540146B20A6119A00224714 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6540146B20A6119A00224714 /* ClockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockController.swift; sourceTree = "<group>"; };
 		6540146E20A6119A00224714 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6540147020A6119B00224714 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6540147220A6119B00224714 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		65535DBA20C8FCB600E2D6D1 /* Orbitron-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Orbitron-Bold.ttf"; path = "../../../../../Downloads/Orbitron/Orbitron-Bold.ttf"; sourceTree = "<group>"; };
+		65EC802220C9FAF30095B91F /* Orbitron-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Orbitron-Bold.ttf"; path = "../../../../../../Downloads/Orbitron/Orbitron-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,8 +39,7 @@
 		6540145D20A6119900224714 = {
 			isa = PBXGroup;
 			children = (
-				6540146820A6119A00224714 /* Clock Test */,
-				65535DB820C8FC4000E2D6D1 /* Supporting Files */,
+				6540146820A6119A00224714 /* Clock Style */,
 				6540146720A6119A00224714 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,26 +47,27 @@
 		6540146720A6119A00224714 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6540146620A6119A00224714 /* Clock Test.app */,
+				6540146620A6119A00224714 /* Clock Style.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6540146820A6119A00224714 /* Clock Test */ = {
+		6540146820A6119A00224714 /* Clock Style */ = {
 			isa = PBXGroup;
 			children = (
 				6540146920A6119A00224714 /* AppDelegate.swift */,
-				6540146B20A6119A00224714 /* ViewController.swift */,
-				6540146D20A6119A00224714 /* Main.storyboard */,
-				6540147020A6119B00224714 /* Assets.xcassets */,
+				65F50A8D20C9EACB00DFD17B /* View */,
+				65F50A8C20C9EAAE00DFD17B /* Controllers */,
+				65535DB820C8FC4000E2D6D1 /* Supporting Files */,
 				6540147220A6119B00224714 /* Info.plist */,
 			);
-			path = "Clock Test";
+			path = "Clock Style";
 			sourceTree = "<group>";
 		};
 		65535DB820C8FC4000E2D6D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6540147020A6119B00224714 /* Assets.xcassets */,
 				65535DB920C8FC5100E2D6D1 /* Fonts */,
 			);
 			path = "Supporting Files";
@@ -75,17 +76,33 @@
 		65535DB920C8FC5100E2D6D1 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				65535DBA20C8FCB600E2D6D1 /* Orbitron-Bold.ttf */,
+				65EC802220C9FAF30095B91F /* Orbitron-Bold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		65F50A8C20C9EAAE00DFD17B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6540146B20A6119A00224714 /* ClockController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		65F50A8D20C9EACB00DFD17B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6540146D20A6119A00224714 /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6540146520A6119900224714 /* Clock Test */ = {
+		6540146520A6119900224714 /* Clock Style */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6540147520A6119B00224714 /* Build configuration list for PBXNativeTarget "Clock Test" */;
+			buildConfigurationList = 6540147520A6119B00224714 /* Build configuration list for PBXNativeTarget "Clock Style" */;
 			buildPhases = (
 				6540146220A6119900224714 /* Sources */,
 				6540146320A6119900224714 /* Frameworks */,
@@ -95,9 +112,9 @@
 			);
 			dependencies = (
 			);
-			name = "Clock Test";
+			name = "Clock Style";
 			productName = "Clock Test";
-			productReference = 6540146620A6119A00224714 /* Clock Test.app */;
+			productReference = 6540146620A6119A00224714 /* Clock Style.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -115,7 +132,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6540146120A6119900224714 /* Build configuration list for PBXProject "Clock Test" */;
+			buildConfigurationList = 6540146120A6119900224714 /* Build configuration list for PBXProject "Clock Style" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -128,7 +145,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6540146520A6119900224714 /* Clock Test */,
+				6540146520A6119900224714 /* Clock Style */,
 			);
 		};
 /* End PBXProject section */
@@ -138,9 +155,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65EC802120C9FA320095B91F /* Info.plist in Resources */,
 				6540147120A6119B00224714 /* Assets.xcassets in Resources */,
+				65EC802320C9FAF30095B91F /* Orbitron-Bold.ttf in Resources */,
 				6540146F20A6119A00224714 /* Main.storyboard in Resources */,
-				65535DBB20C8FE4700E2D6D1 /* Orbitron-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,7 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6540146C20A6119A00224714 /* ViewController.swift in Sources */,
+				6540146C20A6119A00224714 /* ClockController.swift in Sources */,
 				6540146A20A6119A00224714 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,7 +312,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rinconmountaintech.clocktest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rinconmountaintech.clockstyle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -314,7 +332,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rinconmountaintech.clocktest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rinconmountaintech.clockstyle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -325,7 +343,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6540146120A6119900224714 /* Build configuration list for PBXProject "Clock Test" */ = {
+		6540146120A6119900224714 /* Build configuration list for PBXProject "Clock Style" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6540147320A6119B00224714 /* Debug */,
@@ -334,7 +352,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6540147520A6119B00224714 /* Build configuration list for PBXNativeTarget "Clock Test" */ = {
+		6540147520A6119B00224714 /* Build configuration list for PBXNativeTarget "Clock Style" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6540147620A6119B00224714 /* Debug */,

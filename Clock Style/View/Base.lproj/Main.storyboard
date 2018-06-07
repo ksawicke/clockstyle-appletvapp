@@ -113,6 +113,15 @@
                                 <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZwL-uk-u5P">
+                                <rect key="frame" x="100" y="954" width="280" height="76"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Toggle Theme"/>
+                                <connections>
+                                    <action selector="onClickToggleTheme:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GRQ-4S-qoL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -120,7 +129,9 @@
                             <constraint firstItem="04j-Og-yUw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="HzW-Br-dmp"/>
                             <constraint firstItem="04j-Og-yUw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QkC-9b-a5S"/>
                             <constraint firstItem="7my-Sb-GZW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="US9-98-XdW"/>
+                            <constraint firstAttribute="bottom" secondItem="ZwL-uk-u5P" secondAttribute="bottom" constant="50" id="b3i-4N-WPY"/>
                             <constraint firstAttribute="bottom" secondItem="LPZ-fq-UCb" secondAttribute="bottom" constant="50" id="cEd-a6-sCo"/>
+                            <constraint firstItem="ZwL-uk-u5P" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="100" id="cKm-f5-lxU"/>
                             <constraint firstItem="7my-Sb-GZW" firstAttribute="top" secondItem="04j-Og-yUw" secondAttribute="bottom" constant="50" id="w33-5t-sOQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wu6-TO-1qx"/>

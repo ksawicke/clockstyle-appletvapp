@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Clock Test.xcodeproj">
+      location = "self:/Users/ksawicke/Code/XCode/clock-style/Clock Style.xcodeproj">
    </FileRef>
 </Workspace>
