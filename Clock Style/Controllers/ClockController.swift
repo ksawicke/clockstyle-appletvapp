@@ -109,10 +109,15 @@ class ClockController: UIViewController {
                 
                 dateFormatter.dateFormat = "mm"
                 let timeInMinutes = dateFormatter.string(from: currentDate as Date)
-                let firstMinuteDigit = timeInMinutes.index(timeInMinutes.startIndex, offsetBy: 1)
-                let secondMinuteDigit = timeInMinutes.index(timeInMinutes.startIndex, offsetBy: 2)
-                print("firstMinuteDigit: \(firstMinuteDigit) .. secondMinuteDigit: \(secondMinuteDigit)")
                 
+//                let str = "Hello, world!"
+//                let index = str.index(str.startIndex, offsetBy: 4)
+//                str[index] // returns Character 'o'
+                
+                //                let firstMinuteDigit = timeInMinutes.index(timeInMinutes.startIndex, offsetBy: 1)
+//                let secondMinuteDigit = timeInMinutes.index(timeInMinutes.startIndex, offsetBy: 2)
+//                print("firstMinuteDigit: \(firstMinuteDigit) .. secondMinuteDigit: \(secondMinuteDigit)")
+//
                 dateFormatter.dateFormat = "ss"
                 let timeInSeconds = dateFormatter.string(from: currentDate as Date)
                 
