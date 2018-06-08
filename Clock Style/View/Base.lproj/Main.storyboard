@@ -161,18 +161,25 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNS-Cq-gby">
-                                <rect key="frame" x="343" y="963" width="185" height="67"/>
+                                <rect key="frame" x="343" y="963" width="228" height="67"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="Advanced"/>
+                                <state key="normal" title="Toggle Region"/>
                                 <connections>
-                                    <segue destination="Q4p-fJ-dPs" kind="show" identifier="goToSettingsController" id="Ue5-Em-fET"/>
+                                    <action selector="onClickToggleRegion:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="xnh-D0-raa"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Region" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5w0-4M-L48">
+                                <rect key="frame" x="621" y="1003" width="73" height="27"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="LPZ-fq-UCb" secondAttribute="trailing" constant="100" id="04t-Kv-WTS"/>
+                            <constraint firstAttribute="bottom" secondItem="5w0-4M-L48" secondAttribute="bottom" constant="50" id="0yt-IV-U8u"/>
                             <constraint firstAttribute="bottom" secondItem="FNS-Cq-gby" secondAttribute="bottom" constant="50" id="1HH-rj-4BL"/>
                             <constraint firstItem="04j-Og-yUw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="HzW-Br-dmp"/>
                             <constraint firstItem="04j-Og-yUw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QkC-9b-a5S"/>
@@ -183,11 +190,13 @@
                             <constraint firstAttribute="bottom" secondItem="LPZ-fq-UCb" secondAttribute="bottom" constant="50" id="cEd-a6-sCo"/>
                             <constraint firstItem="ZwL-uk-u5P" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="100" id="cKm-f5-lxU"/>
                             <constraint firstItem="pcy-tU-oow" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gMO-PK-nxc"/>
+                            <constraint firstItem="5w0-4M-L48" firstAttribute="leading" secondItem="FNS-Cq-gby" secondAttribute="trailing" constant="50" id="lZi-Fm-CHE"/>
                             <constraint firstItem="7my-Sb-GZW" firstAttribute="top" secondItem="04j-Og-yUw" secondAttribute="bottom" constant="50" id="w33-5t-sOQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wu6-TO-1qx"/>
                     </view>
                     <connections>
+                        <outlet property="currentRegionSelected" destination="5w0-4M-L48" id="DIt-Ax-0pX"/>
                         <outlet property="dateSlot1" destination="Hpd-7K-Tbu" id="0CW-YJ-Cmn"/>
                         <outlet property="dateSlot2" destination="0qS-1E-jRm" id="XtX-kc-tCi"/>
                         <outlet property="dateSlot3" destination="3Am-Mb-sgJ" id="QM0-ga-4M6"/>

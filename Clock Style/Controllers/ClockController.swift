@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ClockController: UIViewController, ChangeSettingsDelegate {
+class ClockController: UIViewController { // , ChangeSettingsDelegate
 
     var themes: Array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
     var themeData: [[String: String]] = [
@@ -18,11 +18,11 @@ class ClockController: UIViewController, ChangeSettingsDelegate {
         ["background": "image", "bgImage": "pexels-photo-132197", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // flagstone
         ["background": "image", "bgImage": "pexels-photo-164005", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // nicer wood
         ["background": "image", "bgImage": "pexels-photo-207142", "fontColor": "neonYellow", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"], // red brick
-        ["background": "image", "bgImage": "pexels-photo-245250", "fontColor": "neonPink", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"], // shiny gray tile
+        ["background": "image", "bgImage": "pexels-photo-245250", "fontColor": "neonGreen", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"], // shiny gray tile
         ["background": "image", "bgImage": "pexels-photo-268976", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // orange horiz wood
         ["background": "image", "bgImage": "pexels-photo-296884", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // dark brown wood
         ["background": "image", "bgImage": "pexels-photo-319382", "fontColor": "darkGray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // yellow and orange
-        ["background": "image", "bgImage": "pexels-photo-850796", "fontColor": "bubbleGum", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // gray paper
+        ["background": "image", "bgImage": "pexels-photo-850796", "fontColor": "darkBlue", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // gray paper
         ["background": "image", "bgImage": "pexels-photo-921776", "fontColor": "darkGray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // gray marble
         ["background": "image", "bgImage": "pexels-photo-953218", "fontColor": "darkGray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // concrete
         ["background": "image", "bgImage": "pexels-photo-960137", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // red wood
@@ -31,9 +31,19 @@ class ClockController: UIViewController, ChangeSettingsDelegate {
     ]
     var currentTheme : Int = 0
     
-    var timeFormat: String = "America" // America, France, Tanzania, Congo
+    var regions: Array = [0, 1, 2, 3, 4]
+    var regionData: [[String: String]] = [
+        ["regionName": "America", "description": "US"],
+        ["regionName": "America24", "description": "US (24 HR)"],
+        ["regionName": "France", "description": "France"],
+        ["regionName": "Tanzania", "description": "Swahili"],
+        ["regionName": "Congo", "description": "Swahili (Congo)"]
+    ]
+    var currentRegion : Int = 0
+    var currentRegionDescription : String = ""
+    var timeFormat: String = ""
     
-    var delegate : ChangeSettingsDelegate?
+//    var delegate : ChangeSettingsDelegate?
     
     @IBOutlet weak var timeSlotBeg: UILabel!
     @IBOutlet weak var timeSlotH1: UILabel!
@@ -51,6 +61,7 @@ class ClockController: UIViewController, ChangeSettingsDelegate {
     @IBOutlet weak var dateSlot3: UILabel!
     @IBOutlet weak var dateSlot4: UILabel!
     @IBOutlet weak var timeZoneSlot: UILabel!
+    @IBOutlet weak var currentRegionSelected: UILabel!
     
     @IBAction func onClickToggleTheme(_ sender: Any) {
         if currentTheme == themes.count - 1 {
@@ -60,6 +71,16 @@ class ClockController: UIViewController, ChangeSettingsDelegate {
         }
         
         updateTheme()
+    }
+    
+    @IBAction func onClickToggleRegion(_ sender: Any) {
+        if currentRegion == regions.count - 1 {
+            currentRegion = 0
+        } else {
+            currentRegion += 1
+        }
+        
+        updateClock()
     }
     
     override func viewDidLoad() {
@@ -103,9 +124,24 @@ class ClockController: UIViewController, ChangeSettingsDelegate {
         
         // Do any additional setup after loading the view, typically from a nib.
         
+        timeFormat = regionData[currentRegion]["regionName"]!
+        currentRegionDescription = regionData[currentRegion]["description"]!
+        
         switch(timeFormat) {
-            case "America":
-                dateFormatter.dateFormat = "hh"
+            case "America", "America24":
+                dateFormatter.locale = NSLocale(localeIdentifier: "en_US") as Locale?
+                
+                switch(timeFormat) {
+                    case "America":
+                        dateFormatter.dateFormat = "hh"
+                    
+                    case "America24":
+                        dateFormatter.dateFormat = "HH"
+                    
+                    default:
+                        dateFormatter.dateFormat = "hh"
+                }
+                
                 let timeInHours = dateFormatter.string(from: currentDate as Date)
                 let hoursDigitIndex1 = timeInHours.index(timeInHours.startIndex, offsetBy: 0)
                 let hoursDigitIndex2 = timeInHours.index(timeInHours.startIndex, offsetBy: 1)
@@ -127,7 +163,7 @@ class ClockController: UIViewController, ChangeSettingsDelegate {
                 let timeSecondsDigit2: String = "\(timeInSeconds[secondsDigitIndex2])"
                 
                 dateFormatter.dateFormat = "a"
-                let timeEnding = dateFormatter.string(from: currentDate as Date)
+                var timeEnding = dateFormatter.string(from: currentDate as Date)
                 
                 dateFormatter.dateFormat = "EEE"
                 let thisDayofWeek = dateFormatter.string(from: currentDate as Date)
@@ -154,6 +190,11 @@ class ClockController: UIViewController, ChangeSettingsDelegate {
                 timeSlotS1.text = timeSecondsDigit1
                 timeSlotS2.text = timeSecondsDigit2
                 timeSlotSep3.text = ""
+                
+                if(timeFormat == "America24") {
+                    timeEnding = ""
+                }
+                
                 timeSlotEnd.text = " \(timeEnding)"
             
                 dateSlot1.text = "\(thisDayofWeek)"
@@ -162,6 +203,8 @@ class ClockController: UIViewController, ChangeSettingsDelegate {
                 dateSlot4.text = "\(thisYear)"
             
                 timeZoneSlot.text = "\(thisTimezone)"
+            
+                currentRegionSelected.text = currentRegionDescription
             
             case "France":
                 dateFormatter.locale = NSLocale(localeIdentifier: "fr_FR") as Locale?
@@ -217,17 +260,74 @@ class ClockController: UIViewController, ChangeSettingsDelegate {
                 timeSlotEnd.text = " \(timeEnding)"
                 
                 dateSlot1.text = "\(thisDayofWeek)"
-                dateSlot2.text = " \(thisDayNumber)"
+                dateSlot2.text = " le \(thisDayNumber)"
                 dateSlot3.text = " \(thisMonth) "
                 dateSlot4.text = "\(thisYear)"
             
                 timeZoneSlot.text = "\(thisTimezone)"
             
+                currentRegionSelected.text = currentRegionDescription
+            
             case "Tanzania":
                 dateFormatter.locale = NSLocale(localeIdentifier: "sw_TZ") as Locale?
                 
                 dateFormatter.dateFormat = "hh"
-                let timeInHours = dateFormatter.string(from: currentDate as Date)
+                var timeInHours = dateFormatter.string(from: currentDate as Date)
+                
+                // 7  1  -6
+                // 8  2  -6
+                // 9  3  -6
+                // 10  4  -6
+                // 11  5  -6
+                // 12  6  -6
+                // 1   7  +6
+                // 2   8  +6
+                // 3   9  +6
+                // 4   10  +6
+                // 5   11  +6
+                // 6   12  +6
+                
+                switch(timeInHours) {
+                    case "07":
+                        timeInHours = "01"
+                    
+                    case "08":
+                        timeInHours = "02"
+                    
+                    case "09":
+                        timeInHours = "03"
+                    
+                    case "10":
+                        timeInHours = "04"
+                    
+                    case "11":
+                        timeInHours = "05"
+                    
+                    case "12":
+                        timeInHours = "06"
+                    
+                    case "01":
+                        timeInHours = "07"
+                    
+                    case "02":
+                        timeInHours = "08"
+                    
+                    case "03":
+                        timeInHours = "09"
+                    
+                    case "04":
+                        timeInHours = "10"
+                    
+                    case "05":
+                        timeInHours = "11"
+                    
+                    case "06":
+                        timeInHours = "12"
+                    
+                    default:
+                        timeInHours = "01"
+                }
+                
                 let hoursDigitIndex1 = timeInHours.index(timeInHours.startIndex, offsetBy: 0)
                 let hoursDigitIndex2 = timeInHours.index(timeInHours.startIndex, offsetBy: 1)
                 let timeHoursDigit1: String = "\(timeInHours[hoursDigitIndex1])"
@@ -250,36 +350,38 @@ class ClockController: UIViewController, ChangeSettingsDelegate {
                 dateFormatter.dateFormat = "a"
                 let ampm = dateFormatter.string(from: currentDate as Date)
                 
-                var timeEnding = ""
+                var timeEnding = " za \(ampm)".lowercased()
                 
-                if(ampm == "AM") {
-                    switch(timeInHours) {
-                        case "05", "06", "07", "08", "09":
-                            timeEnding = " za asubuhi"
-                        
-                        case "10", "11":
-                            timeEnding = " za mchana"
-                        
-                        default:
-                            timeEnding = " za asubuhi"
-                    }
-                }
-                
-                if(ampm == "PM") {
-                    switch(timeInHours) {
-                        case "12", "01", "02", "03":
-                            timeEnding = " za mchana"
-                        
-                        case "04", "05", "06":
-                            timeEnding = " za jioni"
-                        
-                        case "07", "08", "09", "10", "11":
-                            timeEnding = " za usiku"
-                        
-                        default:
-                            timeEnding = " za jioni"
-                    }
-                }
+//                print("\(ampm)")
+//
+//                if(ampm == "AM") {
+//                    switch(timeInHours) {
+//                        case "05", "06", "07", "08", "09":
+//                            timeEnding = " za asubuhi"
+//
+//                        case "10", "11":
+//                            timeEnding = " za mchana"
+//
+//                        default:
+//                            timeEnding = " za asubuhi"
+//                    }
+//                }
+//
+//                if(ampm == "PM") {
+//                    switch(timeInHours) {
+//                        case "12", "01", "02", "03":
+//                            timeEnding = " za mchana"
+//
+//                        case "04", "05", "06":
+//                            timeEnding = " za jioni"
+//
+//                        case "07", "08", "09", "10", "11":
+//                            timeEnding = " za usiku"
+//
+//                        default:
+//                            timeEnding = " za jioni"
+//                    }
+//                }
                 
                 dateFormatter.dateFormat = "EEE"
                 let thisDayofWeek = dateFormatter.string(from: currentDate as Date)
@@ -296,7 +398,7 @@ class ClockController: UIViewController, ChangeSettingsDelegate {
                 dateFormatter.dateFormat = "zzz"
                 let thisTimezone = dateFormatter.string(from: currentDate as Date)
                 
-                timeSlotBeg.text = ""
+                timeSlotBeg.text = "saa "
                 timeSlotH1.text = timeHoursDigit1
                 timeSlotH2.text = timeHoursDigit2
                 timeSlotSep1.text = ":"
@@ -315,8 +417,10 @@ class ClockController: UIViewController, ChangeSettingsDelegate {
             
                 timeZoneSlot.text = "\(thisTimezone)"
             
+                currentRegionSelected.text = currentRegionDescription
+            
             case "Congo":
-                dateFormatter.locale = NSLocale(localeIdentifier: "sw_CD") as Locale?
+                dateFormatter.locale = NSLocale(localeIdentifier: "swc_CD") as Locale?
                 
                 dateFormatter.dateFormat = "HH"
                 let timeInHours = dateFormatter.string(from: currentDate as Date)
@@ -358,12 +462,12 @@ class ClockController: UIViewController, ChangeSettingsDelegate {
                 }
                 
                 dateFormatter.dateFormat = "EEEE"
-                let thisDayofWeek = dateFormatter.string(from: currentDate as Date)
+                var thisDayofWeek = dateFormatter.string(from: currentDate as Date)
                 
-                dateFormatter.dateFormat = "MMMM"
+                dateFormatter.dateFormat = "MM"
                 let thisMonth = dateFormatter.string(from: currentDate as Date)
                 
-                dateFormatter.dateFormat = "d"
+                dateFormatter.dateFormat = "dd"
                 let thisDayNumber = dateFormatter.string(from: currentDate as Date)
                 
                 dateFormatter.dateFormat = "yyyy"
@@ -371,6 +475,32 @@ class ClockController: UIViewController, ChangeSettingsDelegate {
                 
                 dateFormatter.dateFormat = "zzz"
                 let thisTimezone = dateFormatter.string(from: currentDate as Date)
+                
+                switch(thisDayofWeek) {
+                    case "Sunday":
+                        thisDayofWeek = "Siku ya Yenga"
+                    
+                    case "Monday":
+                        thisDayofWeek = "Siku ya Kwanza"
+                    
+                    case "Tuesday":
+                        thisDayofWeek = "Siku ya Pili"
+                    
+                    case "Wednesday":
+                        thisDayofWeek = "Siku ya Tatu"
+                    
+                    case "Thursday":
+                        thisDayofWeek = "Siku ya Ine"
+                    
+                    case "Friday":
+                        thisDayofWeek = "Siku ya Tano"
+                    
+                    case "Saturday":
+                        thisDayofWeek = "Siku ya Posho"
+                    
+                    default:
+                        thisDayofWeek = "Siku ya Kwanza"
+                }
                 
                 timeSlotBeg.text = "saa "
                 timeSlotH1.text = timeHoursDigit1
@@ -385,11 +515,13 @@ class ClockController: UIViewController, ChangeSettingsDelegate {
                 timeSlotEnd.text = " \(timeEnding)"
                 
                 dateSlot1.text = "\(thisDayofWeek)"
-                dateSlot2.text = " \(thisMonth)"
-                dateSlot3.text = " \(thisDayNumber) "
-                dateSlot4.text = "\(thisYear)"
+                dateSlot2.text = " \(thisDayNumber)"
+                dateSlot3.text = "/\(thisMonth)"
+                dateSlot4.text = "/\(thisYear)"
             
                 timeZoneSlot.text = "\(thisTimezone)"
+            
+                currentRegionSelected.text = currentRegionDescription
             
             default:
                 dateFormatter.dateFormat = "hh"
@@ -449,6 +581,8 @@ class ClockController: UIViewController, ChangeSettingsDelegate {
                 dateSlot4.text = "\(thisYear)"
                 
                 timeZoneSlot.text = "\(thisTimezone)"
+            
+                currentRegionSelected.text = currentRegionDescription
         }
     }
     
@@ -503,6 +637,9 @@ class ClockController: UIViewController, ChangeSettingsDelegate {
             
             case "yellow":
                 outputUIColor = UIColor(red: 255/255.0, green: 251/255.0, blue: 0/255.0, alpha: 1.0)
+            
+            case "darkBlue":
+                outputUIColor = UIColor(red: 1/255.0, green: 25/255.0, blue: 147/255.0, alpha: 1.0)
             
             case "black":
                 outputUIColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
@@ -796,23 +933,23 @@ class ClockController: UIViewController, ChangeSettingsDelegate {
         timeZoneSlot.layer.shouldRasterize = true
     }
     
-    func userChangedSettings(bgColor: String) {
-        print("TEST: \(bgColor)")
-    }
+//    func userChangedSettings(bgColor: String) {
+//        print("TEST: \(bgColor)")
+//    }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        switch(segue.identifier!) {
-            case "goToSettingsController":
-                let destinationVC = segue.destination as! SettingsController
-                
-                destinationVC.delegate = self
-                destinationVC.bgColor = "BLUE RASPBERRY" //self.barCodeScanned
-            
-            default:
-                print("ERROR")
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//        switch(segue.identifier!) {
+//            case "goToSettingsController":
+//                let destinationVC = segue.destination as! SettingsController
+//
+//                destinationVC.delegate = self
+//                destinationVC.bgColor = "BLUE RASPBERRY" //self.barCodeScanned
+//
+//            default:
+//                print("ERROR")
+//        }
+//    }
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        
