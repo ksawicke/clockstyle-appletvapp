@@ -73,10 +73,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="O5s-of-F81" firstAttribute="width" secondItem="Nig-er-eLx" secondAttribute="width" id="WHt-fA-4xW"/>
-                                    <constraint firstItem="k7g-Xq-mcL" firstAttribute="width" secondItem="Nig-er-eLx" secondAttribute="width" id="c7y-Ft-Gub"/>
-                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7my-Sb-GZW" userLabel="Date Stack">
                                 <rect key="frame" x="523" y="368" width="875" height="85"/>
