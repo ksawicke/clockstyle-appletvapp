@@ -9,12 +9,31 @@ import UIKit
 
 class ClockController: UIViewController {
 
-    var themes: Array = [0, 1, 2, 3]
+    var themes: Array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
     var themeData: [[String: String]] = [
-        ["background": "color", "bgcolor": "black"],
-        ["background": "color", "bgcolor": "green"],
-        ["background": "color", "bgcolor": "red"],
-        ["background": "color", "bgcolor": "orange"]
+        ["background": "color", "bgColor": "black", "fontColor": "darkGray"],
+        ["background": "color", "bgColor": "green", "fontColor": "white"],
+        ["background": "color", "bgColor": "red", "fontColor": "white"],
+        ["background": "color", "bgColor": "orange", "fontColor": "darkGray"],
+        ["background": "image", "bgImage": "pexels-photo-132197", "fontColor": "red"],
+        ["background": "image", "bgImage": "pexels-photo-132205", "fontColor": "darkGray"],
+        ["background": "image", "bgImage": "pexels-photo-139259", "fontColor": "white"],
+        ["background": "image", "bgImage": "pexels-photo-163999", "fontColor": "darkGray"],
+        ["background": "image", "bgImage": "pexels-photo-164005", "fontColor": "orange"],
+        ["background": "image", "bgImage": "pexels-photo-168442", "fontColor": "darkGray"],
+        ["background": "image", "bgImage": "pexels-photo-207142", "fontColor": "green"],
+        ["background": "image", "bgImage": "pexels-photo-207253", "fontColor": "darkGray"],
+        ["background": "image", "bgImage": "pexels-photo-245250", "fontColor": "darkGray"],
+        ["background": "image", "bgImage": "pexels-photo-268976", "fontColor": "darkGray"],
+        ["background": "image", "bgImage": "pexels-photo-296884", "fontColor": "darkGray"],
+        ["background": "image", "bgImage": "pexels-photo-319382", "fontColor": "darkGray"],
+        ["background": "image", "bgImage": "pexels-photo-850796", "fontColor": "darkGray"],
+        ["background": "image", "bgImage": "pexels-photo-921776", "fontColor": "darkGray"],
+        ["background": "image", "bgImage": "pexels-photo-953218", "fontColor": "darkGray"],
+        ["background": "image", "bgImage": "pexels-photo-960137", "fontColor": "darkGray"],
+        ["background": "image", "bgImage": "pexels-photo-985287", "fontColor": "darkGray"],
+        ["background": "image", "bgImage": "pexels-photo-1022692", "fontColor": "darkGray"],
+        ["background": "image", "bgImage": "pexels-photo-1101125", "fontColor": "darkGray"]
     ]
     var currentTheme : Int = 0
     
@@ -33,9 +52,14 @@ class ClockController: UIViewController {
     @IBOutlet weak var dateSlot4: UILabel!
     
     @IBAction func onClickToggleTheme(_ sender: Any) {
-        print("click")
+        if currentTheme == themes.count - 1 {
+            currentTheme = 0
+        } else {
+            currentTheme += 1
+        }
+        
+        updateTheme()
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +75,7 @@ class ClockController: UIViewController {
     @objc func updateClock() {
         // https://www.appcoda.com/nsdate/
         // http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web
+        // http://unicode.org/reports/tr35/tr35-6.html#Date_Format_Patterns
         
         let currentDate = NSDate()
         let dateFormatter = DateFormatter()
@@ -79,7 +104,7 @@ class ClockController: UIViewController {
         
         switch(timeFormat) {
             case "America":
-                dateFormatter.dateFormat = "HH"
+                dateFormatter.dateFormat = "hh"
                 let timeInHours = dateFormatter.string(from: currentDate as Date)
                 
                 dateFormatter.dateFormat = "mm"
@@ -144,6 +169,69 @@ class ClockController: UIViewController {
                 timeSlotM1.text = "4"
                 timeSlotEnd.text = " pm"
         }
+    }
+    
+    func updateTheme() {
+        let themeSettings = themeData[currentTheme]
+        
+        if themeSettings["background"] == "color" {
+            updateBgColor(bgColor: themeSettings["bgColor"]!)
+        }
+        
+        if themeSettings["background"] == "image" {
+            updateBgImage(bgImage: themeSettings["bgImage"]!)
+        }
+        
+        updateFontColor(fontColor: themeSettings["fontColor"]!)
+    }
+    
+    func getUIColor(color: String) -> UIColor {
+        var outputUIColor = UIColor(red: 66/255.0, green: 66/255.0, blue: 66/255.0, alpha: 1.0)
+        
+        switch(color) {
+            case "green":
+                outputUIColor = UIColor(red: 0/255.0, green: 143/255.0, blue: 0/255.0, alpha: 1.0)
+            
+            case "red":
+                outputUIColor = UIColor(red: 255/255.0, green: 38/255.0, blue: 0/255.0, alpha: 1.0)
+            
+            case "orange":
+                outputUIColor = UIColor(red: 255/255.0, green: 147/255.0, blue: 0/255.0, alpha: 1.0)
+            
+            case "black":
+                outputUIColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
+            
+            case "white":
+                outputUIColor = UIColor(red: 255/255.0, green: 2555/255.0, blue: 255/255.0, alpha: 1.0)
+            
+            case "darkGray":
+                outputUIColor = UIColor(red: 66/255.0, green: 66/255.0, blue: 66/255.0, alpha: 1.0)
+            
+            default:
+                outputUIColor = UIColor(red: 66/255.0, green: 66/255.0, blue: 66/255.0, alpha: 1.0)
+        }
+        
+        return outputUIColor
+    }
+    
+    func updateBgColor(bgColor: String) {
+        view.backgroundColor = getUIColor(color: bgColor)
+    }
+    
+    func updateBgImage(bgImage: String) {
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "\(bgImage).png")!)
+    }
+    
+    func updateFontColor(fontColor: String) {
+        let newColor = getUIColor(color: fontColor)
+        
+        timeSlotBeg.textColor = newColor
+        timeSlotH1.textColor = newColor
+        timeSlotSep1.textColor = newColor
+        timeSlotM1.textColor = newColor
+        timeSlotSep2.textColor = newColor
+        timeSlotS1.textColor = newColor
+        timeSlotEnd.textColor = newColor
     }
     
 }

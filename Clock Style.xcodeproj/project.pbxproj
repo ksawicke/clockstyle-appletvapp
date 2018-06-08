@@ -11,8 +11,8 @@
 		6540146C20A6119A00224714 /* ClockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6540146B20A6119A00224714 /* ClockController.swift */; };
 		6540146F20A6119A00224714 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6540146D20A6119A00224714 /* Main.storyboard */; };
 		6540147120A6119B00224714 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6540147020A6119B00224714 /* Assets.xcassets */; };
-		65EC802120C9FA320095B91F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6540147220A6119B00224714 /* Info.plist */; };
 		65EC802320C9FAF30095B91F /* Orbitron-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65EC802220C9FAF30095B91F /* Orbitron-Bold.ttf */; };
+		65EC802420C9FC250095B91F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6540147220A6119B00224714 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +21,7 @@
 		6540146B20A6119A00224714 /* ClockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockController.swift; sourceTree = "<group>"; };
 		6540146E20A6119A00224714 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6540147020A6119B00224714 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6540147220A6119B00224714 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6540147220A6119B00224714 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Clock Style/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
 		65EC802220C9FAF30095B91F /* Orbitron-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Orbitron-Bold.ttf"; path = "../../../../../../Downloads/Orbitron/Orbitron-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,7 +59,6 @@
 				65F50A8D20C9EACB00DFD17B /* View */,
 				65F50A8C20C9EAAE00DFD17B /* Controllers */,
 				65535DB820C8FC4000E2D6D1 /* Supporting Files */,
-				6540147220A6119B00224714 /* Info.plist */,
 			);
 			path = "Clock Style";
 			sourceTree = "<group>";
@@ -67,6 +66,7 @@
 		65535DB820C8FC4000E2D6D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6540147220A6119B00224714 /* Info.plist */,
 				6540147020A6119B00224714 /* Assets.xcassets */,
 				65535DB920C8FC5100E2D6D1 /* Fonts */,
 			);
@@ -155,7 +155,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65EC802120C9FA320095B91F /* Info.plist in Resources */,
+				65EC802420C9FC250095B91F /* Info.plist in Resources */,
 				6540147120A6119B00224714 /* Assets.xcassets in Resources */,
 				65EC802320C9FAF30095B91F /* Orbitron-Bold.ttf in Resources */,
 				6540146F20A6119A00224714 /* Main.storyboard in Resources */,
@@ -307,7 +307,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MPL4JS8WQN;
-				INFOPLIST_FILE = "Clock Test/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Clock Style/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -327,7 +327,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MPL4JS8WQN;
-				INFOPLIST_FILE = "Clock Test/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Clock Style/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

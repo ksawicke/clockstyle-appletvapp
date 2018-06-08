@@ -18,7 +18,7 @@
         <!--Clock Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ClockController" customModule="Clock_Test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ClockController" customModule="Clock_Style" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -28,46 +28,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="04j-Og-yUw" userLabel="Time Stack">
-                                <rect key="frame" x="430" y="160" width="1060" height="135"/>
+                                <rect key="frame" x="430" y="160" width="1060" height="158"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRr-h4-ee0">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="135"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="158"/>
                                         <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="135"/>
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nig-er-eLx">
-                                        <rect key="frame" x="50" y="0.0" width="226" height="135"/>
+                                        <rect key="frame" x="50" y="0.0" width="226" height="158"/>
                                         <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="135"/>
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TH6-oY-i9H">
-                                        <rect key="frame" x="276" y="0.0" width="29" height="135"/>
+                                        <rect key="frame" x="276" y="0.0" width="29" height="158"/>
                                         <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="135"/>
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5s-of-F81">
-                                        <rect key="frame" x="305" y="0.0" width="226" height="135"/>
+                                        <rect key="frame" x="305" y="0.0" width="226" height="158"/>
                                         <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="135"/>
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VlF-JC-IyU">
-                                        <rect key="frame" x="531" y="0.0" width="29" height="135"/>
+                                        <rect key="frame" x="531" y="0.0" width="29" height="158"/>
                                         <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="135"/>
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7g-Xq-mcL">
-                                        <rect key="frame" x="560" y="0.0" width="226" height="135"/>
+                                        <rect key="frame" x="560" y="0.0" width="226" height="158"/>
                                         <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="135"/>
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWc-fz-2xI">
-                                        <rect key="frame" x="786" y="0.0" width="274" height="135"/>
+                                        <rect key="frame" x="786" y="0.0" width="274" height="158"/>
                                         <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="135"/>
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -79,7 +79,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7my-Sb-GZW" userLabel="Date Stack">
-                                <rect key="frame" x="523" y="345" width="875" height="85"/>
+                                <rect key="frame" x="523" y="368" width="875" height="85"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MON" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hpd-7K-Tbu">
                                         <rect key="frame" x="0.0" y="0.0" width="220" height="85"/>
@@ -114,16 +114,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZwL-uk-u5P">
-                                <rect key="frame" x="100" y="954" width="280" height="76"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <rect key="frame" x="100" y="963" width="228" height="67"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Toggle Theme"/>
                                 <connections>
-                                    <action selector="onClickToggleTheme:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GRQ-4S-qoL"/>
+                                    <action selector="onClickToggleTheme:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="dmE-Cf-NAe"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="LPZ-fq-UCb" secondAttribute="trailing" constant="100" id="04t-Kv-WTS"/>
                             <constraint firstItem="04j-Og-yUw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="HzW-Br-dmp"/>
