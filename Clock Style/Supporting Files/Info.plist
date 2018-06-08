@@ -25,6 +25,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Orbitron-Bold.ttf</string>
+		<string>NeonTubes2.otf</string>
 	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
