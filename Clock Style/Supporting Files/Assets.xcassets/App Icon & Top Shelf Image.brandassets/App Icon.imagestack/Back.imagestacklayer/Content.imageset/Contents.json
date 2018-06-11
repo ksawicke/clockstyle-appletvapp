@@ -2,10 +2,12 @@
   "images" : [
     {
       "idiom" : "tv",
+      "filename" : "clockStyleTVOS_icon_home_screen_back@1x.png",
       "scale" : "1x"
     },
     {
       "idiom" : "tv",
+      "filename" : "clockStyleTVOS_icon_home_screen_back@2x.png",
       "scale" : "2x"
     }
   ],

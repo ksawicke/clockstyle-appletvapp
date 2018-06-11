@@ -1,7 +1,8 @@
 {
   "images" : [
     {
-      "idiom" : "tv"
+      "idiom" : "tv",
+      "filename" : "clockStyleTVOS_icon_app_store_back@1x.png"
     }
   ],
   "info" : {
