@@ -71,9 +71,9 @@
 		65535DB820C8FC4000E2D6D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				65535DB920C8FC5100E2D6D1 /* Fonts */,
 				6540147220A6119B00224714 /* Info.plist */,
 				6540147020A6119B00224714 /* Assets.xcassets */,
-				65535DB920C8FC5100E2D6D1 /* Fonts */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -83,8 +83,8 @@
 			children = (
 				6582C5FA20CEEE47008F2749 /* DS-Digital.ttf */,
 				6582C5FC20CEF474008F2749 /* lcddot.ttf */,
-				659B921020CB1FDE00F0F3D2 /* Orbitron-Bold.ttf */,
 				659B920E20CB1FBA00F0F3D2 /* NeonTubes2.otf */,
+				659B921020CB1FDE00F0F3D2 /* Orbitron-Bold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
