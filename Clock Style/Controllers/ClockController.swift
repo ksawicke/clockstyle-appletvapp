@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ClockController: UIViewController {
+class ClockController: UIViewController, ChangeSettingsDelegate {
 
     var themes: Array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
     var themeData: [[String: String]] = [
@@ -60,6 +60,7 @@ class ClockController: UIViewController {
     var currentRegionDescription : String = ""
     var timeFormat: String = ""
     
+    var delegate : ChangeSettingsDelegate?
     
     @IBOutlet weak var timeSlotBeg: UILabel!
     @IBOutlet weak var timeSlotH1: UILabel!
@@ -906,6 +907,26 @@ class ClockController: UIViewController {
         timeZoneSlot.layer.shadowOpacity = 0.9
         timeZoneSlot.layer.masksToBounds = false
         timeZoneSlot.layer.shouldRasterize = true
+    }
+    
+    func userChangedSettings(bgColor: String) {
+        print("TEST: \(bgColor)")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        print(segue.identifier!)
+        
+        switch(segue.identifier!) {
+        case "goToSettingsController":
+            let destinationVC = segue.destination as! SettingsController
+
+            destinationVC.delegate = self
+            destinationVC.bgColor = "BLUE RASPBERRY" //self.barCodeScanned
+
+        default:
+            print("ERROR")
+        }
     }
     
 }
