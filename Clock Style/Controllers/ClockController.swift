@@ -48,6 +48,8 @@ class ClockController: UIViewController, ChangeSettingsDelegate {
     ]
     var currentTheme : Int = 0
     
+    var showTopBar : Bool = false
+    
     var regions: Array = [0, 1, 2, 3, 4]
     var regionData: [[String: String]] = [
         ["regionName": "America", "description": "US"],
@@ -79,6 +81,7 @@ class ClockController: UIViewController, ChangeSettingsDelegate {
     @IBOutlet weak var dateSlot4: UILabel!
     @IBOutlet weak var timeZoneSlot: UILabel!
     @IBOutlet weak var currentRegionSelected: UILabel!
+    @IBOutlet weak var selectSettingsBar: UITabBar!
     
     @IBAction func onClickToggleTheme(_ sender: Any) {
         if currentTheme == themes.count - 1 {
@@ -104,6 +107,28 @@ class ClockController: UIViewController, ChangeSettingsDelegate {
         super.viewDidLoad()
         
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ClockController.updateClock), userInfo: nil, repeats: true)
+        
+        let upSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        
+        upSwipe.direction = .up
+        
+        view.addGestureRecognizer(upSwipe)
+    }
+    
+    @objc func handleSwipes(_ sender:UISwipeGestureRecognizer) {
+        if (sender.direction == .up) {
+            toggleTopBar()
+        }
+    }
+    
+    func toggleTopBar() {
+        if showTopBar == true {
+            selectSettingsBar.isHidden = false
+            showTopBar = false
+        } else {
+            selectSettingsBar.isHidden = true
+            showTopBar = true
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -15,6 +15,63 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Language-->
+        <scene sceneID="Cgv-zm-fhH">
+            <objects>
+                <viewController id="2Ze-fj-Ttk" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QEs-E4-uvz"/>
+                        <viewControllerLayoutGuide type="bottom" id="TM6-6q-fC9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mim-7h-rye">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ePn-v9-m0U"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Language" id="dEt-Zh-G9b"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tOc-Go-pxj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="160" y="-2495"/>
+        </scene>
+        <!--Background-->
+        <scene sceneID="uQt-9B-AIE">
+            <objects>
+                <viewController id="Tec-Ec-u0s" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fNG-Hq-Q9s"/>
+                        <viewControllerLayoutGuide type="bottom" id="T94-j4-SKM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="G6R-QW-u2L">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="e7t-XV-RA4"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Background" id="Tw5-Bk-aG0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p1F-Cj-Qew" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="160" y="-3618"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ahj-vT-GC7">
+            <objects>
+                <tabBarController hidesBottomBarWhenPushed="YES" id="Hi4-I8-Wmr" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7ia-qG-NhZ">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="0.0"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Tec-Ec-u0s" kind="relationship" relationship="viewControllers" id="QX6-72-3th"/>
+                        <segue destination="2Ze-fj-Ttk" kind="relationship" relationship="viewControllers" id="bOH-IY-6c3"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h0S-Gj-phD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1980" y="-3042"/>
+        </scene>
         <!--Clock Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -28,70 +85,70 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="04j-Og-yUw" userLabel="Time Stack">
-                                <rect key="frame" x="446" y="160" width="1028" height="135"/>
+                                <rect key="frame" x="446" y="160" width="1028" height="158"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRr-h4-ee0" userLabel="Time Slot Beg">
-                                        <rect key="frame" x="0.0" y="0.0" width="122" height="135"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="122" height="158"/>
                                         <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="50"/>
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nig-er-eLx">
-                                        <rect key="frame" x="122" y="0.0" width="113" height="135"/>
+                                        <rect key="frame" x="122" y="0.0" width="113" height="158"/>
                                         <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="135"/>
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EvA-WZ-JIG">
-                                        <rect key="frame" x="235" y="0.0" width="113" height="135"/>
+                                        <rect key="frame" x="235" y="0.0" width="113" height="158"/>
                                         <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="135"/>
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TH6-oY-i9H">
-                                        <rect key="frame" x="348" y="0.0" width="50" height="135"/>
+                                        <rect key="frame" x="348" y="0.0" width="50" height="158"/>
                                         <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="135"/>
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5s-of-F81">
-                                        <rect key="frame" x="398" y="0.0" width="113" height="135"/>
+                                        <rect key="frame" x="398" y="0.0" width="113" height="158"/>
                                         <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="135"/>
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZK-vn-oQy">
-                                        <rect key="frame" x="511" y="0.0" width="113" height="135"/>
+                                        <rect key="frame" x="511" y="0.0" width="113" height="158"/>
                                         <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="135"/>
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VlF-JC-IyU">
-                                        <rect key="frame" x="624" y="0.0" width="50" height="135"/>
+                                        <rect key="frame" x="624" y="0.0" width="50" height="158"/>
                                         <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="135"/>
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7g-Xq-mcL" userLabel="Time Slot S1">
-                                        <rect key="frame" x="674" y="0.0" width="113" height="135"/>
+                                        <rect key="frame" x="674" y="0.0" width="113" height="158"/>
                                         <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="135"/>
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oML-iV-Hng" userLabel="Time Slot S2">
-                                        <rect key="frame" x="787" y="0.0" width="113" height="135"/>
+                                        <rect key="frame" x="787" y="0.0" width="113" height="158"/>
                                         <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="135"/>
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJc-o3-GwI" userLabel="Time Slot Sep3">
-                                        <rect key="frame" x="900" y="0.0" width="42" height="135"/>
+                                        <rect key="frame" x="900" y="0.0" width="42" height="158"/>
                                         <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="135"/>
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWc-fz-2xI">
-                                        <rect key="frame" x="942" y="0.0" width="86" height="135"/>
+                                        <rect key="frame" x="942" y="0.0" width="86" height="158"/>
                                         <fontDescription key="fontDescription" name="Orbitron-Bold" family="Orbitron" pointSize="50"/>
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -106,7 +163,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7my-Sb-GZW" userLabel="Date Stack">
-                                <rect key="frame" x="860" y="345" width="200" height="85"/>
+                                <rect key="frame" x="860" y="368" width="200" height="85"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hpd-7K-Tbu">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="85"/>
@@ -150,7 +207,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcy-tU-oow" userLabel="Timezone Stack">
-                                <rect key="frame" x="935" y="480" width="50" height="50"/>
+                                <rect key="frame" x="935" y="503" width="50" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4eh-VK-bNS">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -184,6 +241,15 @@
                                     <segue destination="rQv-n2-TCK" kind="show" identifier="goToSettingsController" id="LMF-Ej-MPa"/>
                                 </connections>
                             </button>
+                            <tabBar hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LrC-G7-cuG">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="140"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem title="Background" id="hMl-jn-5IP"/>
+                                    <tabBarItem title="Language" id="q1j-nq-8VC"/>
+                                </items>
+                            </tabBar>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -210,6 +276,7 @@
                         <outlet property="dateSlot2" destination="0qS-1E-jRm" id="XtX-kc-tCi"/>
                         <outlet property="dateSlot3" destination="3Am-Mb-sgJ" id="QM0-ga-4M6"/>
                         <outlet property="dateSlot4" destination="mDD-9m-pzn" id="SBl-6Q-TI3"/>
+                        <outlet property="selectSettingsBar" destination="LrC-G7-cuG" id="BxE-R1-Jai"/>
                         <outlet property="timeSlotBeg" destination="cRr-h4-ee0" id="0Ay-Q8-txn"/>
                         <outlet property="timeSlotEnd" destination="aWc-fz-2xI" id="cSZ-WR-50L"/>
                         <outlet property="timeSlotH1" destination="Nig-er-eLx" id="za5-Re-ZEU"/>
@@ -231,64 +298,7 @@
         <!--Settings Controller-->
         <scene sceneID="Zcx-C3-euv">
             <objects>
-                <viewController id="rQv-n2-TCK" customClass="SettingsController" customModule="Clock_Style" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="tqR-sz-4LC"/>
-                        <viewControllerLayoutGuide type="bottom" id="0jP-z3-06s"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7iF-Bn-MzG">
-                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vfe-ns-LCF">
-                                <rect key="frame" x="0.0" y="95" width="1920" height="235"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8tA-oD-RP8">
-                                        <rect key="frame" x="0.0" y="8" width="1920" height="219"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="r1p-GE-Epf">
-                                            <size key="itemSize" width="50" height="50"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="yNR-oP-n2J">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </view>
-                                            </collectionViewCell>
-                                        </cells>
-                                    </collectionView>
-                                </subviews>
-                            </scrollView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uk-Kx-mjM">
-                                <rect key="frame" x="15" y="28" width="93" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvM-3B-I5G">
-                                <rect key="frame" x="15" y="364" width="93" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JjM-DT-sPj">
-                                <rect key="frame" x="0.0" y="437" width="1920" height="231"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </scrollView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="IC4-Zn-2ln"/>
-                    </view>
-                </viewController>
+                <viewController id="rQv-n2-TCK" customClass="SettingsController" customModule="Clock_Style" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cAC-ng-NJw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-413" y="704"/>
