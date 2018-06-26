@@ -276,7 +276,7 @@
                         <outlet property="dateSlot2" destination="0qS-1E-jRm" id="XtX-kc-tCi"/>
                         <outlet property="dateSlot3" destination="3Am-Mb-sgJ" id="QM0-ga-4M6"/>
                         <outlet property="dateSlot4" destination="mDD-9m-pzn" id="SBl-6Q-TI3"/>
-                        <outlet property="selectSettingsBar" destination="LrC-G7-cuG" id="BxE-R1-Jai"/>
+                        <outlet property="selectSettingsBar" destination="LrC-G7-cuG" id="Fli-lK-bea"/>
                         <outlet property="timeSlotBeg" destination="cRr-h4-ee0" id="0Ay-Q8-txn"/>
                         <outlet property="timeSlotEnd" destination="aWc-fz-2xI" id="cSZ-WR-50L"/>
                         <outlet property="timeSlotH1" destination="Nig-er-eLx" id="za5-Re-ZEU"/>
@@ -298,7 +298,7 @@
         <!--Settings Controller-->
         <scene sceneID="Zcx-C3-euv">
             <objects>
-                <viewController id="rQv-n2-TCK" customClass="SettingsController" customModule="Clock_Style" customModuleProvider="target" sceneMemberID="viewController"/>
+                <viewController storyboardIdentifier="settingsVC" id="rQv-n2-TCK" customClass="SettingsController" customModule="Clock_Style" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cAC-ng-NJw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-413" y="704"/>

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ClockController: UIViewController, ChangeSettingsDelegate {
+class ClockController: UIViewController, UITabBarDelegate { //ChangeSettingsDelegate
 
     var themes: Array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
     var themeData: [[String: String]] = [
@@ -62,7 +62,7 @@ class ClockController: UIViewController, ChangeSettingsDelegate {
     var currentRegionDescription : String = ""
     var timeFormat: String = ""
     
-    var delegate : ChangeSettingsDelegate?
+//    var delegate : ChangeSettingsDelegate?
     
     @IBOutlet weak var timeSlotBeg: UILabel!
     @IBOutlet weak var timeSlotH1: UILabel!
@@ -82,6 +82,7 @@ class ClockController: UIViewController, ChangeSettingsDelegate {
     @IBOutlet weak var timeZoneSlot: UILabel!
     @IBOutlet weak var currentRegionSelected: UILabel!
     @IBOutlet weak var selectSettingsBar: UITabBar!
+
     
     @IBAction func onClickToggleTheme(_ sender: Any) {
         if currentTheme == themes.count - 1 {
@@ -106,6 +107,8 @@ class ClockController: UIViewController, ChangeSettingsDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        selectSettingsBar.delegate = self
+        
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ClockController.updateClock), userInfo: nil, repeats: true)
         
         let upSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
@@ -113,6 +116,14 @@ class ClockController: UIViewController, ChangeSettingsDelegate {
         upSwipe.direction = .up
         
         view.addGestureRecognizer(upSwipe)
+    }
+    
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        print("TEST")
+        print(item.title!)
+        
+        let lvc = storyboard?.instantiateViewController(withIdentifier: "settingsVC") as? SettingsController
+        self.navigationController?.pushViewController(lvc!, animated: true)
     }
     
     @objc func handleSwipes(_ sender:UISwipeGestureRecognizer) {
@@ -939,14 +950,14 @@ class ClockController: UIViewController, ChangeSettingsDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+
         print(segue.identifier!)
-        
+
         switch(segue.identifier!) {
-        case "goToSettingsController":
+        case "settingsVC":
             let destinationVC = segue.destination as! SettingsController
 
-            destinationVC.delegate = self
+            destinationVC.delegate = self as! ChangeSettingsDelegate
             destinationVC.bgColor = "BLUE RASPBERRY" //self.barCodeScanned
 
         default:
