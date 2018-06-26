@@ -15,63 +15,6 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Language-->
-        <scene sceneID="Cgv-zm-fhH">
-            <objects>
-                <viewController id="2Ze-fj-Ttk" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="QEs-E4-uvz"/>
-                        <viewControllerLayoutGuide type="bottom" id="TM6-6q-fC9"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Mim-7h-rye">
-                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="ePn-v9-m0U"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Language" id="dEt-Zh-G9b"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tOc-Go-pxj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="160" y="-2495"/>
-        </scene>
-        <!--Background-->
-        <scene sceneID="uQt-9B-AIE">
-            <objects>
-                <viewController id="Tec-Ec-u0s" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fNG-Hq-Q9s"/>
-                        <viewControllerLayoutGuide type="bottom" id="T94-j4-SKM"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="G6R-QW-u2L">
-                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="e7t-XV-RA4"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Background" id="Tw5-Bk-aG0"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="p1F-Cj-Qew" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="160" y="-3618"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="ahj-vT-GC7">
-            <objects>
-                <tabBarController hidesBottomBarWhenPushed="YES" id="Hi4-I8-Wmr" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7ia-qG-NhZ">
-                        <rect key="frame" x="0.0" y="0.0" width="1920" height="0.0"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="Tec-Ec-u0s" kind="relationship" relationship="viewControllers" id="QX6-72-3th"/>
-                        <segue destination="2Ze-fj-Ttk" kind="relationship" relationship="viewControllers" id="bOH-IY-6c3"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="h0S-Gj-phD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1980" y="-3042"/>
-        </scene>
         <!--Clock Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -197,7 +140,7 @@
                                 <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZwL-uk-u5P">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZwL-uk-u5P">
                                 <rect key="frame" x="100" y="963" width="228" height="67"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
@@ -217,7 +160,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNS-Cq-gby">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNS-Cq-gby">
                                 <rect key="frame" x="343" y="963" width="228" height="67"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
@@ -226,13 +169,13 @@
                                     <action selector="onClickToggleRegion:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="xnh-D0-raa"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5w0-4M-L48">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5w0-4M-L48">
                                 <rect key="frame" x="621" y="1030" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxY-fQ-8pc">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxY-fQ-8pc">
                                 <rect key="frame" x="1213" y="953" width="195" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>

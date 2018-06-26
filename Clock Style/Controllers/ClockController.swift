@@ -112,34 +112,49 @@ class ClockController: UIViewController, UITabBarDelegate { //ChangeSettingsDele
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ClockController.updateClock), userInfo: nil, repeats: true)
         
         let upSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
-        
         upSwipe.direction = .up
-        
         view.addGestureRecognizer(upSwipe)
+        
+        let downSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        downSwipe.direction = .down
+        view.addGestureRecognizer(downSwipe)
     }
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        print("TEST")
-        print(item.title!)
+//        print(item.title!)
+
+        guard let index = tabBar.items?.index(of: item) else { return }
+            
+        // Do something with the index
+        print("\(item.title!) : \(index)")
+        debugPrint(tabBar)
         
-        let lvc = storyboard?.instantiateViewController(withIdentifier: "settingsVC") as? SettingsController
-        self.navigationController?.pushViewController(lvc!, animated: true)
+        let settingsVC = SettingsController()
+        self.present(settingsVC, animated: true, completion: nil)
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        print("Selected view controller")
     }
     
     @objc func handleSwipes(_ sender:UISwipeGestureRecognizer) {
-        if (sender.direction == .up) {
-            toggleTopBar()
+        if (sender.direction == .down && selectSettingsBar.isHidden == false) {
+            disableTopBar()
+        }
+        
+        if (sender.direction == .up && selectSettingsBar.isHidden == true) {
+            enableTopBar()
         }
     }
     
-    func toggleTopBar() {
-        if showTopBar == true {
-            selectSettingsBar.isHidden = false
-            showTopBar = false
-        } else {
-            selectSettingsBar.isHidden = true
-            showTopBar = true
-        }
+    func disableTopBar() {
+        selectSettingsBar.isHidden = true
+        showTopBar = true
+    }
+    
+    func enableTopBar() {
+        selectSettingsBar.isHidden = false
+        showTopBar = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -949,21 +964,23 @@ class ClockController: UIViewController, UITabBarDelegate { //ChangeSettingsDele
         print("TEST: \(bgColor)")
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        print(segue.identifier!)
-
-        switch(segue.identifier!) {
-        case "settingsVC":
-            let destinationVC = segue.destination as! SettingsController
-
-            destinationVC.delegate = self as! ChangeSettingsDelegate
-            destinationVC.bgColor = "BLUE RASPBERRY" //self.barCodeScanned
-
-        default:
-            print("ERROR")
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//        print(segue.identifier!)
+//
+//        switch(segue.identifier!) {
+//        case "settingsVC":
+//            let destinationVC = segue.destination as! SettingsController
+//
+//            destinationVC.delegate = self as! ChangeSettingsDelegate
+//            destinationVC.bgColor = "BLUE RASPBERRY" //self.barCodeScanned
+//            
+//            print("OKOK")
+//
+//        default:
+//            print("ERROR")
+//        }
+//    }
     
 }
 

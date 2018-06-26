@@ -15,7 +15,10 @@
 		6582C5FD20CEF475008F2749 /* lcddot.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6582C5FC20CEF474008F2749 /* lcddot.ttf */; };
 		659B921220CB205800F0F3D2 /* Orbitron-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 659B921020CB1FDE00F0F3D2 /* Orbitron-Bold.ttf */; };
 		659B921320CB205800F0F3D2 /* NeonTubes2.otf in Resources */ = {isa = PBXBuildFile; fileRef = 659B920E20CB1FBA00F0F3D2 /* NeonTubes2.otf */; };
-		65AEDF1B20D4770000693E5B /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AEDF1A20D4770000693E5B /* SettingsController.swift */; };
+		65AEDF1B20D4770000693E5B /* SettingsController_OLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AEDF1A20D4770000693E5B /* SettingsController_OLD.swift */; };
+		65B6207F20E29F4100E42609 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B6207E20E29F4100E42609 /* SettingsController.swift */; };
+		65B6208B20E2A30D00E42609 /* CatalogueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B6208A20E2A30D00E42609 /* CatalogueTableViewCell.swift */; };
+		65B6208D20E2A32400E42609 /* CatalogueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B6208C20E2A32400E42609 /* CatalogueCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +32,10 @@
 		6582C5FC20CEF474008F2749 /* lcddot.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lcddot.ttf; sourceTree = "<group>"; };
 		659B920E20CB1FBA00F0F3D2 /* NeonTubes2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NeonTubes2.otf; path = ../../../NeonTubes2.otf; sourceTree = "<group>"; };
 		659B921020CB1FDE00F0F3D2 /* Orbitron-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Orbitron-Bold.ttf"; path = "../../../Orbitron-Bold.ttf"; sourceTree = "<group>"; };
-		65AEDF1A20D4770000693E5B /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		65AEDF1A20D4770000693E5B /* SettingsController_OLD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController_OLD.swift; sourceTree = "<group>"; };
+		65B6207E20E29F4100E42609 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		65B6208A20E2A30D00E42609 /* CatalogueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueTableViewCell.swift; sourceTree = "<group>"; };
+		65B6208C20E2A32400E42609 /* CatalogueCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,8 @@
 				65535DB920C8FC5100E2D6D1 /* Fonts */,
 				6540147220A6119B00224714 /* Info.plist */,
 				6540147020A6119B00224714 /* Assets.xcassets */,
+				65B6208A20E2A30D00E42609 /* CatalogueTableViewCell.swift */,
+				65B6208C20E2A32400E42609 /* CatalogueCollectionViewCell.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -95,7 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				6540146B20A6119A00224714 /* ClockController.swift */,
-				65AEDF1A20D4770000693E5B /* SettingsController.swift */,
+				65AEDF1A20D4770000693E5B /* SettingsController_OLD.swift */,
+				65B6207E20E29F4100E42609 /* SettingsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -182,8 +191,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65AEDF1B20D4770000693E5B /* SettingsController.swift in Sources */,
+				65B6207F20E29F4100E42609 /* SettingsController.swift in Sources */,
+				65B6208B20E2A30D00E42609 /* CatalogueTableViewCell.swift in Sources */,
+				65AEDF1B20D4770000693E5B /* SettingsController_OLD.swift in Sources */,
 				6540146C20A6119A00224714 /* ClockController.swift in Sources */,
+				65B6208D20E2A32400E42609 /* CatalogueCollectionViewCell.swift in Sources */,
 				6540146A20A6119A00224714 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
