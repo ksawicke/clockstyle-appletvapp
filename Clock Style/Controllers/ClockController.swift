@@ -61,6 +61,7 @@ class ClockController: UIViewController, UITabBarDelegate { //ChangeSettingsDele
     var currentRegion : Int = 0
     var currentRegionDescription : String = ""
     var timeFormat: String = ""
+    var hoveredItem: String = ""
     
 //    var delegate : ChangeSettingsDelegate?
     
@@ -118,23 +119,38 @@ class ClockController: UIViewController, UITabBarDelegate { //ChangeSettingsDele
         let downSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
         downSwipe.direction = .down
         view.addGestureRecognizer(downSwipe)
+        
+        let mainbuttonPressRecognizer = UITapGestureRecognizer()
+        mainbuttonPressRecognizer.addTarget(self, action: #selector(self.mainButtonAction))
+        mainbuttonPressRecognizer.allowedPressTypes = [NSNumber(value: UIPressType.select.rawValue)]
+        self.view.addGestureRecognizer(mainbuttonPressRecognizer)
     }
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-//        print(item.title!)
 
         guard let index = tabBar.items?.index(of: item) else { return }
-            
-        // Do something with the index
-        print("\(item.title!) : \(index)")
-        debugPrint(tabBar)
-        
-        let settingsVC = SettingsController()
-        self.present(settingsVC, animated: true, completion: nil)
+
+        hoveredItem = item.title!
     }
     
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        print("Selected view controller")
+    @objc func mainButtonAction() {
+        print("menu pressed")
+        
+        disableTopBar()
+        
+        switch(hoveredItem) {
+        case "Style":
+            let settingsVC = SettingsController()
+            self.present(settingsVC, animated: true, completion: nil)
+            
+        case "Language":
+            print("Do Language thing")
+            
+        default:
+            print("Do nothin")
+        }
+        
+//        UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
     }
     
     @objc func handleSwipes(_ sender:UISwipeGestureRecognizer) {
@@ -974,7 +990,7 @@ class ClockController: UIViewController, UITabBarDelegate { //ChangeSettingsDele
 //
 //            destinationVC.delegate = self as! ChangeSettingsDelegate
 //            destinationVC.bgColor = "BLUE RASPBERRY" //self.barCodeScanned
-//            
+//
 //            print("OKOK")
 //
 //        default:
