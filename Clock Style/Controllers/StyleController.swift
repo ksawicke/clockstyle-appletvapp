@@ -1,5 +1,5 @@
 //
-//  SettingsController.swift
+//  StyleController.swift
 //
 //  Created by Kevin Sawicke on 6/29/18.
 //  Copyright © 2018 Kevin Sawicke. All rights reserved.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SettingsController: UIViewController {
+class StyleController: UIViewController {
     
     var themes: Array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
     var themeData: [[String: String]] = [
@@ -123,24 +123,24 @@ class SettingsController: UIViewController {
     /// private property to store the table cell's identifier
     fileprivate var tableCellIdentifier = "CATALOG_TABLE_CELL_ID"
     
-    fileprivate var season1Images : Array<UIImage> = []
-    fileprivate var season2Images : Array<UIImage> = []
-    fileprivate var season3Images : Array<UIImage> = []
+    fileprivate var themegroup1Images : Array<UIImage> = []
+    fileprivate var themegroup2Images : Array<UIImage> = []
+    fileprivate var themegroup3Images : Array<UIImage> = []
     
     fileprivate var images: [[UIImage]]! {
         didSet {
             for x in 1 ... 9 {
-                season1Images.append(UIImage(named: "theme-background-\(x)")!)
+                themegroup1Images.append(UIImage(named: "theme-background-\(x)")!)
             }
             for x in 10 ... 18 {
-                season2Images.append(UIImage(named: "theme-background-\(x)")!)
+                themegroup2Images.append(UIImage(named: "theme-background-\(x)")!)
             }
             for x in 19 ... 27 {
-                season3Images.append(UIImage(named: "theme-background-\(x)")!)
+                themegroup3Images.append(UIImage(named: "theme-background-\(x)")!)
             }
-            images.append(season1Images)
-            images.append(season2Images)
-            images.append(season3Images)
+            images.append(themegroup1Images)
+            images.append(themegroup2Images)
+            images.append(themegroup3Images)
         }
     }
     
@@ -148,7 +148,7 @@ class SettingsController: UIViewController {
 }
 
 // MARK: - UITableViewDelegate's methods
-extension SettingsController: UITableViewDelegate {
+extension StyleController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return rowHeight
@@ -168,7 +168,7 @@ extension SettingsController: UITableViewDelegate {
 }
 
 // MARK: - UITableViewDataSource's methods
-extension SettingsController: UITableViewDataSource {
+extension StyleController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -179,6 +179,7 @@ extension SettingsController: UITableViewDataSource {
             _cell.titles = [String](repeating: "", count: 9)
             // _cell.titles = [String](repeating: "Arrow S0\(indexPath.section + 1)E0", count: 9)
             _cell.images = images[indexPath.section]
+            _cell.delegate = self
             return _cell
         } else {
             return UITableViewCell()
@@ -196,4 +197,16 @@ extension SettingsController: UITableViewDataSource {
         headerView.addSubview(titleLabel)
         return headerView
     }
+}
+
+// MARK: - CatalogueTableViewCellDelegate methos
+extension StyleController: CatalogueTableViewCellDelegate {
+    
+    func didSelectItem(inCell cell: CatalogueCollectionViewCell) {
+        
+        print("SELECTED ITEM!!")
+//        performSegue(withIdentifier: "ShowDetails", sender: nil)
+        
+    }
+    
 }

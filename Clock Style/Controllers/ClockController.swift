@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class ClockController: UIViewController, UITabBarDelegate { //ChangeSettingsDelegate
 
@@ -140,8 +141,10 @@ class ClockController: UIViewController, UITabBarDelegate { //ChangeSettingsDele
         
         switch(hoveredItem) {
         case "Style":
-            let settingsVC = SettingsController()
-            self.present(settingsVC, animated: true, completion: nil)
+            showHUD()
+            
+            let styleVC = StyleController()
+            self.present(styleVC, animated: true, completion: nil)
             
         case "Language":
             print("Do Language thing")
@@ -151,6 +154,17 @@ class ClockController: UIViewController, UITabBarDelegate { //ChangeSettingsDele
         }
         
 //        UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
+    }
+    
+    func showHUD() {
+        let hud = JGProgressHUD(style: .dark)
+        hud.textLabel.text = "Loading styles"
+        hud.show(in: self.view)
+    }
+    
+    func hideHUD() {
+        let hud = JGProgressHUD(style: .dark)
+        hud.dismiss(afterDelay: 3.0)
     }
     
     @objc func handleSwipes(_ sender:UISwipeGestureRecognizer) {

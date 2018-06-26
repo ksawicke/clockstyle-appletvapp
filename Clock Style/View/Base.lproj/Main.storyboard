@@ -240,10 +240,10 @@
             </objects>
             <point key="canvasLocation" x="-413" y="-992"/>
         </scene>
-        <!--Settings Controller-->
+        <!--Style Controller-->
         <scene sceneID="Zcx-C3-euv">
             <objects>
-                <viewController storyboardIdentifier="settingsVC" id="rQv-n2-TCK" customClass="SettingsController" customModule="Clock_Style" customModuleProvider="target" sceneMemberID="viewController"/>
+                <viewController storyboardIdentifier="styleVC" id="rQv-n2-TCK" customClass="StyleController" customModule="Clock_Style" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cAC-ng-NJw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-413" y="704"/>

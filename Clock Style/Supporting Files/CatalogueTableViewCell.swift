@@ -8,6 +8,12 @@
 
 import UIKit
 
+protocol CatalogueTableViewCellDelegate: class {
+    
+    func didSelectItem(inCell cell: CatalogueCollectionViewCell)
+
+}
+
 class CatalogueTableViewCell: UITableViewCell {
     
     // MARK: - Singleton properties
@@ -25,6 +31,8 @@ class CatalogueTableViewCell: UITableViewCell {
             catalogueCollectionView.reloadData()
         }
     }
+    
+    internal var delegate: CatalogueTableViewCellDelegate?
     
     // MARK: - Public Methods
     
@@ -86,7 +94,18 @@ class CatalogueTableViewCell: UITableViewCell {
 }
 
 // MARK: - UICollectionViewDelegate methods
-extension CatalogueTableViewCell: UICollectionViewDelegate { }
+extension CatalogueTableViewCell: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if let _cell = collectionView.cellForItem(at: indexPath) as? CatalogueCollectionViewCell {
+            
+            delegate?.didSelectItem(inCell: _cell)
+            
+        }
+    }
+    
+}
 
 // MARK: - UICollectionViewDataSource method
 extension CatalogueTableViewCell: UICollectionViewDataSource {
@@ -100,7 +119,7 @@ extension CatalogueTableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionCellIdentifier, for: indexPath) as? CatalogueCollectionViewCell {
-            cell.titleText = titles[indexPath.item] + String(indexPath.item + 1)
+            cell.titleText = titles[indexPath.item] //96++++++++++++-=+ String(indexPath.item + 1)
             cell.titleImage = images[indexPath.item]
             return cell
         } else {
