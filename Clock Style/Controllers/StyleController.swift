@@ -6,8 +6,17 @@
 //
 
 import UIKit
+import JGProgressHUD
+
+protocol ChangeStyleDelegate {
+    
+    func userChangedStyle (rowNumber: Int, cellNumber: Int)
+    
+}
 
 class StyleController: UIViewController {
+    
+    var delegate : ChangeStyleDelegate?
     
     var themes: Array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
     var themeData: [[String: String]] = [
@@ -144,6 +153,17 @@ class StyleController: UIViewController {
         }
     }
     
+    func showHUD() {
+        let hud = JGProgressHUD(style: .dark)
+        hud.textLabel.text = "Applying style"
+        hud.show(in: self.view)
+    }
+    
+    func hideHUD() {
+        let hud = JGProgressHUD(style: .dark)
+        hud.dismiss(afterDelay: 3.0)
+    }
+    
     // MARK: - Private methods
 }
 
@@ -165,6 +185,15 @@ extension StyleController: UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
+    
+    func applyStyleToClock(rowNumber: Int, cellNumber: Int) {
+                print(rowNumber)
+                print(cellNumber)
+        
+        delegate?.userChangedStyle(rowNumber: rowNumber, cellNumber: cellNumber)
+
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 // MARK: - UITableViewDataSource's methods
@@ -176,8 +205,7 @@ extension StyleController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let _cell = tableView.dequeueReusableCell(withIdentifier: tableCellIdentifier, for: indexPath) as? CatalogueTableViewCell {
-            _cell.titles = [String](repeating: "", count: 9)
-            // _cell.titles = [String](repeating: "Arrow S0\(indexPath.section + 1)E0", count: 9)
+             _cell.titles = [String](repeating: "\(indexPath.section + 1),", count: 9)
             _cell.images = images[indexPath.section]
             _cell.delegate = self
             return _cell
@@ -197,6 +225,7 @@ extension StyleController: UITableViewDataSource {
         headerView.addSubview(titleLabel)
         return headerView
     }
+
 }
 
 // MARK: - CatalogueTableViewCellDelegate methos
@@ -204,7 +233,27 @@ extension StyleController: CatalogueTableViewCellDelegate {
     
     func didSelectItem(inCell cell: CatalogueCollectionViewCell) {
         
-        print("SELECTED ITEM!!")
+//        print("SELECTED ITEM!!")
+////        debugPrint(cell)
+////        print(cell.tag)
+//        print(cell.titleText!)
+//
+        let splitText = cell.titleText!
+        var cellArray = splitText.components(separatedBy: ",")
+        var rowNumber: Int = 0
+        var cellNumber: Int = 0
+        
+        rowNumber = Int(cellArray[0])!
+        cellNumber = Int(cellArray[1])!
+        
+        applyStyleToClock(rowNumber: rowNumber, cellNumber: cellNumber)
+        
+//        let clockVC = ClockController()
+//        self.present(clockVC, animated: true, completion: nil)
+        
+//        debugPrint(cell.frame)
+//        debugPrint(tableCellIdentifier)
+//        print("====")
 //        performSegue(withIdentifier: "ShowDetails", sender: nil)
         
     }

@@ -119,7 +119,7 @@ extension CatalogueTableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionCellIdentifier, for: indexPath) as? CatalogueCollectionViewCell {
-            cell.titleText = titles[indexPath.item] //96++++++++++++-=+ String(indexPath.item + 1)
+            cell.titleText = titles[indexPath.item] + String(indexPath.item + 1)
             cell.titleImage = images[indexPath.item]
             return cell
         } else {

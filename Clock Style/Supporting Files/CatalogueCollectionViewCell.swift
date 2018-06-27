@@ -63,7 +63,7 @@ class CatalogueCollectionViewCell: UICollectionViewCell {
         
         if context.nextFocusedView == self {
             UIView.animate(withDuration: 0.2, animations: {
-                self.titleLabel.isHidden = false
+                self.titleLabel.isHidden = true
                 self.titleLabel.transform = self.titleLabel.transform.scaledBy(x: self.scaleFactor, y: self.scaleFactor)
                 self.titleLabel.contentScaleFactor = self.scaleFactor
             })

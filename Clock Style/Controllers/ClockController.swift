@@ -8,7 +8,7 @@
 import UIKit
 import JGProgressHUD
 
-class ClockController: UIViewController, UITabBarDelegate { //ChangeSettingsDelegate
+class ClockController: UIViewController, ChangeStyleDelegate, UITabBarDelegate {
 
     var themes: Array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
     var themeData: [[String: String]] = [
@@ -64,7 +64,10 @@ class ClockController: UIViewController, UITabBarDelegate { //ChangeSettingsDele
     var timeFormat: String = ""
     var hoveredItem: String = ""
     
-//    var delegate : ChangeSettingsDelegate?
+    var selectedRowNumber: Int = 0
+    var selectedCellNumber: Int = 0
+    
+    var delegate : ChangeStyleDelegate?
     
     @IBOutlet weak var timeSlotBeg: UILabel!
     @IBOutlet weak var timeSlotH1: UILabel!
@@ -129,31 +132,38 @@ class ClockController: UIViewController, UITabBarDelegate { //ChangeSettingsDele
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
 
-        guard let index = tabBar.items?.index(of: item) else { return }
+        guard (tabBar.items?.index(of: item)) != nil else { return }
 
         hoveredItem = item.title!
     }
     
     @objc func mainButtonAction() {
-        print("menu pressed")
+        doLaunchStuff()
         
         disableTopBar()
         
         switch(hoveredItem) {
         case "Style":
-            showHUD()
+//            showHUD()
             
             let styleVC = StyleController()
             self.present(styleVC, animated: true, completion: nil)
+            
+//            hideHUD()
             
         case "Language":
             print("Do Language thing")
             
         default:
-            print("Do nothin")
+            print("blah")
+//            print("\(rowNumber)  \(cellNumber)")
         }
         
 //        UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
+    }
+    
+    func doLaunchStuff() {
+        
     }
     
     func showHUD() {
@@ -990,27 +1000,31 @@ class ClockController: UIViewController, UITabBarDelegate { //ChangeSettingsDele
         timeZoneSlot.layer.shouldRasterize = true
     }
     
-    func userChangedSettings(bgColor: String) {
-        print("TEST: \(bgColor)")
+    func userChangedStyle(rowNumber: Int, cellNumber: Int) {
+//        if rowNumber != 0 {
+//            rowNumber = rowNumber
+//            cellNumber = cellNumber
+//        }
+        print("test")
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//        print(segue.identifier!)
-//
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        print(segue.identifier!)
+
 //        switch(segue.identifier!) {
 //        case "settingsVC":
 //            let destinationVC = segue.destination as! SettingsController
 //
-//            destinationVC.delegate = self as! ChangeSettingsDelegate
-//            destinationVC.bgColor = "BLUE RASPBERRY" //self.barCodeScanned
-//
-//            print("OKOK")
+////            destinationVC.delegate = self as! ChangeSettingsDelegate
+////            destinationVC.bgColor = "BLUE RASPBERRY" //self.barCodeScanned
+////
+////            print("OKOK")
 //
 //        default:
 //            print("ERROR")
 //        }
-//    }
+    }
     
 }
 
