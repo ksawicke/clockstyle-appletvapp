@@ -14,36 +14,36 @@ class ClockController: UIViewController, ChangeStyleDelegate, UITabBarDelegate {
     var themeInfo: [String:[String:String]] = [
         // Wood
         "11": ["background": "image", "bgImage": "theme-background-1", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "12": ["background": "image", "bgImage": "theme-background-2", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "13": ["background": "image", "bgImage": "theme-background-3", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "14": ["background": "image", "bgImage": "theme-background-4", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "15": ["background": "image", "bgImage": "theme-background-5", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "12": ["background": "image", "bgImage": "theme-background-2", "fontColor": "black", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "13": ["background": "image", "bgImage": "theme-background-3", "fontColor": "gray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "14": ["background": "image", "bgImage": "theme-background-4", "fontColor": "yellow", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "15": ["background": "image", "bgImage": "theme-background-5", "fontColor": "black", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         "16": ["background": "image", "bgImage": "theme-background-6", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "17": ["background": "image", "bgImage": "theme-background-7", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "17": ["background": "image", "bgImage": "theme-background-7", "fontColor": "black", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         "18": ["background": "image", "bgImage": "theme-background-8", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "19": ["background": "image", "bgImage": "theme-background-9", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "19": ["background": "image", "bgImage": "theme-background-9", "fontColor": "bubbleGum", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         
         // Stone
-        "21": ["background": "image", "bgImage": "theme-background-10", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "22": ["background": "image", "bgImage": "theme-background-11", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "23": ["background": "image", "bgImage": "theme-background-12", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "24": ["background": "image", "bgImage": "theme-background-13", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "25": ["background": "image", "bgImage": "theme-background-14", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "26": ["background": "image", "bgImage": "theme-background-15", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "27": ["background": "image", "bgImage": "theme-background-16", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "28": ["background": "image", "bgImage": "theme-background-17", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "29": ["background": "image", "bgImage": "theme-background-18", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "21": ["background": "image", "bgImage": "theme-background-10", "fontColor": "white", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
+        "22": ["background": "image", "bgImage": "theme-background-11", "fontColor": "neonYellow", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
+        "23": ["background": "image", "bgImage": "theme-background-12", "fontColor": "white", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
+        "24": ["background": "image", "bgImage": "theme-background-13", "fontColor": "neonGreen", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
+        "25": ["background": "image", "bgImage": "theme-background-14", "fontColor": "orange", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
+        "26": ["background": "image", "bgImage": "theme-background-15", "fontColor": "neonPurple", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
+        "27": ["background": "image", "bgImage": "theme-background-16", "fontColor": "red", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
+        "28": ["background": "image", "bgImage": "theme-background-17", "fontColor": "neonYellow", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
+        "29": ["background": "image", "bgImage": "theme-background-18", "fontColor": "neonGreen", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
         
         // Night
-        "31": ["background": "image", "bgImage": "theme-background-19", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "32": ["background": "image", "bgImage": "theme-background-20", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "33": ["background": "image", "bgImage": "theme-background-21", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "34": ["background": "image", "bgImage": "theme-background-22", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "35": ["background": "image", "bgImage": "theme-background-23", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "36": ["background": "image", "bgImage": "theme-background-24", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "31": ["background": "image", "bgImage": "theme-background-19", "fontColor": "red", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
+        "32": ["background": "image", "bgImage": "theme-background-20", "fontColor": "neonLightBlue", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
+        "33": ["background": "image", "bgImage": "theme-background-21", "fontColor": "white", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
+        "34": ["background": "image", "bgImage": "theme-background-22", "fontColor": "neonGreen", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
+        "35": ["background": "image", "bgImage": "theme-background-23", "fontColor": "neonPurple", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
+        "36": ["background": "image", "bgImage": "theme-background-24", "fontColor": "neonPurple", "font": "custom", "fontName": "DS-Digital", "fontEffect": "none"],
         "37": ["background": "image", "bgImage": "theme-background-25", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "38": ["background": "image", "bgImage": "theme-background-26", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "39": ["background": "image", "bgImage": "theme-background-27", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "38": ["background": "image", "bgImage": "theme-background-26", "fontColor": "orange", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
+        "39": ["background": "image", "bgImage": "theme-background-27", "fontColor": "neonYellow", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
     ]
     var themeData: [[String: String]] = [
         ["background": "color", "bgColor": "black", "fontColor": "darkGray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
@@ -174,31 +174,32 @@ class ClockController: UIViewController, ChangeStyleDelegate, UITabBarDelegate {
     }
     
     @objc func mainButtonAction() {
-        doLaunchStuff()
-        
-        disableTopBar()
-        
-        switch(hoveredItem) {
-        case "Style":
-//            showHUD()
+        if selectSettingsBar.isHidden == false {
+            doLaunchStuff()
             
-            let styleVC = StyleController()
-            styleVC.delegate = self
+            disableTopBar()
             
-//            hideHUD()
-            
-            self.present(styleVC, animated: true, completion: nil)
-            
-//            hideHUD()
-            
-        case "Language":
-            print("Do Language thing")
-            
-        default:
-            print("blah")
-//            print("\(rowNumber)  \(cellNumber)")
+            switch(hoveredItem) {
+            case "Style":
+    //            showHUD()
+                
+                let styleVC = StyleController()
+                styleVC.delegate = self
+                
+    //            hideHUD()
+                
+                self.present(styleVC, animated: true, completion: nil)
+                
+    //            hideHUD()
+                
+            case "Language":
+                print("Do Language thing")
+                
+            default:
+                print("blah")
+    //            print("\(rowNumber)  \(cellNumber)")
+            }
         }
-        
 //        UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
     }
     
@@ -778,9 +779,7 @@ class ClockController: UIViewController, ChangeStyleDelegate, UITabBarDelegate {
     }
     
     func updateBgImage(bgImage: String) {
-//        view.backgroundColor = UIColor(patternImage: UIImage(named: "\(bgImage).png")!)
         view.backgroundColor = UIColor(patternImage: scaleImageToSize(size: view.bounds.size, image: UIImage(named: "\(bgImage).png")!))
-//        view.layer.contents = UIImage(named: "\(bgImage).png")
         
     }
     
