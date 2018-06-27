@@ -12,6 +12,7 @@
 		6540146C20A6119A00224714 /* ClockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6540146B20A6119A00224714 /* ClockController.swift */; };
 		6540146F20A6119A00224714 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6540146D20A6119A00224714 /* Main.storyboard */; };
 		6540147120A6119B00224714 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6540147020A6119B00224714 /* Assets.xcassets */; };
+		656C69C120E41FB7004E9C8A /* LanguageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656C69C020E41FB7004E9C8A /* LanguageController.swift */; };
 		6582C5FB20CEEE70008F2749 /* DS-Digital.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6582C5FA20CEEE47008F2749 /* DS-Digital.ttf */; };
 		6582C5FD20CEF475008F2749 /* lcddot.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6582C5FC20CEF474008F2749 /* lcddot.ttf */; };
 		659B921220CB205800F0F3D2 /* Orbitron-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 659B921020CB1FDE00F0F3D2 /* Orbitron-Bold.ttf */; };
@@ -31,6 +32,7 @@
 		6540146E20A6119A00224714 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6540147020A6119B00224714 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6540147220A6119B00224714 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Clock Style/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
+		656C69C020E41FB7004E9C8A /* LanguageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageController.swift; sourceTree = "<group>"; };
 		6582C5FA20CEEE47008F2749 /* DS-Digital.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DS-Digital.ttf"; sourceTree = "<group>"; };
 		6582C5FC20CEF474008F2749 /* lcddot.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lcddot.ttf; sourceTree = "<group>"; };
 		659B920E20CB1FBA00F0F3D2 /* NeonTubes2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NeonTubes2.otf; path = ../../../NeonTubes2.otf; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				6540146B20A6119A00224714 /* ClockController.swift */,
 				65AEDF1A20D4770000693E5B /* SettingsController_OLD.swift */,
 				65B6207E20E29F4100E42609 /* StyleController.swift */,
+				656C69C020E41FB7004E9C8A /* LanguageController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				656C69C120E41FB7004E9C8A /* LanguageController.swift in Sources */,
 				65B6207F20E29F4100E42609 /* StyleController.swift in Sources */,
 				65B6208B20E2A30D00E42609 /* CatalogueTableViewCell.swift in Sources */,
 				65AEDF1B20D4770000693E5B /* SettingsController_OLD.swift in Sources */,
@@ -402,7 +406,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MPL4JS8WQN;
 				INFOPLIST_FILE = "$(SRCROOT)/Clock Style/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rinconmountaintech.rmt-clockstyle";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -422,7 +429,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MPL4JS8WQN;
 				INFOPLIST_FILE = "$(SRCROOT)/Clock Style/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rinconmountaintech.rmt-clockstyle";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

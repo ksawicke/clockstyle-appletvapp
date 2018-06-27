@@ -119,26 +119,6 @@ class ClockController: UIViewController, ChangeStyleDelegate, UITabBarDelegate {
     @IBOutlet weak var selectSettingsBar: UITabBar!
     @IBOutlet weak var attributionLabel: UILabel!
     
-    @IBAction func onClickToggleTheme(_ sender: Any) {
-//        if currentTheme == themes.count - 1 {
-//            currentTheme = 0
-//        } else {
-//            currentTheme += 1
-//        }
-//        
-//        updateTheme()
-    }
-    
-    @IBAction func onClickToggleRegion(_ sender: Any) {
-        if currentRegion == regions.count - 1 {
-            currentRegion = 0
-        } else {
-            currentRegion += 1
-        }
-        
-        updateClock()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -167,40 +147,36 @@ class ClockController: UIViewController, ChangeStyleDelegate, UITabBarDelegate {
     }
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-
         guard (tabBar.items?.index(of: item)) != nil else { return }
-
         hoveredItem = item.title!
     }
     
     @objc func mainButtonAction() {
         if selectSettingsBar.isHidden == false {
             doLaunchStuff()
-            
             disableTopBar()
             
             switch(hoveredItem) {
-            case "Style":
-    //            showHUD()
+                case "Style":
+//                    showHUD()
+                    let styleVC = StyleController()
+                    styleVC.delegate = self
+
+                    self.present(styleVC, animated: true, completion: nil)
                 
-                let styleVC = StyleController()
-                styleVC.delegate = self
+                case "Language":
+                    let languageVC = StyleController()
+                    languageVC.delegate = self
+                    
+                    self.present(languageVC, animated: true, completion: nil)
                 
-    //            hideHUD()
-                
-                self.present(styleVC, animated: true, completion: nil)
-                
-    //            hideHUD()
-                
-            case "Language":
-                print("Do Language thing")
-                
-            default:
-                print("blah")
-    //            print("\(rowNumber)  \(cellNumber)")
+                default:
+                    let styleVC = StyleController()
+                    styleVC.delegate = self
+                    
+                    self.present(styleVC, animated: true, completion: nil)
             }
         }
-//        UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
     }
     
     func doLaunchStuff() {
@@ -210,7 +186,8 @@ class ClockController: UIViewController, ChangeStyleDelegate, UITabBarDelegate {
     func showHUD() {
 //        let hud = JGProgressHUD(style: .dark)
 //        hud.textLabel.text = "Loading styles"
-//        hud.show(in: self.view)
+////        hud.show(in: self.view)
+//        hud.dismiss(afterDelay: 1.5)
         
 //        let hud = JGProgressHUD(style: .light)
 //        hud.vibrancyEnabled = true

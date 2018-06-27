@@ -18,60 +18,9 @@ class StyleController: UIViewController {
     
     var delegate : ChangeStyleDelegate?
     
-//    var themes: Array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
-//    var themeData: [[String: String]] = [
-//        ["background": "color", "bgColor": "black", "fontColor": "darkGray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-//        ["background": "color", "bgColor": "green", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-//        ["background": "color", "bgColor": "red", "fontColor": "yellow", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-//        ["background": "color", "bgColor": "orange", "fontColor": "darkGray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-//
-//        ["background": "color", "bgColor": "black", "fontColor": "red", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
-//        ["background": "color", "bgColor": "black", "fontColor": "neonGreen", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
-//        ["background": "color", "bgColor": "black", "fontColor": "neonYellow", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
-//        ["background": "color", "bgColor": "black", "fontColor": "neonLightBlue", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
-//        ["background": "color", "bgColor": "black", "fontColor": "neonPurple", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
-//        ["background": "color", "bgColor": "black", "fontColor": "neonPink", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
-//        ["background": "color", "bgColor": "black", "fontColor": "white", "font": "custom", "fontName": "DS-Digital", "fontEffect": "none"],
-//
-//        ["background": "color", "bgColor": "black", "fontColor": "red", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
-//        ["background": "color", "bgColor": "black", "fontColor": "neonGreen", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
-//        ["background": "color", "bgColor": "black", "fontColor": "neonYellow", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
-//        ["background": "color", "bgColor": "black", "fontColor": "neonLightBlue", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
-//        ["background": "color", "bgColor": "black", "fontColor": "neonPurple", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
-//        ["background": "color", "bgColor": "black", "fontColor": "neonPink", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
-//        ["background": "color", "bgColor": "black", "fontColor": "white", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
-//
-//        ["background": "image", "bgImage": "pexels-photo-960137", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // red wood
-//        ["background": "image", "bgImage": "pexels-photo-268976", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // orange horiz wood
-//        ["background": "image", "bgImage": "pexels-photo-296884", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // dark brown wood
-//        ["background": "image", "bgImage": "pexels-photo-164005", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // nicer wood
-//        ["background": "image", "bgImage": "pexels-photo-319382", "fontColor": "darkGray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // yellow and orange
-//        ["background": "image", "bgImage": "pexels-photo-850796", "fontColor": "darkBlue", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // gray paper
-//
-//        ["background": "image", "bgImage": "pexels-photo-132197", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // flagstone
-//        ["background": "image", "bgImage": "pexels-photo-921776", "fontColor": "darkGray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // gray marble
-//        ["background": "image", "bgImage": "pexels-photo-245250", "fontColor": "neonLightBlue", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"], // shiny gray tile
-//        ["background": "image", "bgImage": "pexels-photo-953218", "fontColor": "darkGray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // concrete
-//        ["background": "image", "bgImage": "pexels-photo-1022692", "fontColor": "neonYellow", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "none"], // brown brick
-//        ["background": "image", "bgImage": "pexels-photo-1101125", "fontColor": "white", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "none"] // red brick shadows
-//    ]
-//    var currentTheme : Int = 0
-    
     var themeCollections = [
         "Wood", "Stone", "Night", "Blues", "Warmth", "Coffee"
     ]
-    
-//    var regions: Array = [0, 1, 2, 3, 4]
-//    var regionData: [[String: String]] = [
-//        ["regionName": "America", "description": "US"],
-//        ["regionName": "America24", "description": "US (24 HR)"],
-//        ["regionName": "France", "description": "France"],
-//        ["regionName": "Tanzania", "description": "Swahili"],
-//        ["regionName": "Congo", "description": "Swahili (Congo)"]
-//    ]
-//    var currentRegion : Int = 0
-//    var currentRegionDescription : String = ""
-//    var timeFormat: String = ""
     
     // MARK: - Singleton properties
     

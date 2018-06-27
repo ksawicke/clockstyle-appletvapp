@@ -140,15 +140,6 @@
                                 <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZwL-uk-u5P">
-                                <rect key="frame" x="100" y="963" width="228" height="67"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="Toggle Theme"/>
-                                <connections>
-                                    <action selector="onClickToggleTheme:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="dmE-Cf-NAe"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcy-tU-oow" userLabel="Timezone Stack">
                                 <rect key="frame" x="935" y="503" width="50" height="50"/>
                                 <subviews>
@@ -160,30 +151,12 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNS-Cq-gby">
-                                <rect key="frame" x="343" y="963" width="228" height="67"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="Toggle Region"/>
-                                <connections>
-                                    <action selector="onClickToggleRegion:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="xnh-D0-raa"/>
-                                </connections>
-                            </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5w0-4M-L48">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5w0-4M-L48">
                                 <rect key="frame" x="621" y="1030" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxY-fQ-8pc">
-                                <rect key="frame" x="1213" y="953" width="195" height="86"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="rQv-n2-TCK" kind="show" identifier="goToSettingsController" id="LMF-Ej-MPa"/>
-                                </connections>
-                            </button>
                             <tabBar hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LrC-G7-cuG">
                                 <rect key="frame" x="0.0" y="0.0" width="1920" height="140"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -199,16 +172,11 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="LPZ-fq-UCb" secondAttribute="trailing" constant="100" id="04t-Kv-WTS"/>
-                            <constraint firstAttribute="bottom" secondItem="FNS-Cq-gby" secondAttribute="bottom" constant="50" id="1HH-rj-4BL"/>
                             <constraint firstAttribute="bottom" secondItem="5w0-4M-L48" secondAttribute="bottom" constant="50" id="C5J-fw-xAt"/>
-                            <constraint firstItem="5w0-4M-L48" firstAttribute="leading" secondItem="FNS-Cq-gby" secondAttribute="trailing" constant="50" id="Poz-JO-yIE"/>
                             <constraint firstItem="04j-Og-yUw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QkC-9b-a5S"/>
-                            <constraint firstItem="FNS-Cq-gby" firstAttribute="leading" secondItem="ZwL-uk-u5P" secondAttribute="trailing" constant="15" id="SbO-1L-RnV"/>
                             <constraint firstItem="7my-Sb-GZW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="US9-98-XdW"/>
                             <constraint firstItem="pcy-tU-oow" firstAttribute="top" secondItem="7my-Sb-GZW" secondAttribute="bottom" constant="50" id="agi-c4-La6"/>
-                            <constraint firstAttribute="bottom" secondItem="ZwL-uk-u5P" secondAttribute="bottom" constant="50" id="b3i-4N-WPY"/>
                             <constraint firstAttribute="bottom" secondItem="LPZ-fq-UCb" secondAttribute="bottom" constant="50" id="cEd-a6-sCo"/>
-                            <constraint firstItem="ZwL-uk-u5P" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="100" id="cKm-f5-lxU"/>
                             <constraint firstItem="pcy-tU-oow" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gMO-PK-nxc"/>
                             <constraint firstItem="04j-Og-yUw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="obK-p9-cY3"/>
                             <constraint firstItem="7my-Sb-GZW" firstAttribute="top" secondItem="04j-Og-yUw" secondAttribute="bottom" constant="50" id="w33-5t-sOQ"/>
@@ -247,7 +215,26 @@
                 <viewController storyboardIdentifier="styleVC" id="rQv-n2-TCK" customClass="StyleController" customModule="Clock_Style" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cAC-ng-NJw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-413" y="704"/>
+            <point key="canvasLocation" x="-413" y="290"/>
+        </scene>
+        <!--Language Controller-->
+        <scene sceneID="0gj-9F-1b4">
+            <objects>
+                <viewController storyboardIdentifier="languageVC" id="vh7-dc-EdA" customClass="LanguageController" customModule="Clock_Style" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3So-tj-oXA"/>
+                        <viewControllerLayoutGuide type="bottom" id="6nC-67-vWA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aSK-Wy-u7e">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.99763482810000004" green="0.89293657179999997" blue="0.0069418318690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="lPr-qR-iNa"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qDK-Y5-6NO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-420" y="1653"/>
         </scene>
     </scenes>
 </document>
