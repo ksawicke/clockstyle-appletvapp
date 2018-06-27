@@ -97,7 +97,8 @@ class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDele
     var selectedRowNumber: Int = 6
     var selectedCellNumber: Int = 1
     
-    var delegate : ChangeStyleDelegate?
+    var settingsDelegate : ChangeStyleDelegate?
+    var languageDelegate : ChangeLanguageDelegate?
     
     @IBOutlet weak var timeSlotBeg: UILabel!
     @IBOutlet weak var timeSlotH1: UILabel!
@@ -155,26 +156,23 @@ class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDele
         if selectSettingsBar.isHidden == false {
             doLaunchStuff()
             disableTopBar()
-            
-            print("Check hoveredItem: \(hoveredItem)")
-            
+
             switch(hoveredItem) {
                 case "Style":
-//                    showHUD()
                     let styleVC = StyleController()
-                    styleVC.delegate = self
+                    styleVC.styleDelegate = self
 
                     self.present(styleVC, animated: true, completion: nil)
                 
                 case "Language":
                     let languageVC = LanguageController()
-                    languageVC.delegate = self
+                    languageVC.languageDelegate = self
                     
                     self.present(languageVC, animated: true, completion: nil)
                 
                 default:
                     let styleVC = StyleController()
-                    styleVC.delegate = self
+                    styleVC.styleDelegate = self
                     
                     self.present(styleVC, animated: true, completion: nil)
             }

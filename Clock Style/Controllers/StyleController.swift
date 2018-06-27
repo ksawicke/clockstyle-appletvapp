@@ -16,7 +16,7 @@ protocol ChangeStyleDelegate {
 
 class StyleController: UIViewController {
     
-    var delegate : ChangeStyleDelegate?
+    var styleDelegate : ChangeStyleDelegate?
     
     var themeCollections = [
         "Wood", "Stone", "Night", "Blues", "Warmth", "Coffee"
@@ -145,7 +145,7 @@ extension StyleController: UITableViewDelegate {
     
     func saveClockStyleSettings(rowNumber: Int, cellNumber: Int) {
         
-        delegate?.userChangedStyle(rowNumber: rowNumber, cellNumber: cellNumber)
+        styleDelegate?.userChangedStyle(rowNumber: rowNumber, cellNumber: cellNumber)
 
         self.dismiss(animated: true, completion: nil)
     }

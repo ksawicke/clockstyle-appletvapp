@@ -16,7 +16,7 @@ protocol ChangeLanguageDelegate {
 
 class LanguageController: UIViewController {
 
-    var delegate : ChangeLanguageDelegate?
+    var languageDelegate : ChangeLanguageDelegate?
     
     @IBAction func onClickLanguage(_ sender: Any) {
         print("You clicked language with tag: \((sender as AnyObject).tag)")
