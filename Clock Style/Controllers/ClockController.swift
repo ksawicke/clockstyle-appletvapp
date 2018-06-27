@@ -8,7 +8,7 @@
 import UIKit
 import JGProgressHUD
 
-class ClockController: UIViewController, ChangeStyleDelegate, UITabBarDelegate {
+class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDelegate, UITabBarDelegate {
 
     var themeInfo: [String:[String:String]] = [
         // Wood
@@ -156,6 +156,8 @@ class ClockController: UIViewController, ChangeStyleDelegate, UITabBarDelegate {
             doLaunchStuff()
             disableTopBar()
             
+            print("Check hoveredItem: \(hoveredItem)")
+            
             switch(hoveredItem) {
                 case "Style":
 //                    showHUD()
@@ -165,7 +167,7 @@ class ClockController: UIViewController, ChangeStyleDelegate, UITabBarDelegate {
                     self.present(styleVC, animated: true, completion: nil)
                 
                 case "Language":
-                    let languageVC = StyleController()
+                    let languageVC = LanguageController()
                     languageVC.delegate = self
                     
                     self.present(languageVC, animated: true, completion: nil)
@@ -1063,6 +1065,10 @@ class ClockController: UIViewController, ChangeStyleDelegate, UITabBarDelegate {
         currentTheme = "\(rowNumber)\(selectedCellNumber)"
         
         updateTheme()
+    }
+    
+    func userChangedLanguage (languageNumber: Int) {
+        print("changed language: \(languageNumber)")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
