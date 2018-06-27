@@ -220,6 +220,7 @@
         <!--Language Controller-->
         <scene sceneID="0gj-9F-1b4">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qDK-Y5-6NO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="languageVC" id="vh7-dc-EdA" customClass="LanguageController" customModule="Clock_Style" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3So-tj-oXA"/>
@@ -228,11 +229,72 @@
                     <view key="view" contentMode="scaleToFill" id="aSK-Wy-u7e">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.99763482810000004" green="0.89293657179999997" blue="0.0069418318690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select a language:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0N-4A-1kj">
+                                <rect key="frame" x="704" y="135" width="513" height="53"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="44"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7o-aS-FbL">
+                                <rect key="frame" x="770" y="238" width="380" height="86"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="English (12 Hour)"/>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kza-eh-9Xv">
+                                <rect key="frame" x="770" y="349" width="380" height="86"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="English (24 Hour)"/>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKe-Iz-Zd3">
+                                <rect key="frame" x="770" y="571" width="380" height="86"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="French"/>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOL-k1-dYU">
+                                <rect key="frame" x="770" y="682" width="380" height="86"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Swahili"/>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Kh-uV-Olk">
+                                <rect key="frame" x="770" y="793" width="380" height="86"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Swahili (Congo)"/>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8j-3H-ovB">
+                                <rect key="frame" x="770" y="460" width="380" height="86"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Spanish"/>
+                                <connections>
+                                    <action selector="onClickLanguage:" destination="vh7-dc-EdA" eventType="primaryActionTriggered" id="298-a9-Jgj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="x8j-3H-ovB" firstAttribute="top" secondItem="Kza-eh-9Xv" secondAttribute="bottom" constant="25" id="12U-pR-hmH"/>
+                            <constraint firstItem="Kza-eh-9Xv" firstAttribute="top" secondItem="h7o-aS-FbL" secondAttribute="bottom" constant="25" id="5V1-8q-Ing"/>
+                            <constraint firstItem="h7o-aS-FbL" firstAttribute="top" secondItem="k0N-4A-1kj" secondAttribute="bottom" constant="50" id="62x-Ks-W5A"/>
+                            <constraint firstItem="CKe-Iz-Zd3" firstAttribute="width" secondItem="h7o-aS-FbL" secondAttribute="width" id="64t-6L-zsM"/>
+                            <constraint firstItem="3Kh-uV-Olk" firstAttribute="centerX" secondItem="aSK-Wy-u7e" secondAttribute="centerX" id="8a7-HF-gUk"/>
+                            <constraint firstItem="nOL-k1-dYU" firstAttribute="centerX" secondItem="aSK-Wy-u7e" secondAttribute="centerX" id="B9s-Im-9dX"/>
+                            <constraint firstItem="h7o-aS-FbL" firstAttribute="centerX" secondItem="aSK-Wy-u7e" secondAttribute="centerX" id="N3T-5s-Hw9"/>
+                            <constraint firstItem="3Kh-uV-Olk" firstAttribute="top" secondItem="nOL-k1-dYU" secondAttribute="bottom" constant="25" id="P5L-Tk-agE"/>
+                            <constraint firstItem="Kza-eh-9Xv" firstAttribute="width" secondItem="h7o-aS-FbL" secondAttribute="width" id="Ply-aC-Cv0"/>
+                            <constraint firstItem="nOL-k1-dYU" firstAttribute="top" secondItem="CKe-Iz-Zd3" secondAttribute="bottom" constant="25" id="ReG-VG-r5R"/>
+                            <constraint firstItem="x8j-3H-ovB" firstAttribute="centerX" secondItem="aSK-Wy-u7e" secondAttribute="centerX" id="VV2-Gp-W8a"/>
+                            <constraint firstItem="k0N-4A-1kj" firstAttribute="top" secondItem="3So-tj-oXA" secondAttribute="bottom" constant="75" id="Yyz-NR-E08"/>
+                            <constraint firstItem="3Kh-uV-Olk" firstAttribute="width" secondItem="h7o-aS-FbL" secondAttribute="width" id="dvk-zq-rHc"/>
+                            <constraint firstItem="CKe-Iz-Zd3" firstAttribute="centerX" secondItem="aSK-Wy-u7e" secondAttribute="centerX" id="e5Q-Lf-C4s"/>
+                            <constraint firstItem="Kza-eh-9Xv" firstAttribute="centerX" secondItem="aSK-Wy-u7e" secondAttribute="centerX" id="jzf-Qy-FBN"/>
+                            <constraint firstItem="k0N-4A-1kj" firstAttribute="centerX" secondItem="aSK-Wy-u7e" secondAttribute="centerX" id="koW-m8-4y8"/>
+                            <constraint firstItem="CKe-Iz-Zd3" firstAttribute="top" secondItem="x8j-3H-ovB" secondAttribute="bottom" constant="25" id="lbs-vS-HSq"/>
+                            <constraint firstItem="x8j-3H-ovB" firstAttribute="width" secondItem="h7o-aS-FbL" secondAttribute="width" id="wWd-xT-R8G"/>
+                            <constraint firstItem="nOL-k1-dYU" firstAttribute="width" secondItem="h7o-aS-FbL" secondAttribute="width" id="zO9-lh-TXq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lPr-qR-iNa"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qDK-Y5-6NO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-420" y="1653"/>
         </scene>

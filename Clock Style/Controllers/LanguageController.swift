@@ -18,9 +18,16 @@ class LanguageController: UIViewController {
 
     var delegate : ChangeLanguageDelegate?
     
+    @IBAction func onClickLanguage(_ sender: Any) {
+        print("You clicked language with tag: \((sender as AnyObject).tag)")
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("LanguageVC viewDidLoad")
+        
         // Do any additional setup after loading the view.
     }
 
