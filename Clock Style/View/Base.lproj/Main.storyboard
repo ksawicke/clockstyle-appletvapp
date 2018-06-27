@@ -216,6 +216,7 @@
                         <viewLayoutGuide key="safeArea" id="wu6-TO-1qx"/>
                     </view>
                     <connections>
+                        <outlet property="attributionLabel" destination="LPZ-fq-UCb" id="tmV-yO-Pjz"/>
                         <outlet property="currentRegionSelected" destination="5w0-4M-L48" id="DIt-Ax-0pX"/>
                         <outlet property="dateSlot1" destination="Hpd-7K-Tbu" id="0CW-YJ-Cmn"/>
                         <outlet property="dateSlot2" destination="0qS-1E-jRm" id="XtX-kc-tCi"/>

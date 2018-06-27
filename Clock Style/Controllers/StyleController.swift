@@ -58,14 +58,7 @@ class StyleController: UIViewController {
 //    var currentTheme : Int = 0
     
     var themeCollections = [
-        "Wood", "Stone", "Night"
-    ]
-    var themeNames = [
-        "Red Barn", "Orange Horizon", "Light Warm", "Med Brown", "Chip Wood", "Dark Stain Wood", "Weathered Barn", "Gray Wood", "Zebra Wood",
-        
-        "Red Brick Shadow", "Red Brick", "Gray Brick", "Slate Brick", "Yellow Orange", "Blue Marble", "Gray Marble", "Black Tile", "Dark Slate",
-        
-        "Highway", "Tent", "Cactus", "Dock", "Circle Sky", "Pines", "Borealis", "Cabin", "Nebula"
+        "Wood", "Stone", "Night", "Blues", "Warmth", "Coffee"
     ]
     
 //    var regions: Array = [0, 1, 2, 3, 4]
@@ -135,6 +128,9 @@ class StyleController: UIViewController {
     fileprivate var themegroup1Images : Array<UIImage> = []
     fileprivate var themegroup2Images : Array<UIImage> = []
     fileprivate var themegroup3Images : Array<UIImage> = []
+    fileprivate var themegroup4Images : Array<UIImage> = []
+    fileprivate var themegroup5Images : Array<UIImage> = []
+    fileprivate var themegroup6Images : Array<UIImage> = []
     
     fileprivate var images: [[UIImage]]! {
         didSet {
@@ -147,9 +143,21 @@ class StyleController: UIViewController {
             for x in 19 ... 27 {
                 themegroup3Images.append(UIImage(named: "theme-background-\(x)")!)
             }
+            for x in 28 ... 36 {
+                themegroup4Images.append(UIImage(named: "theme-background-\(x)")!)
+            }
+            for x in 37 ... 45 {
+                themegroup5Images.append(UIImage(named: "theme-background-\(x)")!)
+            }
+            for x in 46 ... 54 {
+                themegroup6Images.append(UIImage(named: "theme-background-\(x)")!)
+            }
             images.append(themegroup1Images)
             images.append(themegroup2Images)
             images.append(themegroup3Images)
+            images.append(themegroup4Images)
+            images.append(themegroup5Images)
+            images.append(themegroup6Images)
         }
     }
     
@@ -183,7 +191,7 @@ extension StyleController: UITableViewDelegate {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 6
     }
     
     func saveClockStyleSettings(rowNumber: Int, cellNumber: Int) {

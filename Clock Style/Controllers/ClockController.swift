@@ -10,7 +10,6 @@ import JGProgressHUD
 
 class ClockController: UIViewController, ChangeStyleDelegate, UITabBarDelegate {
 
-    var themes: Array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
     var themeInfo: [String:[String:String]] = [
         // Wood
         "11": ["background": "image", "bgImage": "theme-background-1", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
@@ -44,42 +43,39 @@ class ClockController: UIViewController, ChangeStyleDelegate, UITabBarDelegate {
         "37": ["background": "image", "bgImage": "theme-background-25", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         "38": ["background": "image", "bgImage": "theme-background-26", "fontColor": "orange", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
         "39": ["background": "image", "bgImage": "theme-background-27", "fontColor": "neonYellow", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
-    ]
-    var themeData: [[String: String]] = [
-        ["background": "color", "bgColor": "black", "fontColor": "darkGray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        ["background": "color", "bgColor": "green", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        ["background": "color", "bgColor": "red", "fontColor": "yellow", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        ["background": "color", "bgColor": "orange", "fontColor": "darkGray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         
-        ["background": "color", "bgColor": "black", "fontColor": "red", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
-        ["background": "color", "bgColor": "black", "fontColor": "neonGreen", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
-        ["background": "color", "bgColor": "black", "fontColor": "neonYellow", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
-        ["background": "color", "bgColor": "black", "fontColor": "neonLightBlue", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
-        ["background": "color", "bgColor": "black", "fontColor": "neonPurple", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
-        ["background": "color", "bgColor": "black", "fontColor": "neonPink", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
-        ["background": "color", "bgColor": "black", "fontColor": "white", "font": "custom", "fontName": "DS-Digital", "fontEffect": "none"],
+        // Blues
+        "41": ["background": "image", "bgImage": "theme-background-28", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "42": ["background": "image", "bgImage": "theme-background-29", "fontColor": "neonLightBlue", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
+        "43": ["background": "image", "bgImage": "theme-background-30", "fontColor": "white", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
+        "44": ["background": "image", "bgImage": "theme-background-31", "fontColor": "neonGreen", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
+        "45": ["background": "image", "bgImage": "theme-background-32", "fontColor": "neonYellow", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
+        "46": ["background": "image", "bgImage": "theme-background-33", "fontColor": "gray", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
+        "47": ["background": "image", "bgImage": "theme-background-34", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "48": ["background": "image", "bgImage": "theme-background-35", "fontColor": "neonYellow", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
+        "49": ["background": "image", "bgImage": "theme-background-36", "fontColor": "bubbleGum", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
         
-        ["background": "color", "bgColor": "black", "fontColor": "red", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
-        ["background": "color", "bgColor": "black", "fontColor": "neonGreen", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
-        ["background": "color", "bgColor": "black", "fontColor": "neonYellow", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
-        ["background": "color", "bgColor": "black", "fontColor": "neonLightBlue", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
-        ["background": "color", "bgColor": "black", "fontColor": "neonPurple", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
-        ["background": "color", "bgColor": "black", "fontColor": "neonPink", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
-        ["background": "color", "bgColor": "black", "fontColor": "white", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
+        // Warmth
+        "51": ["background": "image", "bgImage": "theme-background-37", "fontColor": "black", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
+        "52": ["background": "image", "bgImage": "theme-background-38", "fontColor": "white", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
+        "53": ["background": "image", "bgImage": "theme-background-39", "fontColor": "gray", "font": "custom", "fontName": "DS-Digital", "fontEffect": "none"],
+        "54": ["background": "image", "bgImage": "theme-background-40", "fontColor": "gray", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
+        "55": ["background": "image", "bgImage": "theme-background-41", "fontColor": "black", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "56": ["background": "image", "bgImage": "theme-background-42", "fontColor": "gray", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
+        "57": ["background": "image", "bgImage": "theme-background-43", "fontColor": "gray", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
+        "58": ["background": "image", "bgImage": "theme-background-44", "fontColor": "bubbleGum", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
+        "59": ["background": "image", "bgImage": "theme-background-45", "fontColor": "gray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "glow"],
         
-        ["background": "image", "bgImage": "pexels-photo-960137", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // red wood
-        ["background": "image", "bgImage": "pexels-photo-268976", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // orange horiz wood
-        ["background": "image", "bgImage": "pexels-photo-296884", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // dark brown wood
-        ["background": "image", "bgImage": "pexels-photo-164005", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // nicer wood
-        ["background": "image", "bgImage": "pexels-photo-319382", "fontColor": "darkGray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // yellow and orange
-        ["background": "image", "bgImage": "pexels-photo-850796", "fontColor": "darkBlue", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // gray paper
-        
-        ["background": "image", "bgImage": "pexels-photo-132197", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // flagstone
-        ["background": "image", "bgImage": "pexels-photo-921776", "fontColor": "darkGray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // gray marble
-        ["background": "image", "bgImage": "pexels-photo-245250", "fontColor": "neonLightBlue", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"], // shiny gray tile
-        ["background": "image", "bgImage": "pexels-photo-953218", "fontColor": "darkGray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"], // concrete
-        ["background": "image", "bgImage": "pexels-photo-1022692", "fontColor": "neonYellow", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "none"], // brown brick
-        ["background": "image", "bgImage": "pexels-photo-1101125", "fontColor": "white", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "none"] // red brick shadows
+        // Coffee
+        "61": ["background": "image", "bgImage": "theme-background-46", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "62": ["background": "image", "bgImage": "theme-background-47", "fontColor": "neonLightBlue", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
+        "63": ["background": "image", "bgImage": "theme-background-48", "fontColor": "neonYellow", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
+        "64": ["background": "image", "bgImage": "theme-background-49", "fontColor": "orange", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
+        "65": ["background": "image", "bgImage": "theme-background-50", "fontColor": "white", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
+        "66": ["background": "image", "bgImage": "theme-background-51", "fontColor": "black", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "67": ["background": "image", "bgImage": "theme-background-52", "fontColor": "white", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
+        "68": ["background": "image", "bgImage": "theme-background-53", "fontColor": "orange", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
+        "69": ["background": "image", "bgImage": "theme-background-54", "fontColor": "black", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
     ]
     var currentTheme : String = ""
     
@@ -98,8 +94,8 @@ class ClockController: UIViewController, ChangeStyleDelegate, UITabBarDelegate {
     var timeFormat: String = ""
     var hoveredItem: String = ""
     
-    var selectedRowNumber: Int = 0
-    var selectedCellNumber: Int = 0
+    var selectedRowNumber: Int = 6
+    var selectedCellNumber: Int = 1
     
     var delegate : ChangeStyleDelegate?
     
@@ -121,7 +117,7 @@ class ClockController: UIViewController, ChangeStyleDelegate, UITabBarDelegate {
     @IBOutlet weak var timeZoneSlot: UILabel!
     @IBOutlet weak var currentRegionSelected: UILabel!
     @IBOutlet weak var selectSettingsBar: UITabBar!
-
+    @IBOutlet weak var attributionLabel: UILabel!
     
     @IBAction func onClickToggleTheme(_ sender: Any) {
 //        if currentTheme == themes.count - 1 {
@@ -164,6 +160,10 @@ class ClockController: UIViewController, ChangeStyleDelegate, UITabBarDelegate {
         mainbuttonPressRecognizer.addTarget(self, action: #selector(self.mainButtonAction))
         mainbuttonPressRecognizer.allowedPressTypes = [NSNumber(value: UIPressType.select.rawValue)]
         self.view.addGestureRecognizer(mainbuttonPressRecognizer)
+        
+        currentTheme = "\(selectedRowNumber)\(selectedCellNumber)"
+        
+        updateTheme()
     }
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
@@ -812,12 +812,15 @@ class ClockController: UIViewController, ChangeStyleDelegate, UITabBarDelegate {
         dateSlot4.textColor = newColor
         
         timeZoneSlot.textColor = newColor
+        
+        attributionLabel.textColor = newColor
     }
     
     func updateFont(font: String) {
         let newFont = UIFont(name: font, size: 135)
         let newFontMed = UIFont(name: font, size: 85)
         let newFontSm = UIFont(name: font, size: 50)
+        let newFontXs = UIFont(name: font, size: 24)
         
         timeSlotBeg.font = newFontSm
         
@@ -839,6 +842,8 @@ class ClockController: UIViewController, ChangeStyleDelegate, UITabBarDelegate {
         dateSlot4.font = newFontMed
         
         timeZoneSlot.font = newFontMed
+        
+        attributionLabel.font = newFontXs
     }
     
     func makeFontNoGlow(fontColor: String) {
@@ -948,6 +953,13 @@ class ClockController: UIViewController, ChangeStyleDelegate, UITabBarDelegate {
         timeZoneSlot.layer.shadowOpacity = 0.0
         timeZoneSlot.layer.masksToBounds = false
         timeZoneSlot.layer.shouldRasterize = false
+        
+        attributionLabel.layer.shadowColor = newColor.cgColor
+        attributionLabel.layer.shadowOffset = .zero
+        attributionLabel.layer.shadowRadius = 0.0
+        attributionLabel.layer.shadowOpacity = 0.0
+        attributionLabel.layer.masksToBounds = false
+        attributionLabel.layer.shouldRasterize = false
     }
     
     func makeFontGlow(fontColor: String) {
@@ -1057,6 +1069,13 @@ class ClockController: UIViewController, ChangeStyleDelegate, UITabBarDelegate {
         timeZoneSlot.layer.shadowOpacity = 0.9
         timeZoneSlot.layer.masksToBounds = false
         timeZoneSlot.layer.shouldRasterize = true
+        
+        attributionLabel.layer.shadowColor = newColor.cgColor
+        attributionLabel.layer.shadowOffset = .zero
+        attributionLabel.layer.shadowRadius = 25.0
+        attributionLabel.layer.shadowOpacity = 0.9
+        attributionLabel.layer.masksToBounds = false
+        attributionLabel.layer.shouldRasterize = true
     }
     
     func userChangedStyle(rowNumber: Int, cellNumber: Int) {
