@@ -11,6 +11,40 @@ import JGProgressHUD
 class ClockController: UIViewController, ChangeStyleDelegate, UITabBarDelegate {
 
     var themes: Array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
+    var themeInfo: [String:[String:String]] = [
+        // Wood
+        "11": ["background": "image", "bgImage": "theme-background-1", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "12": ["background": "image", "bgImage": "theme-background-2", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "13": ["background": "image", "bgImage": "theme-background-3", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "14": ["background": "image", "bgImage": "theme-background-4", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "15": ["background": "image", "bgImage": "theme-background-5", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "16": ["background": "image", "bgImage": "theme-background-6", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "17": ["background": "image", "bgImage": "theme-background-7", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "18": ["background": "image", "bgImage": "theme-background-8", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "19": ["background": "image", "bgImage": "theme-background-9", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        
+        // Stone
+        "21": ["background": "image", "bgImage": "theme-background-10", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "22": ["background": "image", "bgImage": "theme-background-11", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "23": ["background": "image", "bgImage": "theme-background-12", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "24": ["background": "image", "bgImage": "theme-background-13", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "25": ["background": "image", "bgImage": "theme-background-14", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "26": ["background": "image", "bgImage": "theme-background-15", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "27": ["background": "image", "bgImage": "theme-background-16", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "28": ["background": "image", "bgImage": "theme-background-17", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "29": ["background": "image", "bgImage": "theme-background-18", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        
+        // Night
+        "31": ["background": "image", "bgImage": "theme-background-19", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "32": ["background": "image", "bgImage": "theme-background-20", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "33": ["background": "image", "bgImage": "theme-background-21", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "34": ["background": "image", "bgImage": "theme-background-22", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "35": ["background": "image", "bgImage": "theme-background-23", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "36": ["background": "image", "bgImage": "theme-background-24", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "37": ["background": "image", "bgImage": "theme-background-25", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "38": ["background": "image", "bgImage": "theme-background-26", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "39": ["background": "image", "bgImage": "theme-background-27", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+    ]
     var themeData: [[String: String]] = [
         ["background": "color", "bgColor": "black", "fontColor": "darkGray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         ["background": "color", "bgColor": "green", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
@@ -47,7 +81,7 @@ class ClockController: UIViewController, ChangeStyleDelegate, UITabBarDelegate {
         ["background": "image", "bgImage": "pexels-photo-1022692", "fontColor": "neonYellow", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "none"], // brown brick
         ["background": "image", "bgImage": "pexels-photo-1101125", "fontColor": "white", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "none"] // red brick shadows
     ]
-    var currentTheme : Int = 0
+    var currentTheme : String = ""
     
     var showTopBar : Bool = false
     
@@ -90,13 +124,13 @@ class ClockController: UIViewController, ChangeStyleDelegate, UITabBarDelegate {
 
     
     @IBAction func onClickToggleTheme(_ sender: Any) {
-        if currentTheme == themes.count - 1 {
-            currentTheme = 0
-        } else {
-            currentTheme += 1
-        }
-        
-        updateTheme()
+//        if currentTheme == themes.count - 1 {
+//            currentTheme = 0
+//        } else {
+//            currentTheme += 1
+//        }
+//        
+//        updateTheme()
     }
     
     @IBAction func onClickToggleRegion(_ sender: Any) {
@@ -111,6 +145,8 @@ class ClockController: UIViewController, ChangeStyleDelegate, UITabBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        hideHUD()
         
         selectSettingsBar.delegate = self
         
@@ -147,6 +183,10 @@ class ClockController: UIViewController, ChangeStyleDelegate, UITabBarDelegate {
 //            showHUD()
             
             let styleVC = StyleController()
+            styleVC.delegate = self
+            
+//            hideHUD()
+            
             self.present(styleVC, animated: true, completion: nil)
             
 //            hideHUD()
@@ -167,14 +207,23 @@ class ClockController: UIViewController, ChangeStyleDelegate, UITabBarDelegate {
     }
     
     func showHUD() {
-        let hud = JGProgressHUD(style: .dark)
-        hud.textLabel.text = "Loading styles"
-        hud.show(in: self.view)
+//        let hud = JGProgressHUD(style: .dark)
+//        hud.textLabel.text = "Loading styles"
+//        hud.show(in: self.view)
+        
+//        let hud = JGProgressHUD(style: .light)
+//        hud.vibrancyEnabled = true
+//        hud.textLabel.text = "Loading styles"
+//        hud.detailTextLabel.text = "See JGProgressHUD-Tests for more examples"
+//        hud.shadow = JGProgressHUDShadow(color: .black, offset: .zero, radius: 5.0, opacity: 0.2)
+//        hud.show(in: self.view)
+//        hud.dismiss(afterDelay: 1.5)
     }
     
     func hideHUD() {
-        let hud = JGProgressHUD(style: .dark)
-        hud.dismiss(afterDelay: 3.0)
+//        var hud = JGProgressHUD(style: .dark)
+//        hud.removeFromSuperview()
+        
     }
     
     @objc func handleSwipes(_ sender:UISwipeGestureRecognizer) {
@@ -648,27 +697,27 @@ class ClockController: UIViewController, ChangeStyleDelegate, UITabBarDelegate {
     }
     
     func updateTheme() {
-        let themeSettings = themeData[currentTheme]
+        let themeSettings = themeInfo[currentTheme] //themeData[currentTheme]
         
-        if themeSettings["background"] == "color" {
-            updateBgColor(bgColor: themeSettings["bgColor"]!)
+        if themeSettings!["background"] == "color" {
+            updateBgColor(bgColor: themeSettings!["bgColor"]!)
         }
         
-        if themeSettings["background"] == "image" {
-            updateBgImage(bgImage: themeSettings["bgImage"]!)
+        if themeSettings!["background"] == "image" {
+            updateBgImage(bgImage: themeSettings!["bgImage"]!)
         }
         
-        if themeSettings["font"] == "custom" {
-            updateFont(font: themeSettings["fontName"]!)
+        if themeSettings!["font"] == "custom" {
+            updateFont(font: themeSettings!["fontName"]!)
         }
         
-        if themeSettings["fontEffect"] == "glow" {
-            makeFontGlow(fontColor: themeSettings["fontColor"]!)
+        if themeSettings!["fontEffect"] == "glow" {
+            makeFontGlow(fontColor: themeSettings!["fontColor"]!)
         } else {
-            makeFontNoGlow(fontColor: themeSettings["fontColor"]!)
+            makeFontNoGlow(fontColor: themeSettings!["fontColor"]!)
         }
         
-        updateFontColor(fontColor: themeSettings["fontColor"]!)
+        updateFontColor(fontColor: themeSettings!["fontColor"]!)
     }
     
     func getUIColor(color: String) -> UIColor {
@@ -729,7 +778,18 @@ class ClockController: UIViewController, ChangeStyleDelegate, UITabBarDelegate {
     }
     
     func updateBgImage(bgImage: String) {
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "\(bgImage).png")!)
+//        view.backgroundColor = UIColor(patternImage: UIImage(named: "\(bgImage).png")!)
+        view.backgroundColor = UIColor(patternImage: scaleImageToSize(size: view.bounds.size, image: UIImage(named: "\(bgImage).png")!))
+//        view.layer.contents = UIImage(named: "\(bgImage).png")
+        
+    }
+    
+    func scaleImageToSize(size: CGSize, image: UIImage) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+        image.draw(in: CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height))
+        let imageR = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return imageR!
     }
     
     func updateFontColor(fontColor: String) {
@@ -1001,11 +1061,13 @@ class ClockController: UIViewController, ChangeStyleDelegate, UITabBarDelegate {
     }
     
     func userChangedStyle(rowNumber: Int, cellNumber: Int) {
-//        if rowNumber != 0 {
-//            rowNumber = rowNumber
-//            cellNumber = cellNumber
-//        }
-        print("test")
+        hideHUD()
+        
+        selectedRowNumber = rowNumber
+        selectedCellNumber = cellNumber
+        currentTheme = "\(rowNumber)\(selectedCellNumber)"
+        
+        updateTheme()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
