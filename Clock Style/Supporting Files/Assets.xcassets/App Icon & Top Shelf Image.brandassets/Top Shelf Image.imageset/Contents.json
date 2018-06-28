@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "tv",
-      "filename" : "Clock Style tvOS Top Shelf_standard@1x.png",
+      "filename" : "Clock Style tvOS Top Shelf_standard@1x.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "tv",
-      "filename" : "Clock Style tvOS Top Shelf_standard@2x.png",
+      "filename" : "Clock Style tvOS Top Shelf_standard@2x.jpg",
       "scale" : "2x"
     }
   ],
