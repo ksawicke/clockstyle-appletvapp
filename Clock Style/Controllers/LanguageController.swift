@@ -10,7 +10,7 @@ import UIKit
 
 protocol ChangeLanguageDelegate {
     
-    func userChangedLanguage (languageNumber: Int)
+    func userChangedLanguage(languageNumber: Int)
     
 }
 
@@ -18,15 +18,15 @@ class LanguageController: UIViewController {
 
     var languageDelegate : ChangeLanguageDelegate?
     
-    @IBAction func onClickLanguage(_ sender: Any) {
-        print("You clicked language with tag: \((sender as AnyObject).tag)")
+    @IBAction func onSelectLanguage(_ sender: UIButton) {
+        
+        languageDelegate?.userChangedLanguage(languageNumber: sender.tag)
+        self.dismiss(animated: true, completion: nil)
+        
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print("LanguageVC viewDidLoad")
         
         // Do any additional setup after loading the view.
     }
@@ -35,16 +35,6 @@ class LanguageController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

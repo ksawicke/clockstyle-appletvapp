@@ -233,7 +233,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select a language:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0N-4A-1kj">
                                 <rect key="frame" x="591" y="135" width="738" height="77"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="64"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7o-aS-FbL">
@@ -244,6 +244,9 @@
                                 <state key="normal" title="English (12 Hour)">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onSelectLanguage:" destination="vh7-dc-EdA" eventType="primaryActionTriggered" id="q5T-a4-WvV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kza-eh-9Xv">
                                 <rect key="frame" x="750" y="378" width="421" height="91"/>
@@ -253,6 +256,9 @@
                                 <state key="normal" title="English (24 Hour)">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onSelectLanguage:" destination="vh7-dc-EdA" eventType="primaryActionTriggered" id="xp7-QZ-dM5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKe-Iz-Zd3">
                                 <rect key="frame" x="750" y="610" width="421" height="91"/>
@@ -262,6 +268,9 @@
                                 <state key="normal" title="French">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onSelectLanguage:" destination="vh7-dc-EdA" eventType="primaryActionTriggered" id="iML-tY-hLB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOL-k1-dYU">
                                 <rect key="frame" x="750" y="726" width="421" height="91"/>
@@ -271,6 +280,9 @@
                                 <state key="normal" title="Swahili">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onSelectLanguage:" destination="vh7-dc-EdA" eventType="primaryActionTriggered" id="AYF-HZ-nYB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Kh-uV-Olk">
                                 <rect key="frame" x="750" y="842" width="421" height="91"/>
@@ -280,6 +292,9 @@
                                 <state key="normal" title="Swahili (Congo)">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onSelectLanguage:" destination="vh7-dc-EdA" eventType="primaryActionTriggered" id="eBu-QQ-m0P"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8j-3H-ovB">
                                 <rect key="frame" x="750" y="494" width="421" height="91"/>
@@ -290,11 +305,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onClickLanguage:" destination="vh7-dc-EdA" eventType="primaryActionTriggered" id="298-a9-Jgj"/>
+                                    <action selector="onSelectLanguage:" destination="vh7-dc-EdA" eventType="primaryActionTriggered" id="ARm-Ur-THZ"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="x8j-3H-ovB" firstAttribute="top" secondItem="Kza-eh-9Xv" secondAttribute="bottom" constant="25" id="12U-pR-hmH"/>
                             <constraint firstItem="Kza-eh-9Xv" firstAttribute="top" secondItem="h7o-aS-FbL" secondAttribute="bottom" constant="25" id="5V1-8q-Ing"/>

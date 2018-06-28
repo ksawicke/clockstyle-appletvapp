@@ -1,9 +1,8 @@
 //
 //  CatalogueTableViewCell.swift
-//  catalogue-tvos
 //
-//  Created by DevLabs BG on 3/31/17.
-//  Copyright © 2017 Devlabs. All rights reserved.
+//  Created by Kevin Sawicke on 06/24/18
+//  Portions by DevLabs BG on 3/31/17, Copyright © 2017 Devlabs. All rights reserved.
 //
 
 import UIKit

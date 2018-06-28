@@ -6,11 +6,10 @@
 //
 
 import UIKit
-import JGProgressHUD
 
 protocol ChangeStyleDelegate {
     
-    func userChangedStyle (rowNumber: Int, cellNumber: Int)
+    func userChangedStyle(rowNumber: Int, cellNumber: Int)
     
 }
 
@@ -110,17 +109,6 @@ class StyleController: UIViewController {
         }
     }
     
-    func showHUD() {
-        let hud = JGProgressHUD(style: .dark)
-        hud.textLabel.text = "Applying style"
-        hud.show(in: self.view)
-    }
-    
-    func hideHUD() {
-        let hud = JGProgressHUD(style: .dark)
-        hud.dismiss(afterDelay: 3.0)
-    }
-    
     // MARK: - Private methods
 }
 
@@ -174,7 +162,7 @@ extension StyleController: UITableViewDataSource {
         let titleLabel = UILabel()
         titleLabel.textColor = .white
         titleLabel.textAlignment = .left
-        titleLabel.font = titleLabel.font.withSize(22)
+        titleLabel.font = titleLabel.font.withSize(30)
         titleLabel.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: (rowHeight) * 0.2).integral
         titleLabel.text = "\(themeCollections[section])"
         headerView.addSubview(titleLabel)

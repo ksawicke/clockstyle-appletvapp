@@ -15,7 +15,7 @@ class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDele
         "11": ["background": "image", "bgImage": "theme-background-1", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         "12": ["background": "image", "bgImage": "theme-background-2", "fontColor": "black", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         "13": ["background": "image", "bgImage": "theme-background-3", "fontColor": "gray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "14": ["background": "image", "bgImage": "theme-background-4", "fontColor": "yellow", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "14": ["background": "image", "bgImage": "theme-background-4", "fontColor": "darkBlue", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         "15": ["background": "image", "bgImage": "theme-background-5", "fontColor": "black", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         "16": ["background": "image", "bgImage": "theme-background-6", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         "17": ["background": "image", "bgImage": "theme-background-7", "fontColor": "black", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
@@ -23,9 +23,9 @@ class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDele
         "19": ["background": "image", "bgImage": "theme-background-9", "fontColor": "bubbleGum", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         
         // Stone
-        "21": ["background": "image", "bgImage": "theme-background-10", "fontColor": "white", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
+        "21": ["background": "image", "bgImage": "theme-background-10", "fontColor": "neonGreen", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
         "22": ["background": "image", "bgImage": "theme-background-11", "fontColor": "neonYellow", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
-        "23": ["background": "image", "bgImage": "theme-background-12", "fontColor": "white", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
+        "23": ["background": "image", "bgImage": "theme-background-12", "fontColor": "neonLightBlue", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
         "24": ["background": "image", "bgImage": "theme-background-13", "fontColor": "neonGreen", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
         "25": ["background": "image", "bgImage": "theme-background-14", "fontColor": "orange", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
         "26": ["background": "image", "bgImage": "theme-background-15", "fontColor": "neonPurple", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
@@ -36,7 +36,7 @@ class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDele
         // Night
         "31": ["background": "image", "bgImage": "theme-background-19", "fontColor": "red", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
         "32": ["background": "image", "bgImage": "theme-background-20", "fontColor": "neonLightBlue", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
-        "33": ["background": "image", "bgImage": "theme-background-21", "fontColor": "white", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
+        "33": ["background": "image", "bgImage": "theme-background-21", "fontColor": "neonLightBlue", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
         "34": ["background": "image", "bgImage": "theme-background-22", "fontColor": "neonGreen", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
         "35": ["background": "image", "bgImage": "theme-background-23", "fontColor": "neonPurple", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
         "36": ["background": "image", "bgImage": "theme-background-24", "fontColor": "neonPurple", "font": "custom", "fontName": "DS-Digital", "fontEffect": "none"],
@@ -47,7 +47,7 @@ class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDele
         // Blues
         "41": ["background": "image", "bgImage": "theme-background-28", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         "42": ["background": "image", "bgImage": "theme-background-29", "fontColor": "neonLightBlue", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
-        "43": ["background": "image", "bgImage": "theme-background-30", "fontColor": "white", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
+        "43": ["background": "image", "bgImage": "theme-background-30", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         "44": ["background": "image", "bgImage": "theme-background-31", "fontColor": "neonGreen", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
         "45": ["background": "image", "bgImage": "theme-background-32", "fontColor": "neonYellow", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
         "46": ["background": "image", "bgImage": "theme-background-33", "fontColor": "gray", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
@@ -64,7 +64,7 @@ class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDele
         "56": ["background": "image", "bgImage": "theme-background-42", "fontColor": "gray", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
         "57": ["background": "image", "bgImage": "theme-background-43", "fontColor": "gray", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
         "58": ["background": "image", "bgImage": "theme-background-44", "fontColor": "bubbleGum", "font": "custom", "fontName": "lcddot", "fontEffect": "none"],
-        "59": ["background": "image", "bgImage": "theme-background-45", "fontColor": "gray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "glow"],
+        "59": ["background": "image", "bgImage": "theme-background-45", "fontColor": "gray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         
         // Coffee
         "61": ["background": "image", "bgImage": "theme-background-46", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
@@ -81,23 +81,23 @@ class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDele
     
     var showTopBar : Bool = false
     
-    var regions: Array = [0, 1, 2, 3, 4]
     var regionData: [[String: String]] = [
-        ["regionName": "America", "description": "US"],
-        ["regionName": "America24", "description": "US (24 HR)"],
-        ["regionName": "France", "description": "France"],
-        ["regionName": "Tanzania", "description": "Swahili"],
-        ["regionName": "Congo", "description": "Swahili (Congo)"]
+        ["regionName": "English12", "description": "English (12 HR)"],
+        ["regionName": "English24", "description": "English (24 HR)"],
+        ["regionName": "Spanish", "description": "Spanish"],
+        ["regionName": "French", "description": "French"],
+        ["regionName": "Swahili", "description": "Swahili"],
+        ["regionName": "SwahiliCongo", "description": "Swahili (Congo)"]
     ]
     var currentRegion : Int = 0
     var currentRegionDescription : String = ""
     var timeFormat: String = ""
     var hoveredItem: String = ""
     
-    var selectedRowNumber: Int = 6
+    var selectedRowNumber: Int = 4
     var selectedCellNumber: Int = 1
     
-    var settingsDelegate : ChangeStyleDelegate?
+    var styleDelegate : ChangeStyleDelegate?
     var languageDelegate : ChangeLanguageDelegate?
     
     @IBOutlet weak var timeSlotBeg: UILabel!
@@ -154,27 +154,27 @@ class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDele
     
     @objc func mainButtonAction() {
         if selectSettingsBar.isHidden == false {
-            doLaunchStuff()
             disableTopBar()
+            showHUD()
 
             switch(hoveredItem) {
                 case "Style":
-                    let styleVC = StyleController()
-                    styleVC.styleDelegate = self
-
-                    self.present(styleVC, animated: true, completion: nil)
+                    if let styleVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "styleVC") as? StyleController {
+                        styleVC.styleDelegate = self
+                        self.present(styleVC, animated: true, completion: nil)
+                    }
                 
                 case "Language":
-                    let languageVC = LanguageController()
-                    languageVC.languageDelegate = self
-                    
-                    self.present(languageVC, animated: true, completion: nil)
+                    if let languageVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "languageVC") as? LanguageController {
+                        languageVC.languageDelegate = self
+                        self.present(languageVC, animated: true, completion: nil)
+                    }
                 
                 default:
-                    let styleVC = StyleController()
-                    styleVC.styleDelegate = self
-                    
-                    self.present(styleVC, animated: true, completion: nil)
+                    if let styleVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "styleVC") as? StyleController {
+                        styleVC.styleDelegate = self
+                        self.present(styleVC, animated: true, completion: nil)
+                    }
             }
         }
     }
@@ -184,24 +184,15 @@ class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDele
     }
     
     func showHUD() {
-//        let hud = JGProgressHUD(style: .dark)
-//        hud.textLabel.text = "Loading styles"
-////        hud.show(in: self.view)
-//        hud.dismiss(afterDelay: 1.5)
-        
-//        let hud = JGProgressHUD(style: .light)
-//        hud.vibrancyEnabled = true
-//        hud.textLabel.text = "Loading styles"
-//        hud.detailTextLabel.text = "See JGProgressHUD-Tests for more examples"
-//        hud.shadow = JGProgressHUDShadow(color: .black, offset: .zero, radius: 5.0, opacity: 0.2)
-//        hud.show(in: self.view)
-//        hud.dismiss(afterDelay: 1.5)
+        let hud = JGProgressHUD(style: .dark)
+        hud.textLabel.text = "Updating"
+        hud.show(in: self.view)
+        hud.dismiss(afterDelay: 3.0)
     }
     
     func hideHUD() {
-//        var hud = JGProgressHUD(style: .dark)
-//        hud.removeFromSuperview()
-        
+        let hud = JGProgressHUD(style: .dark)
+        hud.dismiss()
     }
     
     @objc func handleSwipes(_ sender:UISwipeGestureRecognizer) {
@@ -241,14 +232,14 @@ class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDele
         currentRegionDescription = regionData[currentRegion]["description"]!
         
         switch(timeFormat) {
-            case "America", "America24":
+            case "English12", "English24":
                 dateFormatter.locale = NSLocale(localeIdentifier: "en_US") as Locale?
                 
                 switch(timeFormat) {
-                    case "America":
+                    case "English12":
                         dateFormatter.dateFormat = "hh"
                     
-                    case "America24":
+                    case "English24":
                         dateFormatter.dateFormat = "HH"
                     
                     default:
@@ -304,7 +295,7 @@ class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDele
                 timeSlotS2.text = timeSecondsDigit2
                 timeSlotSep3.text = ""
                 
-                if(timeFormat == "America24") {
+                if(timeFormat == "English24") {
                     timeEnding = ""
                 }
                 
@@ -319,7 +310,96 @@ class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDele
             
                 currentRegionSelected.text = currentRegionDescription
             
-            case "France":
+        case "Spanish":
+            dateFormatter.locale = NSLocale(localeIdentifier: "es") as Locale?
+            
+            dateFormatter.dateFormat = "hh"
+            let timeInHours = dateFormatter.string(from: currentDate as Date)
+            let hoursDigitIndex1 = timeInHours.index(timeInHours.startIndex, offsetBy: 0)
+            let hoursDigitIndex2 = timeInHours.index(timeInHours.startIndex, offsetBy: 1)
+            let timeHoursDigit1: String = "\(timeInHours[hoursDigitIndex1])"
+            let timeHoursDigit2: String = "\(timeInHours[hoursDigitIndex2])"
+            
+            dateFormatter.dateFormat = "mm"
+            let timeInMinutes = dateFormatter.string(from: currentDate as Date)
+            let minutesDigitIndex1 = timeInMinutes.index(timeInMinutes.startIndex, offsetBy: 0)
+            let minutesDigitIndex2 = timeInMinutes.index(timeInMinutes.startIndex, offsetBy: 1)
+            let timeMinutesDigit1: String = "\(timeInMinutes[minutesDigitIndex1])"
+            let timeMinutesDigit2: String = "\(timeInMinutes[minutesDigitIndex2])"
+            
+            dateFormatter.dateFormat = "ss"
+            let timeInSeconds = dateFormatter.string(from: currentDate as Date)
+            let secondsDigitIndex1 = timeInSeconds.index(timeInSeconds.startIndex, offsetBy: 0)
+            let secondsDigitIndex2 = timeInSeconds.index(timeInSeconds.startIndex, offsetBy: 1)
+            let timeSecondsDigit1: String = "\(timeInSeconds[secondsDigitIndex1])"
+            let timeSecondsDigit2: String = "\(timeInSeconds[secondsDigitIndex2])"
+            
+            dateFormatter.dateFormat = "a"
+            let timeEnding = dateFormatter.string(from: currentDate as Date)
+            
+            dateFormatter.dateFormat = "EEEE"
+            var thisDayofWeek = dateFormatter.string(from: currentDate as Date)
+            
+            dateFormatter.dateFormat = "MMMM"
+            let thisMonth = dateFormatter.string(from: currentDate as Date)
+            
+            dateFormatter.dateFormat = "d"
+            let thisDayNumber = dateFormatter.string(from: currentDate as Date)
+            
+            dateFormatter.dateFormat = "yyyy"
+            let thisYear = dateFormatter.string(from: currentDate as Date)
+            
+            dateFormatter.dateFormat = "zzz"
+            let thisTimezone = dateFormatter.string(from: currentDate as Date)
+            
+            switch(thisDayofWeek) {
+            case "Sunday":
+                thisDayofWeek = "domingo"
+                
+            case "Monday":
+                thisDayofWeek = "lunes"
+                
+            case "Tuesday":
+                thisDayofWeek = "martes"
+                
+            case "Wednesday":
+                thisDayofWeek = "miércoles"
+                
+            case "Thursday":
+                thisDayofWeek = "jueves"
+                
+            case "Friday":
+                thisDayofWeek = "viernes"
+                
+            case "Saturday":
+                thisDayofWeek = "sábado"
+                
+            default:
+                thisDayofWeek = "domingo"
+            }
+            
+            timeSlotBeg.text = ""
+            timeSlotH1.text = timeHoursDigit1
+            timeSlotH2.text = timeHoursDigit2
+            timeSlotSep1.text = ":"
+            timeSlotM1.text = timeMinutesDigit1
+            timeSlotM2.text = timeMinutesDigit2
+            timeSlotSep2.text = ":"
+            timeSlotS1.text = timeSecondsDigit1
+            timeSlotS2.text = timeSecondsDigit2
+            timeSlotSep3.text = ""
+            timeSlotEnd.text = " \(timeEnding)"
+            
+            dateSlot1.text = "\(thisDayofWeek)"
+            dateSlot2.text = " \(thisMonth)"
+            dateSlot3.text = " \(thisDayNumber) "
+            dateSlot4.text = "\(thisYear)"
+            
+            timeZoneSlot.text = "\(thisTimezone)"
+            
+            currentRegionSelected.text = currentRegionDescription
+            
+            case "French":
                 dateFormatter.locale = NSLocale(localeIdentifier: "fr_FR") as Locale?
                 
                 dateFormatter.dateFormat = "HH"
@@ -381,7 +461,7 @@ class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDele
             
                 currentRegionSelected.text = currentRegionDescription
             
-            case "Tanzania":
+            case "Swahili":
                 dateFormatter.locale = NSLocale(localeIdentifier: "sw_TZ") as Locale?
                 
                 dateFormatter.dateFormat = "hh"
@@ -507,7 +587,7 @@ class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDele
             
                 currentRegionSelected.text = currentRegionDescription
             
-            case "Congo":
+            case "SwahiliCongo":
                 dateFormatter.locale = NSLocale(localeIdentifier: "swc_CD") as Locale?
                 
                 dateFormatter.dateFormat = "HH"
@@ -1065,26 +1145,12 @@ class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDele
         updateTheme()
     }
     
-    func userChangedLanguage (languageNumber: Int) {
-        print("changed language: \(languageNumber)")
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        print(segue.identifier!)
-
-//        switch(segue.identifier!) {
-//        case "settingsVC":
-//            let destinationVC = segue.destination as! SettingsController
-//
-////            destinationVC.delegate = self as! ChangeSettingsDelegate
-////            destinationVC.bgColor = "BLUE RASPBERRY" //self.barCodeScanned
-////
-////            print("OKOK")
-//
-//        default:
-//            print("ERROR")
-//        }
+    func userChangedLanguage(languageNumber: Int) {
+        hideHUD()
+        
+        currentRegion = languageNumber
+        
+        updateClock()
     }
     
 }
