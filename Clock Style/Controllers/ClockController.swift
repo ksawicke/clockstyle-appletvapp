@@ -7,7 +7,6 @@
 
 import UIKit
 import JGProgressHUD
-import SwiftyStoreKit
 
 class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDelegate, UITabBarDelegate {
     
