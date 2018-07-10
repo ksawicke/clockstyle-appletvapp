@@ -166,6 +166,7 @@
                                     <tabBarItem title="Language" id="q1j-nq-8VC">
                                         <color key="badgeColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </tabBarItem>
+                                    <tabBarItem title="Add-Ons" id="bms-Ni-LGH"/>
                                 </items>
                             </tabBar>
                         </subviews>
@@ -336,6 +337,131 @@
                 </viewController>
             </objects>
             <point key="canvasLocation" x="-420" y="1653"/>
+        </scene>
+        <!--In App Purchase Controller-->
+        <scene sceneID="noQ-Ln-hMC">
+            <objects>
+                <viewController storyboardIdentifier="inAppPurchaseVC" id="b2t-MV-ZBZ" customClass="InAppPurchaseController" customModule="Clock_Style" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Y4k-zY-DiO"/>
+                        <viewControllerLayoutGuide type="bottom" id="hBc-1b-8a4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hxV-kV-DPe">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchase additional themes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lvy-Zb-RmL">
+                                <rect key="frame" x="545" y="135" width="831" height="77"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="64"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fs4-Fx-2hO">
+                                <rect key="frame" x="881" y="331" width="158" height="69"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onClickButtonThemepack2:" destination="b2t-MV-ZBZ" eventType="primaryActionTriggered" id="0wz-WC-ie3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ie-OR-cym">
+                                <rect key="frame" x="881" y="425" width="158" height="69"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onClickButtonThemepack3:" destination="b2t-MV-ZBZ" eventType="primaryActionTriggered" id="ktD-Nu-c6C"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eya-Nr-K5o">
+                                <rect key="frame" x="881" y="519" width="158" height="69"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onClickButtonThemepack4:" destination="b2t-MV-ZBZ" eventType="primaryActionTriggered" id="xfE-vo-xjP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xyf-2a-nRB">
+                                <rect key="frame" x="881" y="613" width="158" height="69"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onClickButtonThemepack5:" destination="b2t-MV-ZBZ" eventType="primaryActionTriggered" id="XgE-s6-fUC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKv-IZ-GQd">
+                                <rect key="frame" x="881" y="707" width="158" height="69"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onClickButonThemepack6:" destination="b2t-MV-ZBZ" eventType="primaryActionTriggered" id="X8M-Gn-vul"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIF-wh-AE1">
+                                <rect key="frame" x="881" y="801" width="158" height="69"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onClickButtonRestorePurchases:" destination="b2t-MV-ZBZ" eventType="primaryActionTriggered" id="gmQ-Zx-WhF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aow-kt-LBA">
+                                <rect key="frame" x="863" y="237" width="195" height="69"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onClickButtonThemepack1:" destination="b2t-MV-ZBZ" eventType="primaryActionTriggered" id="9Rr-g9-5zC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eya-Nr-K5o" firstAttribute="centerX" secondItem="hxV-kV-DPe" secondAttribute="centerX" id="1fZ-TJ-ueg"/>
+                            <constraint firstItem="aow-kt-LBA" firstAttribute="centerX" secondItem="Fs4-Fx-2hO" secondAttribute="centerX" id="4g2-1d-rMW"/>
+                            <constraint firstItem="Fs4-Fx-2hO" firstAttribute="top" secondItem="aow-kt-LBA" secondAttribute="bottom" constant="25" id="53n-57-8wD"/>
+                            <constraint firstItem="Xyf-2a-nRB" firstAttribute="centerX" secondItem="hxV-kV-DPe" secondAttribute="centerX" id="5Qh-8F-8Zs"/>
+                            <constraint firstItem="aow-kt-LBA" firstAttribute="leading" secondItem="iAx-K3-nze" secondAttribute="leading" constant="773" id="DWw-Tk-L1b"/>
+                            <constraint firstItem="Fs4-Fx-2hO" firstAttribute="centerX" secondItem="hxV-kV-DPe" secondAttribute="centerX" id="FeA-yu-nTZ"/>
+                            <constraint firstItem="hIF-wh-AE1" firstAttribute="centerX" secondItem="hxV-kV-DPe" secondAttribute="centerX" id="G5j-m3-qvw"/>
+                            <constraint firstItem="4Ie-OR-cym" firstAttribute="centerX" secondItem="hxV-kV-DPe" secondAttribute="centerX" id="HJr-eT-iow"/>
+                            <constraint firstItem="Lvy-Zb-RmL" firstAttribute="top" secondItem="Y4k-zY-DiO" secondAttribute="bottom" constant="75" id="QQt-64-kOA"/>
+                            <constraint firstItem="eya-Nr-K5o" firstAttribute="top" secondItem="4Ie-OR-cym" secondAttribute="bottom" constant="25" id="XLp-pl-k1A"/>
+                            <constraint firstItem="4Ie-OR-cym" firstAttribute="top" secondItem="Fs4-Fx-2hO" secondAttribute="bottom" constant="25" id="bj5-0V-3I1"/>
+                            <constraint firstItem="hIF-wh-AE1" firstAttribute="top" secondItem="dKv-IZ-GQd" secondAttribute="bottom" constant="25" id="bt2-n5-jUG"/>
+                            <constraint firstItem="Xyf-2a-nRB" firstAttribute="top" secondItem="eya-Nr-K5o" secondAttribute="bottom" constant="25" id="dKa-Af-hTY"/>
+                            <constraint firstItem="dKv-IZ-GQd" firstAttribute="top" secondItem="Xyf-2a-nRB" secondAttribute="bottom" constant="25" id="hlu-H2-ahs"/>
+                            <constraint firstItem="aow-kt-LBA" firstAttribute="top" secondItem="Lvy-Zb-RmL" secondAttribute="bottom" constant="25" id="ub6-T4-NMm"/>
+                            <constraint firstItem="Lvy-Zb-RmL" firstAttribute="centerX" secondItem="hxV-kV-DPe" secondAttribute="centerX" id="v63-Fd-fDD"/>
+                            <constraint firstItem="dKv-IZ-GQd" firstAttribute="centerX" secondItem="hxV-kV-DPe" secondAttribute="centerX" id="zDS-zh-NO7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iAx-K3-nze"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonRestorePurchases" destination="hIF-wh-AE1" id="QOH-1m-QNJ"/>
+                        <outlet property="buttonThemePack4" destination="eya-Nr-K5o" id="otM-TM-Fb0"/>
+                        <outlet property="buttonThemePack5" destination="Xyf-2a-nRB" id="Mfx-fe-Vjk"/>
+                        <outlet property="buttonThemePack6" destination="dKv-IZ-GQd" id="Dtp-lb-Vue"/>
+                        <outlet property="buttonThemepack1" destination="aow-kt-LBA" id="Ku9-tB-ysP"/>
+                        <outlet property="buttonThemepack2" destination="Fs4-Fx-2hO" id="wFu-TI-bv8"/>
+                        <outlet property="buttonThemepack3" destination="4Ie-OR-cym" id="BV5-Th-3Iq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aay-vl-52Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-413" y="2997"/>
         </scene>
     </scenes>
 </document>

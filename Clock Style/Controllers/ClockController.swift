@@ -7,9 +7,10 @@
 
 import UIKit
 import JGProgressHUD
+import SwiftyStoreKit
 
 class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDelegate, UITabBarDelegate {
-
+    
     var themeInfo: [String:[String:String]] = [
         // Wood
         "11": ["background": "image", "bgImage": "theme-background-1", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
@@ -169,6 +170,12 @@ class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDele
                         languageVC.languageDelegate = self
                         self.present(languageVC, animated: true, completion: nil)
                     }
+                
+                case "Add-Ons":
+                    if let inAppPurchaseVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "inAppPurchaseVC") as? InAppPurchaseController {
+//                        inAppPurchaseVC.languageDelegate = self
+                        self.present(inAppPurchaseVC, animated: true, completion: nil)
+                }
                 
                 default:
                     if let styleVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "styleVC") as? StyleController {
