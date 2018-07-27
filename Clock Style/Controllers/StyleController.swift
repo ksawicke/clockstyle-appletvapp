@@ -148,7 +148,7 @@ extension StyleController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let _cell = tableView.dequeueReusableCell(withIdentifier: tableCellIdentifier, for: indexPath) as? CatalogueTableViewCell {
-             _cell.titles = [String](repeating: "\(indexPath.section + 1),", count: 9)
+            _cell.titles = [String](repeating: "\(indexPath.section + 1),", count: 9)
             _cell.images = images[indexPath.section]
             _cell.delegate = self
             return _cell
