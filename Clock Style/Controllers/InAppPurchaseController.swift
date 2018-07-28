@@ -11,42 +11,20 @@ import SwiftyStoreKit
 
 class InAppPurchaseController: UIViewController {
     
+    var selectedTheme : Int16 = 0
+    
     @IBOutlet weak var themePreviewImage: UIImageView!
+    
+    @IBOutlet weak var themePreviewLabel: UILabel!
     @IBOutlet weak var themePreviewDescription: UITextView!
     
-    @IBOutlet weak var buttonThemepack1: UIButton!
-    @IBOutlet weak var buttonThemepack2: UIButton!
-    @IBOutlet weak var buttonThemepack3: UIButton!
-    @IBOutlet weak var buttonThemepack4: UIButton!
-    @IBOutlet weak var buttonThemepack5: UIButton!
-    @IBOutlet weak var buttonThemepack6: UIButton!
-    @IBOutlet weak var buttonThemepack7: UIButton!
-    @IBOutlet weak var buttonThemepack8: UIButton!
-    @IBOutlet weak var buttonThemepack9: UIButton!
+    
+    @IBAction func buttonClickPrev(_ sender: Any) {
+    }
+    @IBAction func buttonClickNext(_ sender: Any) {
+    }
     @IBOutlet weak var buttonRestorePurchases: UIButton!
     
-    @IBOutlet weak var labelThemepack1: UILabel!
-    @IBOutlet weak var labelThemepack2: UILabel!
-    @IBOutlet weak var labelThemepack3: UILabel!
-    @IBOutlet weak var labelThemepack4: UILabel!
-    @IBOutlet weak var labelThemepack5: UILabel!
-    @IBOutlet weak var labelThemepack6: UILabel!
-    @IBOutlet weak var labelThemepack7: UILabel!
-    @IBOutlet weak var labelThemepack8: UILabel!
-    @IBOutlet weak var labelThemepack9: UILabel!
-    
-    @IBAction func onClickButtonThemepack1(_ sender: Any) {
-    }
-    @IBAction func onClickButtonThemepack2(_ sender: Any) {
-    }
-    @IBAction func onClickButtonThemepack3(_ sender: Any) {
-    }
-    @IBAction func onClickButtonThemepack4(_ sender: Any) {
-    }
-    @IBAction func onClickButtonThemepack5(_ sender: Any) {
-    }
-    @IBAction func onClickButtonThemepack6(_ sender: Any) {
-    }
     @IBAction func onClickButtonRestorePurchases(_ sender: Any) {
     }
     
@@ -62,34 +40,12 @@ class InAppPurchaseController: UIViewController {
           "clockstyle.themepack9" ]
     ]
     
+    var inAppPurchaseLabels = [String]()
+    var inAppPurchaseDescriptions = [String]()
+    var inAppPurchasePrices = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let inAppPurchaseButtons = [
-            [ buttonThemepack1,
-              buttonThemepack2,
-              buttonThemepack3,
-              buttonThemepack4,
-              buttonThemepack5,
-              buttonThemepack6,
-              buttonThemepack7,
-              buttonThemepack8,
-              buttonThemepack9 ]
-        ]
-        
-        let inAppPurchaseLabels = [
-            [ labelThemepack1,
-              labelThemepack2,
-              labelThemepack3,
-              labelThemepack4,
-              labelThemepack5,
-              labelThemepack6,
-              labelThemepack7,
-              labelThemepack8,
-              labelThemepack9 ]
-        ]
-        
-        var inAppPurchaseDescriptions = [String]()
 
         for i in 0...inAppPurchaseIds.count - 1 {
             for j in 0...inAppPurchaseIds[i].count - 1 {
@@ -97,19 +53,28 @@ class InAppPurchaseController: UIViewController {
                     if let product = result.retrievedProducts.first {
                         debugPrint(product)
 
-                        let priceString = product.localizedPrice!
-                        print("Product: \(product.localizedDescription), price: \(priceString)")
-
-                        inAppPurchaseButtons[i][j]?.setTitle("\(priceString)", for: .normal)
+                        var productPrice = product.localizedPrice!
+                        var productLabel = "\(product.localizedTitle)"
+                        var productDescription = "\(product.localizedTitle)"
                         
-                        inAppPurchaseLabels[i][j]?.text = "\(product.localizedTitle)"
+                        self.inAppPurchaseLabels.append(productLabel)
+                        self.inAppPurchaseDescriptions.append(productDescription)
+                        self.inAppPurchasePrices.append(productPrice)
                         
-                        self.themePreviewImage.image = UIImage(named: "theme-background-18")
-                        
-                        inAppPurchaseDescriptions.append("\(product.localizedDescription)")
+//                        print("Product: \(product.localizedDescription), price: \(priceString)")
+//
+//                        inAppPurchaseButtons[i][j]?.setTitle("\(priceString)", for: .normal)
+//
+//                        inAppPurchaseLabels[i][j]?.text = "\(product.localizedTitle)"
+//
+//                        self.themePreviewImage.image = UIImage(named: "theme-background-18")
+//
+//                        inAppPurchaseDescriptions.append("\(product.localizedDescription)")
                         
                         if j == 0 {
-                            self.themePreviewDescription.text = "\(product.localizedDescription)"
+                            self.themePreviewLabel.text = "Buy This"
+                            self.themePreviewDescription.text = "Blah!"
+//                            self.themePreviewDescription.text = "\(product.localizedDescription)"
                         }
                     }
                     else if let invalidProductId = result.invalidProductIDs.first {
@@ -122,7 +87,10 @@ class InAppPurchaseController: UIViewController {
             }
         }
         
+        debugPrint(inAppPurchaseLabels)
         debugPrint(inAppPurchaseDescriptions)
+        debugPrint(inAppPurchasePrices)
+        
 //        themePreviewDescription.text = inAppPurchaseDescriptions[0]
         
         // Do any additional setup after loading the view.
