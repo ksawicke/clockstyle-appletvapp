@@ -18,7 +18,11 @@ class StyleController: UIViewController {
     var styleDelegate : ChangeStyleDelegate?
     
     var themeCollections = [
-        "Wood", "Stone", "Night", "Blues", "Warmth", "Coffee"
+        "Wood", "Stone", "Night", "Blues", "Warmth", "Coffee",
+        
+        // In-App Purchases
+        "Bridges", "Bulbs", "Classic Audio", "Classic Cameras",
+        "Classic Cars", "Classic Games", "Desert", "Maps", "Palms"
     ]
     
     // MARK: - Singleton properties
@@ -79,6 +83,9 @@ class StyleController: UIViewController {
     fileprivate var themegroup4Images : Array<UIImage> = []
     fileprivate var themegroup5Images : Array<UIImage> = []
     fileprivate var themegroup6Images : Array<UIImage> = []
+    fileprivate var themegroup7Images : Array<UIImage> = []
+    fileprivate var themegroup8Images : Array<UIImage> = []
+    fileprivate var themegroup9Images : Array<UIImage> = []
     
     fileprivate var images: [[UIImage]]! {
         didSet {

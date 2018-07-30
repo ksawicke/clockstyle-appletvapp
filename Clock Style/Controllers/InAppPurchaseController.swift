@@ -30,7 +30,7 @@ class InAppPurchaseController: UIViewController {
     var inAppPurchaseLabels = [String]()
     var inAppPurchaseDescriptions = [String]()
     var inAppPurchasePrices = [String]()
-    var inAppPurchaseValidations = [Bool]()
+    var inAppPurchaseValidations = [String]()
     
     @IBOutlet weak var themePreviewImage: UIImageView!
     @IBOutlet weak var themePreviewLabel: UILabel!
@@ -44,12 +44,15 @@ class InAppPurchaseController: UIViewController {
     @IBAction func onClickBuyButton(_ sender: Any) {
         print(selectedTheme)
         let productIdentifierChosen = inAppPurchaseIds[0][selectedTheme]
+        let productLabelChosen = inAppPurchaseLabels[selectedTheme]
+        print(productIdentifierChosen)
+        print(productLabelChosen)
         SwiftyStoreKit.purchaseProduct("\(productIdentifierChosen)", quantity: 1, atomically: true) { result in
             switch result {
             case .success(let purchase):
-//                self.inAppPurchaseValidations[0][self.selectedTheme] = true
-                debugPrint(self.inAppPurchaseValidations[0])
-                self.showHUDMessage(messageType: "success", withMessage: "Purchased. Enjoy!")
+                self.inAppPurchaseValidations[self.selectedTheme] = "1"
+                print(self.inAppPurchaseValidations[self.selectedTheme])
+                self.showHUDMessage(messageType: "success", withMessage: "Enjoy this theme!")
 //                print("Purchase Success: \(purchase.productId)")
                 break
                 
@@ -126,7 +129,20 @@ class InAppPurchaseController: UIViewController {
     }
     
     @IBAction func onClickRestorePurchasesButton(_ sender: Any) {
-        
+        SwiftyStoreKit.restorePurchases(atomically: true) { results in
+            if results.restoreFailedPurchases.count > 0 {
+                self.showHUDMessage(messageType: "error", withMessage: "Error restoring purchases.")
+//                print("Restore Failed: \(results.restoreFailedPurchases)")
+            }
+            else if results.restoredPurchases.count > 0 {
+                self.showHUDMessage(messageType: "success", withMessage: "Your purchases were restored successfully.")
+//                print("Restore Success: \(results.restoredPurchases)")
+            }
+            else {
+                self.showHUDMessage(messageType: "error", withMessage: "Nothing to restore.")
+//                print("Nothing to Restore")
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -134,9 +150,9 @@ class InAppPurchaseController: UIViewController {
 
         loadInAppPurchaseData()
         
-        debugPrint(inAppPurchaseLabels)
-        debugPrint(inAppPurchaseDescriptions)
-        debugPrint(inAppPurchasePrices)
+//        debugPrint(inAppPurchaseLabels)
+//        debugPrint(inAppPurchaseDescriptions)
+//        debugPrint(inAppPurchasePrices)
 
 //        themePreviewDescription.text = inAppPurchaseDescriptions[0]
         
@@ -166,6 +182,8 @@ class InAppPurchaseController: UIViewController {
                         var productDescription = "\(product.localizedDescription)"
                         var productPurchased = self.verifyPurchase(with: self.inAppPurchaseIds[i][j], sharedSecret: self.sharedSecret)
                         
+//                        print("** \(self.inAppPurchaseIds[i][j]) ** \(productPurchased)")
+                        
                         self.inAppPurchaseLabels.append(productLabel)
                         self.inAppPurchaseDescriptions.append(productDescription)
                         self.inAppPurchasePrices.append(productPrice)
@@ -177,11 +195,12 @@ class InAppPurchaseController: UIViewController {
                             self.themePreviewLabel.text = self.inAppPurchaseLabels[0]
                             self.themePreviewDescription.text = self.inAppPurchaseDescriptions[0]
                             
-                            if self.inAppPurchaseValidations[0] == false {
+//                            if self.inAppPurchaseValidations[0] == "0" {
                                 priceLabel = self.inAppPurchasePrices[0]
-                            } else {
-                                priceLabel = "Purchased"
-                            }
+//                            }
+//                            if self.inAppPurchaseValidations[0] == "1" {
+//                                priceLabel = "Purchased"
+//                            }
                             
                             self.buyButtonLabel.setTitle(priceLabel, for: .normal)
                         }
@@ -199,7 +218,7 @@ class InAppPurchaseController: UIViewController {
     
     func showHUDMessage(messageType: String, withMessage: String) {
         let hud = JGProgressHUD(style: .dark)
-        hud.textLabel.text = "Purchased. Thanks & enjoy!"
+        hud.textLabel.text = withMessage
         
         if messageType == "success" {
             hud.indicatorView = JGProgressHUDSuccessIndicatorView()
@@ -211,9 +230,9 @@ class InAppPurchaseController: UIViewController {
         hud.dismiss(afterDelay: 3.0)
     }
     
-    func verifyPurchase(with id: String, sharedSecret: String) -> Bool {
+    func verifyPurchase(with id: String, sharedSecret: String) -> String {
         let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: sharedSecret)
-        var valueToReturn = false
+        var valueToReturn = "0"
         
         SwiftyStoreKit.verifyReceipt(using: appleValidator) { result in
             switch result {
@@ -228,13 +247,13 @@ class InAppPurchaseController: UIViewController {
                 switch purchaseResult {
                     case .purchased(let receiptItem):
     //                    print("\(productId) is purchased: \(receiptItem)")
-                       valueToReturn = true
+                       valueToReturn = "1"
                     case .notPurchased:
-                       valueToReturn = false
+                       valueToReturn = "0"
     //                    print("The user has never purchased \(productId)")
                 }
             case .error(let error):
-                valueToReturn = false
+                valueToReturn = "0"
 //                print("Receipt verification failed: \(error)")
             }
         }
@@ -249,7 +268,7 @@ class InAppPurchaseController: UIViewController {
         self.themePreviewDescription.text = self.inAppPurchaseDescriptions[selectedTheme]
         self.buyButtonLabel.setTitle(self.inAppPurchasePrices[selectedTheme], for: .normal)
         
-        if self.inAppPurchaseValidations[selectedTheme] == false {
+        if self.inAppPurchaseValidations[selectedTheme] == "0" {
             priceLabel = self.inAppPurchasePrices[selectedTheme]
         } else {
             priceLabel = "Purchased"
