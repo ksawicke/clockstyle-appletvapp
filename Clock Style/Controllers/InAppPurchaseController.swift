@@ -11,21 +11,45 @@ import SwiftyStoreKit
 
 class InAppPurchaseController: UIViewController {
     
-    var selectedTheme : Int16 = 0
+    var selectedTheme : Int = 0
     
     @IBOutlet weak var themePreviewImage: UIImageView!
     
     @IBOutlet weak var themePreviewLabel: UILabel!
     @IBOutlet weak var themePreviewDescription: UITextView!
+    @IBOutlet weak var buyButtonLabel: UIButton!
+    @IBOutlet weak var prevButtonLabel: UIButton!
+    @IBOutlet weak var nextButtonLabel: UIButton!
+    @IBOutlet weak var restorePurchasesLabel: UIButton!
     
+    @IBAction func onClickBuyButton(_ sender: Any) {
+        
+    }
     
     @IBAction func buttonClickPrev(_ sender: Any) {
+        if selectedTheme == inAppPurchaseLabels.count - 1 {
+            selectedTheme = 0
+        } else {
+            selectedTheme = selectedTheme - 1
+        }
+        
+        updateTheme()
     }
-    @IBAction func buttonClickNext(_ sender: Any) {
-    }
-    @IBOutlet weak var buttonRestorePurchases: UIButton!
     
-    @IBAction func onClickButtonRestorePurchases(_ sender: Any) {
+    @IBAction func buttonClickNext(_ sender: Any) {
+        if selectedTheme == inAppPurchaseLabels.count - 1 {
+            selectedTheme = 0
+        } else {
+            selectedTheme = selectedTheme + 1
+        }
+        
+        updateTheme()
+    }
+    
+    @IBOutlet weak var restorePurchasesButtonLabel: UIButton!
+    
+    @IBAction func onClickRestorePurchasesButton(_ sender: Any) {
+        
     }
     
     let inAppPurchaseIds = [
@@ -55,7 +79,7 @@ class InAppPurchaseController: UIViewController {
 
                         var productPrice = product.localizedPrice!
                         var productLabel = "\(product.localizedTitle)"
-                        var productDescription = "\(product.localizedTitle)"
+                        var productDescription = "\(product.localizedDescription)"
                         
                         self.inAppPurchaseLabels.append(productLabel)
                         self.inAppPurchaseDescriptions.append(productDescription)
@@ -72,9 +96,9 @@ class InAppPurchaseController: UIViewController {
 //                        inAppPurchaseDescriptions.append("\(product.localizedDescription)")
                         
                         if j == 0 {
-                            self.themePreviewLabel.text = "Buy This"
-                            self.themePreviewDescription.text = "Blah!"
-//                            self.themePreviewDescription.text = "\(product.localizedDescription)"
+                            self.themePreviewLabel.text = self.inAppPurchaseLabels[0]
+                            self.themePreviewDescription.text = self.inAppPurchaseDescriptions[0]
+                            self.buyButtonLabel.setTitle(self.inAppPurchasePrices[0], for: .normal)
                         }
                     }
                     else if let invalidProductId = result.invalidProductIDs.first {
@@ -101,6 +125,12 @@ class InAppPurchaseController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override var preferredFocusedView: UIView? {
+        get {
+            return self.nextButtonLabel
+        }
+    }
+    
     func verifyPurchase(with id: String, sharedSecret: String) {
         let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: sharedSecret)
         SwiftyStoreKit.verifyReceipt(using: appleValidator) { result in
@@ -122,6 +152,12 @@ class InAppPurchaseController: UIViewController {
                 print("Receipt verification failed: \(error)")
             }
         }
+    }
+    
+    func updateTheme() {
+        self.themePreviewLabel.text = self.inAppPurchaseLabels[selectedTheme]
+        self.themePreviewDescription.text = self.inAppPurchaseDescriptions[selectedTheme]
+        self.buyButtonLabel.setTitle(self.inAppPurchasePrices[selectedTheme], for: .normal)
     }
 
     /*
