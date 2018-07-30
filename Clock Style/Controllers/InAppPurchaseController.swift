@@ -8,27 +8,106 @@
 
 import UIKit
 import SwiftyStoreKit
+import JGProgressHUD
 
 class InAppPurchaseController: UIViewController {
     
     var selectedTheme : Int = 0
+    let sharedSecret = "ed62de2cc93d45558fd5b7aa5e028fac"
+    
+    let inAppPurchaseIds = [
+        [ "clockstyle.themepack1",
+          "clockstyle.themepack2",
+          "clockstyle.themepack3",
+          "clockstyle.themepack4",
+          "clockstyle.themepack5",
+          "clockstyle.themepack6",
+          "clockstyle.themepack7",
+          "clockstyle.themepack8",
+          "clockstyle.themepack9" ]
+    ]
+    
+    var inAppPurchaseLabels = [String]()
+    var inAppPurchaseDescriptions = [String]()
+    var inAppPurchasePrices = [String]()
+    var inAppPurchaseValidations = [Bool]()
     
     @IBOutlet weak var themePreviewImage: UIImageView!
-    
     @IBOutlet weak var themePreviewLabel: UILabel!
     @IBOutlet weak var themePreviewDescription: UITextView!
     @IBOutlet weak var buyButtonLabel: UIButton!
     @IBOutlet weak var prevButtonLabel: UIButton!
     @IBOutlet weak var nextButtonLabel: UIButton!
     @IBOutlet weak var restorePurchasesLabel: UIButton!
+    @IBOutlet weak var restorePurchasesButtonLabel: UIButton!
     
     @IBAction func onClickBuyButton(_ sender: Any) {
+        print(selectedTheme)
+        let productIdentifierChosen = inAppPurchaseIds[0][selectedTheme]
+        SwiftyStoreKit.purchaseProduct("\(productIdentifierChosen)", quantity: 1, atomically: true) { result in
+            switch result {
+            case .success(let purchase):
+//                self.inAppPurchaseValidations[0][self.selectedTheme] = true
+                debugPrint(self.inAppPurchaseValidations[0])
+                self.showHUDMessage(messageType: "success", withMessage: "Purchased. Enjoy!")
+//                print("Purchase Success: \(purchase.productId)")
+                break
+                
+            case .error(let error):
+                switch error.code {
+                    case .unknown:
+                        self.showHUDMessage(messageType: "error", withMessage: "Purchase failed. Try again.")
+//                        print("Unknown error. Please contact support")
+                        break
+                    
+                    case .clientInvalid:
+                        self.showHUDMessage(messageType: "error", withMessage: "Purchase failed. Try again.")
+//                        print("Not allowed to make the payment")
+                        break
+                    
+                    case .paymentCancelled:
+                        break
+                    
+                    case .paymentInvalid:
+                        self.showHUDMessage(messageType: "error", withMessage: "Purchase failed. Try again.")
+//                        print("The purchase identifier was invalid")
+                        break
+                    
+                    case .paymentNotAllowed:
+                        self.showHUDMessage(messageType: "error", withMessage: "Purchase failed. Try again.")
+//                        print("The device is not allowed to make the payment")
+                        break
+                    
+                    case .storeProductNotAvailable:
+                        self.showHUDMessage(messageType: "error", withMessage: "Purchase failed. Try again.")
+//                        print("The product is not available in the current storefront")
+                        break
+                    
+                    case .cloudServicePermissionDenied:
+                        self.showHUDMessage(messageType: "error", withMessage: "Purchase failed. Try again.")
+//                        print("Access to cloud service information is not allowed")
+                        break
+                    
+                    case .cloudServiceNetworkConnectionFailed:
+                        self.showHUDMessage(messageType: "error", withMessage: "Purchase failed. Try again.")
+//                        print("Could not connect to the network")
+                        break
+                    
+                    case .cloudServiceRevoked:
+                        self.showHUDMessage(messageType: "error", withMessage: "Purchase failed. Try again.")
+//                        print("User has revoked permission to use this cloud service")
+                        break
+                }
+            }
+        }
         
+        updateTheme()
+        debugPrint(inAppPurchaseValidations)
     }
     
     @IBAction func buttonClickPrev(_ sender: Any) {
-        if selectedTheme == inAppPurchaseLabels.count - 1 {
-            selectedTheme = 0
+        if selectedTheme == 0 {
+            selectedTheme = inAppPurchaseLabels.count - 1
         } else {
             selectedTheme = selectedTheme - 1
         }
@@ -46,75 +125,19 @@ class InAppPurchaseController: UIViewController {
         updateTheme()
     }
     
-    @IBOutlet weak var restorePurchasesButtonLabel: UIButton!
-    
     @IBAction func onClickRestorePurchasesButton(_ sender: Any) {
         
     }
     
-    let inAppPurchaseIds = [
-        [ "clockstyle.themepack1",
-          "clockstyle.themepack2",
-          "clockstyle.themepack3",
-          "clockstyle.themepack4",
-          "clockstyle.themepack5",
-          "clockstyle.themepack6",
-          "clockstyle.themepack7",
-          "clockstyle.themepack8",
-          "clockstyle.themepack9" ]
-    ]
-    
-    var inAppPurchaseLabels = [String]()
-    var inAppPurchaseDescriptions = [String]()
-    var inAppPurchasePrices = [String]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        for i in 0...inAppPurchaseIds.count - 1 {
-            for j in 0...inAppPurchaseIds[i].count - 1 {
-                SwiftyStoreKit.retrieveProductsInfo([inAppPurchaseIds[i][j]]) { result in
-                    if let product = result.retrievedProducts.first {
-                        debugPrint(product)
-
-                        var productPrice = product.localizedPrice!
-                        var productLabel = "\(product.localizedTitle)"
-                        var productDescription = "\(product.localizedDescription)"
-                        
-                        self.inAppPurchaseLabels.append(productLabel)
-                        self.inAppPurchaseDescriptions.append(productDescription)
-                        self.inAppPurchasePrices.append(productPrice)
-                        
-//                        print("Product: \(product.localizedDescription), price: \(priceString)")
-//
-//                        inAppPurchaseButtons[i][j]?.setTitle("\(priceString)", for: .normal)
-//
-//                        inAppPurchaseLabels[i][j]?.text = "\(product.localizedTitle)"
-//
-//                        self.themePreviewImage.image = UIImage(named: "theme-background-18")
-//
-//                        inAppPurchaseDescriptions.append("\(product.localizedDescription)")
-                        
-                        if j == 0 {
-                            self.themePreviewLabel.text = self.inAppPurchaseLabels[0]
-                            self.themePreviewDescription.text = self.inAppPurchaseDescriptions[0]
-                            self.buyButtonLabel.setTitle(self.inAppPurchasePrices[0], for: .normal)
-                        }
-                    }
-                    else if let invalidProductId = result.invalidProductIDs.first {
-                        print("Invalid product identifier: \(invalidProductId)")
-                    }
-                    else {
-                        print("Error: \(result.error)")
-                    }
-                }
-            }
-        }
+        loadInAppPurchaseData()
         
         debugPrint(inAppPurchaseLabels)
         debugPrint(inAppPurchaseDescriptions)
         debugPrint(inAppPurchasePrices)
-        
+
 //        themePreviewDescription.text = inAppPurchaseDescriptions[0]
         
         // Do any additional setup after loading the view.
@@ -131,10 +154,70 @@ class InAppPurchaseController: UIViewController {
         }
     }
     
-    func verifyPurchase(with id: String, sharedSecret: String) {
+    func loadInAppPurchaseData() {
+        for i in 0...inAppPurchaseIds.count - 1 {
+            for j in 0...inAppPurchaseIds[i].count - 1 {
+                SwiftyStoreKit.retrieveProductsInfo([inAppPurchaseIds[i][j]]) { result in
+                    if let product = result.retrievedProducts.first {
+                        debugPrint(product)
+                        
+                        var productPrice = product.localizedPrice!
+                        var productLabel = "\(product.localizedTitle)"
+                        var productDescription = "\(product.localizedDescription)"
+                        var productPurchased = self.verifyPurchase(with: self.inAppPurchaseIds[i][j], sharedSecret: self.sharedSecret)
+                        
+                        self.inAppPurchaseLabels.append(productLabel)
+                        self.inAppPurchaseDescriptions.append(productDescription)
+                        self.inAppPurchasePrices.append(productPrice)
+                        self.inAppPurchaseValidations.append(productPurchased)
+                        
+                        if j == 0 {
+                            var priceLabel = ""
+                            
+                            self.themePreviewLabel.text = self.inAppPurchaseLabels[0]
+                            self.themePreviewDescription.text = self.inAppPurchaseDescriptions[0]
+                            
+                            if self.inAppPurchaseValidations[0] == false {
+                                priceLabel = self.inAppPurchasePrices[0]
+                            } else {
+                                priceLabel = "Purchased"
+                            }
+                            
+                            self.buyButtonLabel.setTitle(priceLabel, for: .normal)
+                        }
+                    }
+                    else if let invalidProductId = result.invalidProductIDs.first {
+                        print("Invalid product identifier: \(invalidProductId)")
+                    }
+                    else {
+                        print("Error: \(result.error)")
+                    }
+                }
+            }
+        }
+    }
+    
+    func showHUDMessage(messageType: String, withMessage: String) {
+        let hud = JGProgressHUD(style: .dark)
+        hud.textLabel.text = "Purchased. Thanks & enjoy!"
+        
+        if messageType == "success" {
+            hud.indicatorView = JGProgressHUDSuccessIndicatorView()
+        } else {
+            hud.indicatorView = JGProgressHUDErrorIndicatorView()
+        }
+        
+        hud.show(in: self.view)
+        hud.dismiss(afterDelay: 3.0)
+    }
+    
+    func verifyPurchase(with id: String, sharedSecret: String) -> Bool {
         let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: sharedSecret)
+        var valueToReturn = false
+        
         SwiftyStoreKit.verifyReceipt(using: appleValidator) { result in
             switch result {
+                
             case .success(let receipt):
                 let productId = id
                 // Verify the purchase of Consumable or NonConsumable
@@ -143,21 +226,36 @@ class InAppPurchaseController: UIViewController {
                     inReceipt: receipt)
                 
                 switch purchaseResult {
-                case .purchased(let receiptItem):
-                    print("\(productId) is purchased: \(receiptItem)")
-                case .notPurchased:
-                    print("The user has never purchased \(productId)")
+                    case .purchased(let receiptItem):
+    //                    print("\(productId) is purchased: \(receiptItem)")
+                       valueToReturn = true
+                    case .notPurchased:
+                       valueToReturn = false
+    //                    print("The user has never purchased \(productId)")
                 }
             case .error(let error):
-                print("Receipt verification failed: \(error)")
+                valueToReturn = false
+//                print("Receipt verification failed: \(error)")
             }
         }
+        
+        return valueToReturn
     }
     
     func updateTheme() {
+        var priceLabel = ""
+        
         self.themePreviewLabel.text = self.inAppPurchaseLabels[selectedTheme]
         self.themePreviewDescription.text = self.inAppPurchaseDescriptions[selectedTheme]
         self.buyButtonLabel.setTitle(self.inAppPurchasePrices[selectedTheme], for: .normal)
+        
+        if self.inAppPurchaseValidations[selectedTheme] == false {
+            priceLabel = self.inAppPurchasePrices[selectedTheme]
+        } else {
+            priceLabel = "Purchased"
+        }
+        
+        self.buyButtonLabel.setTitle(priceLabel, for: .normal)
     }
 
     /*
