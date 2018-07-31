@@ -86,6 +86,12 @@ class StyleController: UIViewController {
     fileprivate var themegroup7Images : Array<UIImage> = []
     fileprivate var themegroup8Images : Array<UIImage> = []
     fileprivate var themegroup9Images : Array<UIImage> = []
+    fileprivate var themegroup10Images : Array<UIImage> = []
+    fileprivate var themegroup11Images : Array<UIImage> = []
+    fileprivate var themegroup12Images : Array<UIImage> = []
+    fileprivate var themegroup13Images : Array<UIImage> = []
+    fileprivate var themegroup14Images : Array<UIImage> = []
+    fileprivate var themegroup15Images : Array<UIImage> = []
     
     fileprivate var images: [[UIImage]]! {
         didSet {
@@ -107,12 +113,48 @@ class StyleController: UIViewController {
             for x in 46 ... 54 {
                 themegroup6Images.append(UIImage(named: "theme-background-\(x)")!)
             }
+            for x in 55 ... 63 {
+                themegroup7Images.append(UIImage(named: "theme-background-\(x)")!)
+            }
+            for x in 64 ... 72 {
+                themegroup8Images.append(UIImage(named: "theme-background-\(x)")!)
+            }
+            for x in 73 ... 81 {
+                themegroup9Images.append(UIImage(named: "theme-background-\(x)")!)
+            }
+            for x in 82 ... 90 {
+                themegroup10Images.append(UIImage(named: "theme-background-\(x)")!)
+            }
+            for x in 91 ... 99 {
+                themegroup11Images.append(UIImage(named: "theme-background-\(x)")!)
+            }
+            for x in 100 ... 108 {
+                themegroup12Images.append(UIImage(named: "theme-background-\(x)")!)
+            }
+            for x in 109 ... 117 {
+                themegroup13Images.append(UIImage(named: "theme-background-\(x)")!)
+            }
+            for x in 118 ... 126 {
+                themegroup14Images.append(UIImage(named: "theme-background-\(x)")!)
+            }
+            for x in 127 ... 135 {
+                themegroup15Images.append(UIImage(named: "theme-background-\(x)")!)
+            }
             images.append(themegroup1Images)
             images.append(themegroup2Images)
             images.append(themegroup3Images)
             images.append(themegroup4Images)
             images.append(themegroup5Images)
             images.append(themegroup6Images)
+            images.append(themegroup7Images)
+            images.append(themegroup8Images)
+            images.append(themegroup9Images)
+            images.append(themegroup10Images)
+            images.append(themegroup11Images)
+            images.append(themegroup12Images)
+            images.append(themegroup13Images)
+            images.append(themegroup14Images)
+            images.append(themegroup15Images)
         }
     }
     
@@ -135,7 +177,7 @@ extension StyleController: UITableViewDelegate {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 6
+        return 15
     }
     
     func saveClockStyleSettings(rowNumber: Int, cellNumber: Int) {
@@ -190,6 +232,8 @@ extension StyleController: CatalogueTableViewCellDelegate {
         
         rowNumber = Int(cellArray[0])!
         cellNumber = Int(cellArray[1])!
+        
+        print("ROW: \(rowNumber) ... CELL: \(cellNumber)")
         
         saveClockStyleSettings(rowNumber: rowNumber, cellNumber: cellNumber)
         
