@@ -96,49 +96,52 @@ class StyleController: UIViewController {
     fileprivate var images: [[UIImage]]! {
         didSet {
             for x in 1 ... 9 {
-                themegroup1Images.append(UIImage(named: "theme-background-\(x)")!)
+                themegroup1Images.append(UIImage(named: "theme-thumbnail-\(x)")!)
             }
             for x in 10 ... 18 {
-                themegroup2Images.append(UIImage(named: "theme-background-\(x)")!)
+                themegroup2Images.append(UIImage(named: "theme-thumbnail-\(x)")!)
             }
             for x in 19 ... 27 {
-                themegroup3Images.append(UIImage(named: "theme-background-\(x)")!)
+                themegroup3Images.append(UIImage(named: "theme-thumbnail-\(x)")!)
             }
             for x in 28 ... 36 {
+                // NOTE: These are color backgrounds. No thumbnail needed.
                 themegroup4Images.append(UIImage(named: "theme-background-\(x)")!)
             }
             for x in 37 ... 45 {
+                // NOTE: These are color backgrounds. No thumbnail needed.
                 themegroup5Images.append(UIImage(named: "theme-background-\(x)")!)
             }
             for x in 46 ... 54 {
+                // NOTE: These are color backgrounds. No thumbnail needed.
                 themegroup6Images.append(UIImage(named: "theme-background-\(x)")!)
             }
             for x in 55 ... 63 {
-                themegroup7Images.append(UIImage(named: "theme-background-\(x)")!)
+                themegroup7Images.append(UIImage(named: "theme-thumbnail-\(x)")!)
             }
             for x in 64 ... 72 {
-                themegroup8Images.append(UIImage(named: "theme-background-\(x)")!)
+                themegroup8Images.append(UIImage(named: "theme-thumbnail-\(x)")!)
             }
             for x in 73 ... 81 {
-                themegroup9Images.append(UIImage(named: "theme-background-\(x)")!)
+                themegroup9Images.append(UIImage(named: "theme-thumbnail-\(x)")!)
             }
             for x in 82 ... 90 {
-                themegroup10Images.append(UIImage(named: "theme-background-\(x)")!)
+                themegroup10Images.append(UIImage(named: "theme-thumbnail-\(x)")!)
             }
             for x in 91 ... 99 {
-                themegroup11Images.append(UIImage(named: "theme-background-\(x)")!)
+                themegroup11Images.append(UIImage(named: "theme-thumbnail-\(x)")!)
             }
             for x in 100 ... 108 {
-                themegroup12Images.append(UIImage(named: "theme-background-\(x)")!)
+                themegroup12Images.append(UIImage(named: "theme-thumbnail-\(x)")!)
             }
             for x in 109 ... 117 {
-                themegroup13Images.append(UIImage(named: "theme-background-\(x)")!)
+                themegroup13Images.append(UIImage(named: "theme-thumbnail-\(x)")!)
             }
             for x in 118 ... 126 {
-                themegroup14Images.append(UIImage(named: "theme-background-\(x)")!)
+                themegroup14Images.append(UIImage(named: "theme-thumbnail-\(x)")!)
             }
             for x in 127 ... 135 {
-                themegroup15Images.append(UIImage(named: "theme-background-\(x)")!)
+                themegroup15Images.append(UIImage(named: "theme-thumbnail-\(x)")!)
             }
             images.append(themegroup1Images)
             images.append(themegroup2Images)

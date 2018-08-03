@@ -870,8 +870,8 @@ class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDele
         }
 
         if themeSettings!["background"] == "image" {
-            let imageThumbnailName = "theme-background-\(themeSettings!["bgImage"]!)"
-            updateBgImage(bgImage: imageThumbnailName)
+            let imageBackgroundName = "theme-background-\(themeSettings!["bgImage"]!)"
+            updateBgImage(bgImage: imageBackgroundName)
         }
 
         if themeSettings!["font"] == "custom" {
@@ -945,7 +945,7 @@ class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDele
     }
     
     func updateBgImage(bgImage: String) {
-        let imageBackgroundName = "theme-background-\(bgImage).png"
+        let imageBackgroundName = "\(bgImage).jpg"
         view.backgroundColor = UIColor(patternImage: scaleImageToSize(size: view.bounds.size, image: UIImage(named: imageBackgroundName)!))
         
     }
