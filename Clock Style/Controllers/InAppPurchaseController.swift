@@ -16,15 +16,15 @@ class InAppPurchaseController: UIViewController {
     let sharedSecret = "ed62de2cc93d45558fd5b7aa5e028fac"
     
     let inAppPurchaseIds = [
-        [ "clockstyle.themepack1",
-          "clockstyle.themepack2",
-          "clockstyle.themepack3",
-          "clockstyle.themepack4",
-          "clockstyle.themepack5",
-          "clockstyle.themepack6",
-          "clockstyle.themepack7",
-          "clockstyle.themepack8",
-          "clockstyle.themepack9" ]
+        "clockstyle.themepack1",
+        "clockstyle.themepack2",
+        "clockstyle.themepack3",
+        "clockstyle.themepack4",
+        "clockstyle.themepack5",
+        "clockstyle.themepack6",
+        "clockstyle.themepack7",
+        "clockstyle.themepack8",
+        "clockstyle.themepack9"
     ]
     
     var inAppPurchaseLabels = [String]()
@@ -43,13 +43,15 @@ class InAppPurchaseController: UIViewController {
     
     @IBAction func onClickBuyButton(_ sender: Any) {
         print(selectedTheme)
-        let productIdentifierChosen = inAppPurchaseIds[0][selectedTheme]
+        let productIdentifierChosen = inAppPurchaseIds[selectedTheme]
         let productLabelChosen = inAppPurchaseLabels[selectedTheme]
         print(productIdentifierChosen)
         print(productLabelChosen)
         SwiftyStoreKit.purchaseProduct("\(productIdentifierChosen)", quantity: 1, atomically: true) { result in
             switch result {
             case .success(let purchase):
+                print("Purchase:")
+                debugPrint(purchase)
                 self.inAppPurchaseValidations[self.selectedTheme] = "1"
                 print(self.inAppPurchaseValidations[self.selectedTheme])
                 self.showHUDMessage(messageType: "success", withMessage: "Enjoy this theme!")
@@ -171,16 +173,19 @@ class InAppPurchaseController: UIViewController {
     }
     
     func loadInAppPurchaseData() {
-        for i in 0...inAppPurchaseIds.count - 1 {
-            for j in 0...inAppPurchaseIds[i].count - 1 {
-                SwiftyStoreKit.retrieveProductsInfo([inAppPurchaseIds[i][j]]) { result in
+//        for i in 0...inAppPurchaseIds.count - 1 {
+            for j in 0...inAppPurchaseIds.count - 1 {
+//                print(inAppPurchaseIds[j])
+                SwiftyStoreKit.retrieveProductsInfo([inAppPurchaseIds[j]]) { result in
                     if let product = result.retrievedProducts.first {
-                        debugPrint(product)
+//                        debugPrint(product)
                         
-                        var productPrice = product.localizedPrice!
-                        var productLabel = "\(product.localizedTitle)"
-                        var productDescription = "\(product.localizedDescription)"
-                        var productPurchased = self.verifyPurchase(with: self.inAppPurchaseIds[i][j], sharedSecret: self.sharedSecret)
+                        let productPrice = product.localizedPrice!
+                        let productLabel = "\(product.localizedTitle)"
+                        let productDescription = "\(product.localizedDescription)"
+                        let productPurchased = self.verifyPurchase(with: self.inAppPurchaseIds[j], sharedSecret: self.sharedSecret)
+                        
+//                        print("\(productPrice) \(productLabel) \(productDescription) \(productPurchased)")
                         
 //                        print("** \(self.inAppPurchaseIds[i][j]) ** \(productPurchased)")
                         
@@ -213,7 +218,13 @@ class InAppPurchaseController: UIViewController {
                     }
                 }
             }
-        }
+        
+//        print("*********")
+//        debugPrint(inAppPurchaseIds)
+//        debugPrint(inAppPurchaseLabels)
+//        debugPrint(inAppPurchasePrices)
+//        debugPrint(inAppPurchaseValidations)
+//        }
     }
     
     func showHUDMessage(messageType: String, withMessage: String) {
@@ -268,23 +279,13 @@ class InAppPurchaseController: UIViewController {
         self.themePreviewDescription.text = self.inAppPurchaseDescriptions[selectedTheme]
         self.buyButtonLabel.setTitle(self.inAppPurchasePrices[selectedTheme], for: .normal)
         
-        if self.inAppPurchaseValidations[selectedTheme] == "0" {
+//        if self.inAppPurchaseValidations[selectedTheme] == "0" {
             priceLabel = self.inAppPurchasePrices[selectedTheme]
-        } else {
-            priceLabel = "Purchased"
-        }
+//        } else {
+//            priceLabel = "Purchased"
+//        }
         
         self.buyButtonLabel.setTitle(priceLabel, for: .normal)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

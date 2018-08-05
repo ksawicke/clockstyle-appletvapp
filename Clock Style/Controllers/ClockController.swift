@@ -7,8 +7,23 @@
 
 import UIKit
 import JGProgressHUD
+import SwiftyStoreKit
 
 class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDelegate, UITabBarDelegate {
+    
+    let sharedSecret = "ed62de2cc93d45558fd5b7aa5e028fac"
+    
+    let inAppPurchaseIds = [
+        "clockstyle.themepack1",
+        "clockstyle.themepack2",
+        "clockstyle.themepack3",
+        "clockstyle.themepack4",
+        "clockstyle.themepack5",
+        "clockstyle.themepack6",
+        "clockstyle.themepack7",
+        "clockstyle.themepack8",
+        "clockstyle.themepack9"
+    ]
     
     var themeInfo: [String:[String:String]] = [
         // Wood
@@ -1247,14 +1262,27 @@ class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDele
     
     func userChangedStyle(rowNumber: Int, cellNumber: Int) {
         hideHUD()
+        var productPurchased = "0"
         
-        selectedRowNumber = rowNumber
-        selectedCellNumber = cellNumber
-        currentTheme = "\(rowNumber)\(selectedCellNumber)"
+        if rowNumber >= 7 && rowNumber <= 15 {
+            let id = rowNumber - 7
+            productPurchased = verifyPurchase(with: inAppPurchaseIds[id], sharedSecret: sharedSecret)
+            
+            print("ID: \(inAppPurchaseIds[id])")
+            print("PRODUCT PURCHASED: \(productPurchased)")
+        }
         
-//        print("ROW \(selectedRowNumber) , CELL \(selectedCellNumber) , currentTheme \(currentTheme)")
+        print("PRODUCT PURCHASED: \(productPurchased)")
         
-        updateTheme()
+        if productPurchased == "1" {
+            selectedRowNumber = rowNumber
+            selectedCellNumber = cellNumber
+            currentTheme = "\(rowNumber)\(selectedCellNumber)"
+            
+            updateTheme()
+        } else {
+            showHUDMessage(messageType: "error", withMessage: "Theme not purchsaed.")
+        }
     }
     
     func userChangedLanguage(languageNumber: Int) {
@@ -1263,6 +1291,48 @@ class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDele
         currentRegion = languageNumber
         
         updateClock()
+    }
+    
+    func verifyPurchase(with id: String, sharedSecret: String) -> String {
+        let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: sharedSecret)
+        var valueToReturn = "0"
+        
+        SwiftyStoreKit.verifyReceipt(using: appleValidator) { result in
+            switch result {
+                
+            case .success(let receipt):
+                let productId = id
+                // Verify the purchase of Consumable or NonConsumable
+                let purchaseResult = SwiftyStoreKit.verifyPurchase(
+                    productId: productId,
+                    inReceipt: receipt)
+                
+                switch purchaseResult {
+                case .purchased(let receiptItem):
+                    valueToReturn = "1"
+                case .notPurchased:
+                    valueToReturn = "0"
+                }
+            case .error(let error):
+                valueToReturn = "0"
+            }
+        }
+        
+        return valueToReturn
+    }
+    
+    func showHUDMessage(messageType: String, withMessage: String) {
+        let hud = JGProgressHUD(style: .dark)
+        hud.textLabel.text = withMessage
+        
+        if messageType == "success" {
+            hud.indicatorView = JGProgressHUDSuccessIndicatorView()
+        } else {
+            hud.indicatorView = JGProgressHUDErrorIndicatorView()
+        }
+        
+        hud.show(in: self.view)
+        hud.dismiss(afterDelay: 3.0)
     }
     
 }
