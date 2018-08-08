@@ -13,16 +13,18 @@ class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDele
     
     let sharedSecret = "ed62de2cc93d45558fd5b7aa5e028fac"
     
+    var isPurchased: String = "0"
+    
     let inAppPurchaseIds = [
-        "clockstyle.themepack1",
-        "clockstyle.themepack2",
-        "clockstyle.themepack3",
-        "clockstyle.themepack4",
-        "clockstyle.themepack5",
-        "clockstyle.themepack6",
-        "clockstyle.themepack7",
-        "clockstyle.themepack8",
-        "clockstyle.themepack9"
+        "clockstyle.themepack1", // Bridges
+        "clockstyle.themepack2", // Bulbs
+        "clockstyle.themepack7", // Classic Audio
+        "clockstyle.themepack8", // Classic Cameras
+        "clockstyle.themepack3", // Classic Cars
+        "clockstyle.themepack9", // Classic Games
+        "clockstyle.themepack4", // Desert
+        "clockstyle.themepack5", // Maps
+        "clockstyle.themepack6", // Tropical
     ]
     
     var themeInfo: [String:[String:String]] = [
@@ -95,74 +97,74 @@ class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDele
         // In-App Purchases
         // Theme Pack - Bridges (clockstyle.themepack1)
         "71": ["background": "image", "bgImage": "55", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "72": ["background": "image", "bgImage": "56", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "72": ["background": "image", "bgImage": "56", "fontColor": "neonLightBlue", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         "73": ["background": "image", "bgImage": "57", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "74": ["background": "image", "bgImage": "58", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "75": ["background": "image", "bgImage": "59", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "74": ["background": "image", "bgImage": "58", "fontColor": "black", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "75": ["background": "image", "bgImage": "59", "fontColor": "black", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         "76": ["background": "image", "bgImage": "60", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "77": ["background": "image", "bgImage": "61", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "78": ["background": "image", "bgImage": "62", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "79": ["background": "image", "bgImage": "63", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "77": ["background": "image", "bgImage": "61", "fontColor": "black", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "78": ["background": "image", "bgImage": "62", "fontColor": "black", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "79": ["background": "image", "bgImage": "63", "fontColor": "bubbleGum", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
 
         // Theme Pack - Bulbs (clockstyle.themepack2)
         "81": ["background": "image", "bgImage": "64", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         "82": ["background": "image", "bgImage": "65", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "83": ["background": "image", "bgImage": "66", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "84": ["background": "image", "bgImage": "67", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "85": ["background": "image", "bgImage": "68", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "86": ["background": "image", "bgImage": "69", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "87": ["background": "image", "bgImage": "70", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "88": ["background": "image", "bgImage": "71", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "89": ["background": "image", "bgImage": "72", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "83": ["background": "image", "bgImage": "66", "fontColor": "black", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "84": ["background": "image", "bgImage": "67", "fontColor": "red", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "none"],
+        "85": ["background": "image", "bgImage": "68", "fontColor": "white", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "none"],
+        "86": ["background": "image", "bgImage": "69", "fontColor": "red", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
+        "87": ["background": "image", "bgImage": "70", "fontColor": "orange", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
+        "88": ["background": "image", "bgImage": "71", "fontColor": "green", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "89": ["background": "image", "bgImage": "72", "fontColor": "black", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
     
         // Theme Pack - Classic Audio (clockstyle.themepack7)
-        "91": ["background": "image", "bgImage": "73", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "92": ["background": "image", "bgImage": "74", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "93": ["background": "image", "bgImage": "75", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "94": ["background": "image", "bgImage": "76", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "95": ["background": "image", "bgImage": "77", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "96": ["background": "image", "bgImage": "78", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "97": ["background": "image", "bgImage": "79", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "91": ["background": "image", "bgImage": "73", "fontColor": "red", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "none"],
+        "92": ["background": "image", "bgImage": "74", "fontColor": "neonLightBlue", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
+        "93": ["background": "image", "bgImage": "75", "fontColor": "yellow", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "94": ["background": "image", "bgImage": "76", "fontColor": "green", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
+        "95": ["background": "image", "bgImage": "77", "fontColor": "bubbleGum", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
+        "96": ["background": "image", "bgImage": "78", "fontColor": "red", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
+        "97": ["background": "image", "bgImage": "79", "fontColor": "neonLightBlue", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
         "98": ["background": "image", "bgImage": "80", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "99": ["background": "image", "bgImage": "81", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "99": ["background": "image", "bgImage": "81", "fontColor": "neonYellow", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
     
         // Theme Pack - Classic Cameras (clockstyle.themepack8)
-        "101": ["background": "image", "bgImage": "82", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "102": ["background": "image", "bgImage": "83", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "103": ["background": "image", "bgImage": "84", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "104": ["background": "image", "bgImage": "85", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "101": ["background": "image", "bgImage": "82", "fontColor": "red", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
+        "102": ["background": "image", "bgImage": "83", "fontColor": "red", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "103": ["background": "image", "bgImage": "84", "fontColor": "neonLightBlue", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
+        "104": ["background": "image", "bgImage": "85", "fontColor": "green", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
         "105": ["background": "image", "bgImage": "86", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         "106": ["background": "image", "bgImage": "87", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         "107": ["background": "image", "bgImage": "88", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "108": ["background": "image", "bgImage": "89", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "108": ["background": "image", "bgImage": "89", "fontColor": "red", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
         "109": ["background": "image", "bgImage": "90", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         
         // Theme Pack - Classic Cars (clockstyle.themepack3)
         "111": ["background": "image", "bgImage": "91", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         "112": ["background": "image", "bgImage": "92", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "113": ["background": "image", "bgImage": "93", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "114": ["background": "image", "bgImage": "94", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "115": ["background": "image", "bgImage": "95", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "113": ["background": "image", "bgImage": "93", "fontColor": "black", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "114": ["background": "image", "bgImage": "94", "fontColor": "red", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "red"],
+        "115": ["background": "image", "bgImage": "95", "fontColor": "bubbleGum", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
         "116": ["background": "image", "bgImage": "96", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "117": ["background": "image", "bgImage": "97", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "118": ["background": "image", "bgImage": "98", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "119": ["background": "image", "bgImage": "99", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "117": ["background": "image", "bgImage": "97", "fontColor": "yellow", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
+        "118": ["background": "image", "bgImage": "98", "fontColor": "black", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "119": ["background": "image", "bgImage": "99", "fontColor": "yellow", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
         
         // Theme Pack - Classic Games (clockstyle.themepack9)
-        "121": ["background": "image", "bgImage": "100", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "121": ["background": "image", "bgImage": "100", "fontColor": "yellow", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
         "122": ["background": "image", "bgImage": "101", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "123": ["background": "image", "bgImage": "102", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "124": ["background": "image", "bgImage": "103", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "125": ["background": "image", "bgImage": "104", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "126": ["background": "image", "bgImage": "105", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "127": ["background": "image", "bgImage": "106", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "128": ["background": "image", "bgImage": "107", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "129": ["background": "image", "bgImage": "108", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "123": ["background": "image", "bgImage": "102", "fontColor": "red", "font": "custom", "fontName": "DS-Digital", "fontEffect": "glow"],
+        "124": ["background": "image", "bgImage": "103", "fontColor": "yellow", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
+        "125": ["background": "image", "bgImage": "104", "fontColor": "green", "font": "custom", "fontName": "Neon Tubes 2", "fontEffect": "glow"],
+        "126": ["background": "image", "bgImage": "105", "fontColor": "black", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "127": ["background": "image", "bgImage": "106", "fontColor": "yellow", "font": "custom", "fontName": "lcddot", "fontEffect": "glow"],
+        "128": ["background": "image", "bgImage": "107", "fontColor": "green", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "129": ["background": "image", "bgImage": "108", "fontColor": "green", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         
         // Theme Pack - Desert (clockstyle.themepack4)
         "131": ["background": "image", "bgImage": "109", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         "132": ["background": "image", "bgImage": "110", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "133": ["background": "image", "bgImage": "111", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "133": ["background": "image", "bgImage": "111", "fontColor": "gray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         "134": ["background": "image", "bgImage": "112", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         "135": ["background": "image", "bgImage": "113", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         "136": ["background": "image", "bgImage": "114", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
@@ -171,18 +173,18 @@ class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDele
         "139": ["background": "image", "bgImage": "117", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         
         // Theme Pack - Maps (clockstyle.themepack5)
-        "141": ["background": "image", "bgImage": "118", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "142": ["background": "image", "bgImage": "119", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "143": ["background": "image", "bgImage": "120", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "144": ["background": "image", "bgImage": "121", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "145": ["background": "image", "bgImage": "122", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "141": ["background": "image", "bgImage": "118", "fontColor": "gray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "142": ["background": "image", "bgImage": "119", "fontColor": "gray", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "143": ["background": "image", "bgImage": "120", "fontColor": "black", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "144": ["background": "image", "bgImage": "121", "fontColor": "black", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "145": ["background": "image", "bgImage": "122", "fontColor": "black", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         "146": ["background": "image", "bgImage": "123", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         "147": ["background": "image", "bgImage": "124", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
-        "148": ["background": "image", "bgImage": "125", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        "148": ["background": "image", "bgImage": "125", "fontColor": "black", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         "149": ["background": "image", "bgImage": "126", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         
-        // Theme Pack - Palms (clockstyle.themepack6)
-        "151": ["background": "image", "bgImage": "127", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
+        // Theme Pack - Tropical (clockstyle.themepack6)
+        "151": ["background": "image", "bgImage": "127", "fontColor": "black", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         "152": ["background": "image", "bgImage": "128", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         "153": ["background": "image", "bgImage": "129", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
         "154": ["background": "image", "bgImage": "130", "fontColor": "white", "font": "custom", "fontName": "Orbitron-Bold", "fontEffect": "none"],
@@ -962,7 +964,6 @@ class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDele
     func updateBgImage(bgImage: String) {
         let imageBackgroundName = "\(bgImage).jpg"
         view.backgroundColor = UIColor(patternImage: scaleImageToSize(size: view.bounds.size, image: UIImage(named: imageBackgroundName)!))
-        
     }
     
     func scaleImageToSize(size: CGSize, image: UIImage) -> UIImage {
@@ -1262,26 +1263,16 @@ class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDele
     
     func userChangedStyle(rowNumber: Int, cellNumber: Int) {
         hideHUD()
-        var productPurchased = "0"
         
         if rowNumber >= 7 && rowNumber <= 15 {
             let id = rowNumber - 7
-            productPurchased = verifyPurchase(with: inAppPurchaseIds[id], sharedSecret: sharedSecret)
-            
-            print("ID: \(inAppPurchaseIds[id])")
-            print("PRODUCT PURCHASED: \(productPurchased)")
-        }
-        
-        print("PRODUCT PURCHASED: \(productPurchased)")
-        
-        if productPurchased == "1" {
+            verifyPurchase(with: inAppPurchaseIds[id], sharedSecret: sharedSecret, rowNumber: rowNumber, cellNumber: cellNumber)
+        } else {
             selectedRowNumber = rowNumber
             selectedCellNumber = cellNumber
             currentTheme = "\(rowNumber)\(selectedCellNumber)"
-            
+
             updateTheme()
-        } else {
-            showHUDMessage(messageType: "error", withMessage: "Theme not purchsaed.")
         }
     }
     
@@ -1293,9 +1284,8 @@ class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDele
         updateClock()
     }
     
-    func verifyPurchase(with id: String, sharedSecret: String) -> String {
+    func verifyPurchase(with id: String, sharedSecret: String, rowNumber: Int, cellNumber: Int) {
         let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: sharedSecret)
-        var valueToReturn = "0"
         
         SwiftyStoreKit.verifyReceipt(using: appleValidator) { result in
             switch result {
@@ -1309,16 +1299,18 @@ class ClockController: UIViewController, ChangeStyleDelegate, ChangeLanguageDele
                 
                 switch purchaseResult {
                 case .purchased(let receiptItem):
-                    valueToReturn = "1"
+                    self.selectedRowNumber = rowNumber
+                    self.selectedCellNumber = cellNumber
+                    self.currentTheme = "\(rowNumber)\(self.selectedCellNumber)"
+                    
+                    self.updateTheme()
                 case .notPurchased:
-                    valueToReturn = "0"
+                    self.showHUDMessage(messageType: "error", withMessage: "Theme not purchased.")
                 }
             case .error(let error):
-                valueToReturn = "0"
+                self.showHUDMessage(messageType: "error", withMessage: "Theme not purchased.")
             }
         }
-        
-        return valueToReturn
     }
     
     func showHUDMessage(messageType: String, withMessage: String) {

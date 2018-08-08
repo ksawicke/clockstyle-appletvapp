@@ -21,8 +21,7 @@ class StyleController: UIViewController {
         "Wood", "Stone", "Night", "Blues", "Warmth", "Coffee",
         
         // In-App Purchases
-        "Bridges", "Bulbs", "Classic Audio", "Classic Cameras",
-        "Classic Cars", "Classic Games", "Desert", "Maps", "Palms"
+        "Bridges", "Bulbs", "Classic Audio", "Classic Cameras", "Classic Cars", "Classic Games", "Desert", "Maps", "Tropical"
     ]
     
     // MARK: - Singleton properties
@@ -42,8 +41,6 @@ class StyleController: UIViewController {
         tableView.register(CatalogueTableViewCell.self, forCellReuseIdentifier: tableCellIdentifier)
         
         images = []
-        
-        //    print(themeData[0]["background"]!)
     }
     
     // MARK: - Override methods
